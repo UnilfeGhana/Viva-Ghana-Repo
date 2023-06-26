@@ -118,7 +118,7 @@ def add_member(phone,commission,parents,children,doc):
         query_params = f'{query_params}&parents={value.string_value}'
 
     for value in children:
-        query_params = f'{query_params}&children={value.string_value}'
+        query_params = f'{query_params}&children={value}'
 
     req_url = f'{url}{query_params}'
     req_url = req_url.replace(" ","")
