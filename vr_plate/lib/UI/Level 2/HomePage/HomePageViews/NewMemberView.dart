@@ -14,7 +14,8 @@ class _NewMemberViewState extends State<NewMemberView> {
   L1EventHandler eventHandler = L1EventHandler();
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Scaffold(
+        body: Container(
       decoration: const BoxDecoration(
           // color: Colors.lightGreen,
           // image: DecorationImage(image: GetImage().getLocalImage(1)),
@@ -81,6 +82,6 @@ class _NewMemberViewState extends State<NewMemberView> {
               child: const Text('Add Member'))
         ],
       ),
-    );
+    ));
   }
 }

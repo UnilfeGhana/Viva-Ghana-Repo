@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:vr_plate/Functions/GetImage.dart';
 import 'package:vr_plate/Functions/EventHandler/Level_1_events.dart';
 import 'package:vr_plate/Functions/Navigation/NavigationHandler.dart';
 

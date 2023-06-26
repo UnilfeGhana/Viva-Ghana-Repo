@@ -25,7 +25,7 @@ class _CarouselViewState extends State<CarouselView> {
   Widget build(BuildContext context) {
     // print('get Carousel');
     return Container(
-        height: 299,
+        height: 305,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
