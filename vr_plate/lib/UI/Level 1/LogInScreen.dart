@@ -15,7 +15,7 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   L1EventHandler eventHandler = L1EventHandler();
   UserFunction user = UserFunction();
-  NavHandler navHandler = NavHandler();
+  String phone = '';
   @override
   Widget build(BuildContext context) {
     //Initializing OTP bool in UserFunction Class
@@ -59,11 +59,14 @@ class _LoginScreenState extends State<LoginScreen> {
                       keyboardType: TextInputType.number,
                       onChanged: (value) {
                         String newVal = value.trim();
-                        newVal = newVal.split('+233')[1];
-                        newVal = newVal.split('0')[1];
+                        if (newVal[0] == '+233' || newVal[0] == '0') {
+                          newVal = newVal.split('+233')[1];
+                          newVal = newVal.split('0')[1];
+                        }
                         newVal = '+233$newVal';
                         setState(() {
                           phone = newVal;
+                          UserFunction.user_.phone = phone;
                         });
                       },
                       decoration: const InputDecoration(
@@ -80,6 +83,7 @@ class _LoginScreenState extends State<LoginScreen> {
             ElevatedButton(
               onPressed: () {
                 setState(() {
+                  String phoneNum = 'phone';
                   eventHandler.onLogin(context, 'otp', phone);
                 });
                 // String verId = eventHandler.onSubmitPhone(phone);

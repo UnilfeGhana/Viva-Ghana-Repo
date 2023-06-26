@@ -78,6 +78,19 @@ class ServerFunctions {
     }
   }
 
+  submitNewLoginAsMember(String phone, String name, String parentPhone) async {
+    CollectionReference cloudMembers = cloud.collection('Members');
+    MemberClass new_member = MemberClass(phone, ['0'], ['00'], '0', 0);
+    Map<String, dynamic> memberMap = {
+      'phone': new_member.phone,
+      'commission': new_member.commission,
+      'children': new_member.children,
+      'parents': new_member.parents,
+      'new_member_buffer': 'none',
+    };
+    cloudMembers.doc(phone).set(memberMap);
+  }
+
   submitNewChild(String phone, String name, String parentPhone) async {
     CollectionReference cloudMembers = cloud.collection('Members');
 

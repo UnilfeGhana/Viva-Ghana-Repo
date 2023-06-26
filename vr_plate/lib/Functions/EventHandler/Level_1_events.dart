@@ -18,9 +18,14 @@ class L1EventHandler {
   onLogin(BuildContext context, String otp, String phone) async {
     UserFunction userF = UserFunction();
     _locationClass.getDeviceLocation();
+    bool isMember = await ServerFunctions().isMember(UserFunction.user_.phone);
+    if (isMember == false) {
+      ServerFunctions()
+          .submitNewLoginAsMember(UserFunction.user_.phone, 'name', '0');
+    }
     // UserFunction.total = 0;
-    userF.setPhone(phone);
-    UserFunction.user_.phone = phone;
+    // userF.setPhone(phone);
+    // UserFunction.user_.phone = phone;
     //first validate _sFunctions.authenticateUser()
     //Make every Login a Member here
     _navHandler.Level2Nav('HomePage', context);
@@ -41,7 +46,7 @@ class L1EventHandler {
     //   _sFunctions.sumbitNewMember(member);
     // }
 
-    MemberFunction().pushNewMember(phone, 'name', '000');
+    // MemberFunction().pushNewMember(phone, 'name', '000');
 
     return;
   }
@@ -78,15 +83,16 @@ class L1EventHandler {
     MemberFunction mf = MemberFunction();
     _navHandler.clearLayers(context);
     _navHandler.Level2Nav('HomePage', context);
-    // bool success = mf.addMember(user.phone, user.userName);
-    bool success = mf.pushNewMember(
-        user.phone, user.userName, MemberFunction.member.phone);
+    // bool success = mf.addMember(user.phone, user.userName);\
+    mf.pushNewMember(user.phone, user.userName, MemberFunction.member.phone);
+    // bool success = mf.pushNewMember(
+    //     user.phone, user.userName, MemberFunction.member.phone);
     // mf.http_submitMember(user.phone, MemberFunction.member.phone);
-    if (success) {
-      return _navHandler.PopUpSuccess(context, 'Successful');
-    } else {
-      return _navHandler.PopUpFailed(context, 'Member Already Exists');
-    }
+    // if (success) {
+    //   return _navHandler.PopUpSuccess(context, 'Successful');
+    // } else {
+    //   return _navHandler.PopUpFailed(context, 'Member Already Exists');
+    // }
   }
 
   onLogout(BuildContext context) {
