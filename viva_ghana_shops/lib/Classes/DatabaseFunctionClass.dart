@@ -8,16 +8,23 @@ class DatabaseFunctionClass {
   static ShopClass shop = ShopClass(
       'None', 'none', 'mobile', {}, [], [], [], [], [], 'shop_db_location');
 
-  Map<String, CartClass> cartMap = {};
-
 ////////////////////////////////////////////////
   ///       List of Products                 ////
 ////////////////////////////////////////////////
-  List<ProductClass> products = [
+  static final List<ProductClass> products = [
     ProductClass('Viva Plus (90)', '70', '90tabsViva.png'),
     ProductClass('Viva Plus (120)', '90', '120tabsViva.png'),
     ProductClass('Viva Lady', '100', 'Vivalady.png')
   ];
+
+  static final List<CartClass> cartList = [
+    CartClass(products[0], '0'),
+    CartClass(products[1], '0'),
+    CartClass(products[2], '0'),
+
+  ];
+
+  Map<String, CartClass> cartMap = {};
 
   static ServerFunctionClass serverFunction = ServerFunctionClass();
 

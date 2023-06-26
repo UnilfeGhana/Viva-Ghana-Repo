@@ -47,6 +47,7 @@ class _StockPageState extends State<StockPage> {
                       return MedicineCardWidget(
                           medicineName: (index).toString(),
                           canEdit: false,
+                          itemIndex: index,
                           in_dbfc: dbfc);
                     })),
             const Text('Contact UniLife Ghana to refill your stock')

@@ -5,22 +5,26 @@ class MedicineCardWidget extends StatefulWidget {
   String medicineName;
   bool canEdit;
   DatabaseFunctionClass in_dbfc;
+  int itemIndex;
   MedicineCardWidget(
       {super.key,
       required this.medicineName,
       required this.canEdit,
-      required this.in_dbfc});
+      required this.in_dbfc,
+      required this.itemIndex});
 
   @override
-  State<MedicineCardWidget> createState() =>
-      _MedicineCardWidgetState(this.medicineName, this.canEdit, this.in_dbfc);
+  State<MedicineCardWidget> createState() => _MedicineCardWidgetState(
+      this.medicineName, this.canEdit, this.in_dbfc, this.itemIndex);
 }
 
 class _MedicineCardWidgetState extends State<MedicineCardWidget> {
   String medicineName;
   bool canEdit;
   DatabaseFunctionClass _dbfc;
-  _MedicineCardWidgetState(this.medicineName, this.canEdit, this._dbfc);
+  int itemIndex;
+  _MedicineCardWidgetState(
+      this.medicineName, this.canEdit, this._dbfc, this.itemIndex);
   String productName = '';
   String price = '';
   String img = '';
@@ -112,20 +116,21 @@ class _MedicineCardWidgetState extends State<MedicineCardWidget> {
                               ////// Then edit the Sub-Total
                               if (int.tryParse(value)! > 0) {
                                 setState(() {
+                                  DatabaseFunctionClass
+                                      .cartList[itemIndex].amount = value;
                                   _dbfc.cartMap[productName]?.amount = value;
-                                  total =
-                                      _dbfc.cartMap[productName]?.subTotal ??
-                                          '0';
+                                  total = DatabaseFunctionClass
+                                      .cartList[itemIndex].subTotal;
                                 });
                               }
                               ////If the value is less than 1 remove the medicine from the cart
                               ////// Then edit the Sub-Total
                               else if (int.tryParse(value)! < 1) {
                                 setState(() {
-                                  _dbfc.cartMap[productName]?.amount = '0';
-                                  total =
-                                      _dbfc.cartMap[productName]?.subTotal ??
-                                          '0';
+                                  DatabaseFunctionClass
+                                      .cartList[itemIndex].amount = '0';
+                                  total = DatabaseFunctionClass
+                                      .cartList[itemIndex].subTotal;
                                 });
                               }
                             }

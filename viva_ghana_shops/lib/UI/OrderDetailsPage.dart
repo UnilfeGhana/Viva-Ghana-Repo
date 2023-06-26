@@ -26,17 +26,17 @@ class _OrderDetailsPageState extends State<OrderDetailsPage> {
     // TODO: implement initState
     super.initState();
     //Adding the Medicines in the Order to the cartmap of this dbfc
-    order.orders.entries.forEach((medicine) {
-      int productIndex = DatabaseFunctionClass()
-          .products
-          .indexWhere((product) => product.productName == medicine.key);
-      String price_of_medicine =
-          (DatabaseFunctionClass().products[productIndex].price);
-      String img = (DatabaseFunctionClass().products[productIndex].img);
-      ProductClass product = ProductClass(medicine.key, price_of_medicine, img);
-      CartClass cartItem = CartClass(product, medicine.value.toString());
-      dbfc.cartMap.addAll({medicine.key: cartItem});
-    });
+    // order.orders.entries.forEach((medicine) {
+    //   int productIndex = DatabaseFunctionClass()
+    //       .products
+    //       .indexWhere((product) => product.productName == medicine.key);
+    //   String price_of_medicine =
+    //       (DatabaseFunctionClass().products[productIndex].price);
+    //   String img = (DatabaseFunctionClass().products[productIndex].img);
+    //   ProductClass product = ProductClass(medicine.key, price_of_medicine, img);
+    //   CartClass cartItem = CartClass(product, medicine.value.toString());
+    //   dbfc.cartMap.addAll({medicine.key: cartItem});
+    // });
   }
 
   @override
@@ -73,11 +73,11 @@ class _OrderDetailsPageState extends State<OrderDetailsPage> {
                       index,
                     ) {
                       return MedicineCardWidget(
-                        medicineName: order.orders.keys.toList()[index],
-                        //  'Viva Plus (90)',
-                        canEdit: false,
-                        in_dbfc: dbfc,
-                      );
+                          medicineName: order.orders.keys.toList()[index],
+                          //  'Viva Plus (90)',
+                          canEdit: false,
+                          in_dbfc: dbfc,
+                          itemIndex: index);
                     })),
             //For spacing
             const SizedBox(height: 20),

@@ -27,10 +27,10 @@ class _SellingPageState extends State<SellingPage> {
     // TODO: implement initState
     super.initState();
     /////Adding all Products in dbfc products to cart
-    for (var product in dbfc.products) {
-      CartClass cartItem = CartClass(product, '0');
-      dbfc.cartMap.addAll({product.productName: cartItem});
-    }
+    // for (var product in dbfc.products) {
+    //   CartClass cartItem = CartClass(product, '0');
+    //   dbfc.cartMap.addAll({product.productName: cartItem});
+    // }
   }
 
   @override
@@ -57,25 +57,31 @@ class _SellingPageState extends State<SellingPage> {
                       itemCount: dbfc.cartMap.length,
                       itemBuilder: (BuildContext context, index) {
                         return MedicineCardWidget(
-                          medicineName: DatabaseFunctionClass()
-                              .products[index]
-                              .productName,
-                          canEdit: true,
-                          in_dbfc: dbfc,
-                        );
+                            medicineName: DatabaseFunctionClass
+                                .products[index].productName,
+                            canEdit: true,
+                            in_dbfc: dbfc,
+                            itemIndex: index);
                       }),
                 ),
                 Row(
                   children: [
                     const Text('Total:'),
-                    Text(calculateTotal(dbfc.cartMap))
+                    Text(calculateTotal(DatabaseFunctionClass.cartList))
                   ],
                 ),
                 ElevatedButton(
                     onPressed: () {
-                      String total = calculateTotal(dbfc.cartMap);
+                      String total =
+                          calculateTotal(DatabaseFunctionClass.cartList);
+                      //Creating Order Map
+                      Map<String, CartClass> orderMap = {};
+                      //adding entries to orderMap
+                      for (var element in DatabaseFunctionClass.cartList) {
+                        orderMap.addAll({element.product.productName: element});
+                      }
                       //Creating the Order
-                      OrderClass order = OrderClass(rName, rPhone, dbfc.cartMap,
+                      OrderClass order = OrderClass(rName, rPhone, orderMap,
                           total, 'order_db_location', member);
                       eventH.on_fulfill_order(order);
                     },
@@ -84,13 +90,16 @@ class _SellingPageState extends State<SellingPage> {
             )));
   }
 
-  calculateTotal(Map<String, CartClass> cartMap) {
+  calculateTotal(List<CartClass> cartItems) {
     String total = '0';
     int total_val = 0;
 
-    cartMap.entries.forEach((element) {
-      total_val += int.parse(element.value.subTotal);
-    });
+    for (var element in cartItems) {
+      total_val += int.parse(element.subTotal);
+    }
+    // cartMap.entries.forEach((element) {
+    //   total_val += int.parse(element.value.subTotal);
+    // });
     total = total_val.toString();
     return total;
   }
@@ -113,7 +122,7 @@ class _SellingPageState extends State<SellingPage> {
               onChanged: (value) {
                 //Calculating Total each time the name is changed
                 setState(() {
-                  calculateTotal(dbfc.cartMap);
+                  calculateTotal(DatabaseFunctionClass.cartList);
                 });
                 String newVal = value.trim();
                 switch (fieldName) {
