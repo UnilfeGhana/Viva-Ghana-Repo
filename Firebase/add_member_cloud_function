@@ -1,0 +1,138 @@
+from cloudevents.http import CloudEvent
+import functions_framework
+from google.events.cloud import firestore
+import urllib.request
+import json
+
+
+
+@functions_framework.cloud_event
+def hello_firestore(cloud_event: CloudEvent) -> None:
+    
+    generation_number = 3
+
+    """Triggers by a change to a Firestore document.
+    Args:
+        cloud_event: cloud event with information on the firestore event trigger
+    """
+    firestore_payload = firestore.DocumentEventData()
+    firestore_payload._pb.ParseFromString(cloud_event.data)
+
+    # print(f"Function triggered by change to: {cloud_event['source']}")
+
+    source_array = str(firestore_payload.value.name).split('/')
+
+    document_location = source_array[-1]
+    try:
+        old_value = firestore_payload.old_value.fields['new_member_buffer'].string_value
+
+        next_value = firestore_payload.value.fields['new_member_buffer'].string_value
+    except:
+        print("Couldn't get old and New Values")
+        return 'Not good'
+
+    
+
+    #Infinite Loop Prevention
+    if old_value == next_value:
+        return 'loop'
+
+    str_value = firestore_payload.old_value.fields['new_member_buffer']
+    # str_value = str(str_value)
+    print(f"String Value is {str_value}")
+
+    #Check if the member already exists
+    member_url = f'https://firestore.googleapis.com/v1/projects/copy-1-dfbcf/databases/(default)/documents/Members/{str_value}'
+    try:
+        with urllib.request.urlopen(member_url) as response:
+            if response.getcode() ==200:
+                exists = True
+            else:
+                exists = False
+    except:
+        exists = False
+    
+
+    #saving old values
+    phone = firestore_payload.old_value.fields['phone'].string_value
+    commission = firestore_payload.old_value.fields['commission'].string_value
+    children = firestore_payload.old_value.fields['children'].array_value.values
+    parents = firestore_payload.old_value.fields['parents'].array_value.values
+
+    #Adding new Member to Parent
+    children.append(str_value)
+
+    #Update the value of the parent
+    update_member(phone,commission,parents,children,document_location)
+    print(f'children are: {children}')
+
+    #Then update the value of the New Member
+    n_phone = str_value
+    n_children = ['0']
+    n_parents = [phone]
+    n_commission = '0'
+    for i in range(generation_number):
+        if i < len(parents):
+            n_parents.append(parents[i])
+        else:
+            break
+
+    add_member(n_phone,n_commission,n_parents,n_children,n_phone)
+    
+
+    return 'Successful'
+
+
+def update_member(phone,commission,parents,children,doc):
+    url = 'https://us-central1-copy-1-dfbcf.cloudfunctions.net/updateMember_http_func?'
+
+    query_params = f'doc={doc}&phone={phone}&commission={commission}&collection=Members'
+
+    for value in parents:
+        query_params = f'{query_params}&parents={value.string_value}'
+
+    for value in children:
+        query_params = f'{query_params}&children={value.string_value}'
+
+    req_url = f'{url}{query_params}'
+    req_url = req_url.replace(" ","")
+
+    print(f"Req url is: {req_url}")
+
+    try:
+        with urllib.request.urlopen(req_url) as response:
+            if response.getcode() == 200:
+                return("HTTP request successful")
+            else:
+                return("HTTP request failed")
+    except urllib.error.URLError as e:
+        return(f"HTTP request failed: {e.reason}")
+
+
+def add_member(phone,commission,parents,children,doc):
+    url = 'https://us-central1-copy-1-dfbcf.cloudfunctions.net/addNewMember_http_func?'
+
+    query_params = f'doc={doc}&phone={phone}&commission={commission}&collection=Members'
+
+    for value in parents:
+        query_params = f'{query_params}&parents={value.string_value}'
+
+    for value in children:
+        query_params = f'{query_params}&children={value.string_value}'
+
+    req_url = f'{url}{query_params}'
+    req_url = req_url.replace(" ","")
+
+    print(f"Req url is: {req_url}")
+
+    try:
+        with urllib.request.urlopen(req_url) as response:
+            if response.getcode() == 200:
+                return("HTTP request successful")
+            else:
+                return("HTTP request failed")
+    except urllib.error.URLError as e:
+        return(f"HTTP request failed: {e.reason}")
+
+    
+#https://us-central1-copy-1-dfbcf.cloudfunctions.net/addNewMember_http_func

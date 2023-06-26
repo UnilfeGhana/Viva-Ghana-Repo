@@ -1,0 +1,56 @@
+import functions_framework
+import urllib.request
+import json
+
+@functions_framework.http
+def hello_http(request):
+    request_json = request.get_json(silent=True)
+    request_args = request.args
+
+    if request_args and 'commission' in request_args and 'phone' in request_args and 'parents' in request_args and 'children' in request_args and 'collection' in request_args and 'doc' in request_args:
+        pass
+    else:
+        return "Add value"
+
+    coll = request_args['collection']
+    doc = request_args['doc']
+    commission = request_args['commission']
+    phone = request_args['phone']
+    parents = request_args.getlist('parents')  # Get multiple values as a list
+    children = request_args.getlist('children')  # Get multiple values as a list
+
+    req_url = f'https://firestore.googleapis.com/v1/projects/copy-1-dfbcf/databases/(default)/documents/{coll}/{doc}'
+
+    payload = {
+        'fields': {
+            'phone': {
+                'stringValue': phone
+            },
+            'commission': {
+                'stringValue': commission
+            },
+            'parents': {
+                'arrayValue': {
+                    'values': [{'stringValue': parent} for parent in parents]
+                }
+            },
+            'children': {
+                'arrayValue': {
+                    'values': [{'stringValue': child} for child in children]
+                }
+            },
+            'new_member_buffer':{
+                'stringValue': 'none'
+            }
+        }
+    }
+    req = urllib.request.Request(req_url, method='POST', data=json.dumps(payload).encode('utf-8'), headers={'Content-Type': 'application/json'})
+
+    try:
+        with urllib.request.urlopen(req) as response:
+            if response.getcode() == 200:
+                return 'Value updated successfully'
+            else:
+                return 'Value update failed'
+    except urllib.error.HTTPError as e:
+        return f'Value update failed: {e.code} {e.reason}'

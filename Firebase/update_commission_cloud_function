@@ -1,0 +1,183 @@
+from cloudevents.http import CloudEvent
+import functions_framework
+from google.events.cloud import firestore
+import urllib.request
+import json
+
+
+
+@functions_framework.cloud_event
+def hello_firestore(cloud_event: CloudEvent) -> None:
+    
+    commission_value = 4
+    commission_limit = 10
+
+    """Triggers by a change to a Firestore document.
+    Args:
+        cloud_event: cloud event with information on the firestore event trigger
+    """
+    firestore_payload = firestore.DocumentEventData()
+    firestore_payload._pb.ParseFromString(cloud_event.data)
+
+    # print(f"Function triggered by change to: {cloud_event['source']}")
+
+    source_array = str(firestore_payload.value.name).split('/')
+
+    document_location = source_array[-1]
+
+    # print(f'Document Location is: {document_location}')
+
+    # print("\nOld value:")
+    # print(firestore_payload.old_value)
+
+    # print("\nNew value:")
+    # print(firestore_payload.value)
+    try:
+        old_value = firestore_payload.old_value.fields['commission'].string_value
+
+        next_value = firestore_payload.value.fields['commission'].string_value
+    except:
+        print("Couldn't get old and New Values")
+        return 'Not good'
+
+    
+
+    #Infinite Loop Prevention
+    if old_value == next_value:
+        return
+
+    str_value = firestore_payload.old_value.fields['commission'].string_value
+    try:
+        int_val = int(str_value)
+        int_val += commission_value
+        new_val = str(int_val)
+    except:
+        return "Non-integer"
+
+    int_val = int(str_value)
+    int_val += commission_value
+    new_val = str(int_val)
+
+    # Limiting Commission
+    if int_val > commission_limit:
+        new_val = str(commission_limit)
+
+
+    #saving old values
+    phone = firestore_payload.old_value.fields['phone'].string_value
+    children = firestore_payload.old_value.fields['children'].array_value.values
+    parents = firestore_payload.old_value.fields['parents'].array_value.values
+
+    #Update the value
+    update_member(phone,new_val,parents,children,document_location)
+    print(f'Parents are: {parents}')
+
+    #commission all parents
+    for parent in parents:
+        parent_value = parent.string_value
+        parent_url = f'https://firestore.googleapis.com/v1/projects/copy-1-dfbcf/databases/(default)/documents/Members/{parent_value}'
+
+        print(f"_Parent URL is {parent_url}")
+        try:
+            with urllib.request.urlopen(parent_url) as _response:
+                if _response.getcode() != 200:
+                    print('Failed To Open URL for Parent {parent_value}')
+                    continue
+                else:
+                    parent_req = urllib.request.urlopen(parent_url)
+                    parent_data = parent_req.read().decode('utf-8')
+                    parent_json = json.loads(parent_data)
+                    print(f'Parent_Json is {parent_json}')
+
+                    parent_json_fields = parent_json.get('fields', {})
+
+                    if parent_json and 'phone' in parent_json_fields and 'commission' in parent_json_fields and 'parents' in parent_json_fields and 'children' in parent_json_fields:
+                        print('Good')
+                    else:
+                        print("Bad Keys")
+                        break
+                    _commission = parent_json_fields['commission']['stringValue']
+                    _phone = parent_json_fields['phone']['stringValue']
+
+                    _children = [value['stringValue'] for value in parent_json_fields['children']['arrayValue']['values']]
+                    _parents = [value['stringValue'] for value in parent_json_fields['parents']['arrayValue']['values']]
+
+                    print(f'_parents are: {_parents}')
+                    print(f'_children are: {_children}')
+
+
+                    try:
+                        _int_val = int(_commission)
+                    except:
+                        print(f"Could not convert: {_commission}")
+                        continue
+
+                    #Increase commission
+                    _int_val = int(_commission)
+                    _int_val+=commission_value
+                    _commission = str(_int_val)
+
+                    if _int_val> commission_limit:
+                        _commission=commission_limit
+
+                    print(f"Parent json commission is {_commission}")
+
+
+                    propagate_update_member(_phone,_commission,_parents,_children,_phone)
+        except urllib.error.URLError as e:
+            print(f"HTTP request failed: {e.reason}")
+            continue
+
+    return 'Successful'
+
+
+def update_member(phone,commission,parents,children,doc):
+    url = 'https://us-central1-copy-1-dfbcf.cloudfunctions.net/updateMember_http_func?'
+
+    query_params = f'doc={doc}&phone={phone}&commission={commission}&collection=Members'
+
+    for value in parents:
+        query_params = f'{query_params}&parents={value.string_value}'
+
+    for value in children:
+        query_params = f'{query_params}&children={value.string_value}'
+
+    req_url = f'{url}{query_params}'
+    req_url = req_url.replace(" ","")
+
+    try:
+        with urllib.request.urlopen(req_url) as response:
+            if response.getcode() == 200:
+                print("HTTP request successful")
+            else:
+                print("HTTP request failed")
+    except urllib.error.URLError as e:
+        print(f"HTTP request failed: {e.reason}")
+
+    
+
+def propagate_update_member(phone,commission,parents,children,doc):
+    url = 'https://us-central1-copy-1-dfbcf.cloudfunctions.net/updateMember_http_func?'
+
+    query_params = f'doc={doc}&phone={phone}&commission={commission}&collection=Members'
+
+    for value in parents:
+        query_params = f'{query_params}&parents={value}'
+
+    for value in children:
+        query_params = f'{query_params}&children={value}'
+
+    req_url = f'{url}{query_params}'
+    req_url = req_url.replace(" ","")
+    print(f"Sending request to url: {req_url}")
+
+    try:
+        with urllib.request.urlopen(req_url) as response:
+            if response.getcode() == 200:
+                print("HTTP request successful")
+            else:
+                print("HTTP request failed")
+    except urllib.error.URLError as e:
+        print(f"HTTP request failed: {e.reason}")
+
+    

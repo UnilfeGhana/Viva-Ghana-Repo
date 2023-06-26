@@ -1,0 +1,180 @@
+{
+  "project_info": {
+    "project_number": "871953441014",
+    "firebase_url": "https://copy-1-dfbcf-default-rtdb.firebaseio.com",
+    "project_id": "copy-1-dfbcf",
+    "storage_bucket": "copy-1-dfbcf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:871953441014:android:3f86c61fcbfcb268dfccd7",
+        "android_client_info": {
+          "package_name": "com.Viva.med_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "871953441014-bcmr7oatj399mf2u8da6cq4tpleuua2j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.Viva.med_app",
+            "certificate_hash": "cb85b2e4a0e4244812c901e0518dd6f6a80ff5e6"
+          }
+        },
+        {
+          "client_id": "871953441014-nhptdruleapph4b5ni1v015cvn48mgbg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0YwDGJiaN4-vNTyl5tT2HZoAwgjs3g9k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "871953441014-nhptdruleapph4b5ni1v015cvn48mgbg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:871953441014:android:30149fcc2a7b1f22dfccd7",
+        "android_client_info": {
+          "package_name": "com.VivaPlus.med_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "871953441014-t9kv8ovg0sqauqdb4ef97errf0uf6nb2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.VivaPlus.med_app",
+            "certificate_hash": "cb85b2e4a0e4244812c901e0518dd6f6a80ff5e6"
+          }
+        },
+        {
+          "client_id": "871953441014-nhptdruleapph4b5ni1v015cvn48mgbg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0YwDGJiaN4-vNTyl5tT2HZoAwgjs3g9k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "871953441014-nhptdruleapph4b5ni1v015cvn48mgbg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:871953441014:android:c0e3f3c8e694c570dfccd7",
+        "android_client_info": {
+          "package_name": "com.VivaPlus.pharma_maps"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "871953441014-nhptdruleapph4b5ni1v015cvn48mgbg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0YwDGJiaN4-vNTyl5tT2HZoAwgjs3g9k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "871953441014-nhptdruleapph4b5ni1v015cvn48mgbg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:871953441014:android:b5c9c2fa977ca800dfccd7",
+        "android_client_info": {
+          "package_name": "com.VivaPlus.truepharma"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "871953441014-1j2jiee0e0qru7e2ghahc399s1nupm1s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.VivaPlus.truepharma",
+            "certificate_hash": "26f77cc80d0c0b2e9b127c933571d562f866e567"
+          }
+        },
+        {
+          "client_id": "871953441014-nhptdruleapph4b5ni1v015cvn48mgbg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0YwDGJiaN4-vNTyl5tT2HZoAwgjs3g9k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "871953441014-nhptdruleapph4b5ni1v015cvn48mgbg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:871953441014:android:d098bad569634656dfccd7",
+        "android_client_info": {
+          "package_name": "com.VivaPlus.unilife"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "871953441014-nhptdruleapph4b5ni1v015cvn48mgbg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0YwDGJiaN4-vNTyl5tT2HZoAwgjs3g9k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "871953441014-nhptdruleapph4b5ni1v015cvn48mgbg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
