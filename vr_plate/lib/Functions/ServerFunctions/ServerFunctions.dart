@@ -36,13 +36,13 @@ class ServerFunctions {
   Future<MemberClass> getMember(String phone) async {
     MemberClass member = MemberClass('None Member', [], [], '0', 0);
 
-    // cloud.collection('Members').doc(phone).snapshots().listen((memberSnapshot) {
-    //   member.phone = memberSnapshot['phone'];
-    //   member.children = memberSnapshot['children'];
-    //   member.parents = memberSnapshot['parents'];
-    //   member.commission = memberSnapshot['commission'];
-    //   member.medicinesBought = 1;
-    // });
+    cloud.collection('Members').doc(phone).snapshots().listen((memberSnapshot) {
+      member.phone = memberSnapshot['phone'];
+      member.children = memberSnapshot['children'];
+      member.parents = memberSnapshot['parents'];
+      member.commission = memberSnapshot['commission'];
+      member.medicinesBought = 1;
+    });
 
     return member;
   }
@@ -100,9 +100,9 @@ class ServerFunctions {
   getCommission(String phone) {
     CollectionReference cloudMembers = cloud.collection('Members');
     String commission = '';
-    // cloudMembers.doc(phone).snapshots().listen((event) {
-    //   commission = event['commission'];
-    // });
+    cloudMembers.doc(phone).snapshots().listen((event) {
+      commission = event['commission'];
+    });
     return commission;
   }
 
