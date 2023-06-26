@@ -1,4 +1,4 @@
-package com.VivaPlus.unilife
+package com.VivaPlus.vivaghana
 
 import io.flutter.embedding.android.FlutterActivity
 
