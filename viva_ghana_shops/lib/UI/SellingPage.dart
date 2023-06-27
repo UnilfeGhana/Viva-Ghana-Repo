@@ -36,7 +36,6 @@ class _SellingPageState extends State<SellingPage> {
   @override
   Widget build(BuildContext context) {
     eventH = EventHandler(context);
-    var length_of_cart_map = dbfc.cartMap.length;
     ScrollController controller = ScrollController();
 
     return Scaffold(
@@ -54,7 +53,7 @@ class _SellingPageState extends State<SellingPage> {
                   child: ListView.builder(
                       shrinkWrap: true,
                       controller: controller,
-                      itemCount: dbfc.cartMap.length,
+                      itemCount: DatabaseFunctionClass.cartList.length,
                       itemBuilder: (BuildContext context, index) {
                         return MedicineCardWidget(
                             medicineName: DatabaseFunctionClass

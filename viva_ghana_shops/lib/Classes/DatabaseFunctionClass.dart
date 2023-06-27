@@ -21,10 +21,9 @@ class DatabaseFunctionClass {
     CartClass(products[0], '0'),
     CartClass(products[1], '0'),
     CartClass(products[2], '0'),
-
   ];
 
-  Map<String, CartClass> cartMap = {};
+  // Map<String, CartClass> cartMap = {};
 
   static ServerFunctionClass serverFunction = ServerFunctionClass();
 

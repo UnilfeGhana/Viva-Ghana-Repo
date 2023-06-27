@@ -42,6 +42,7 @@ class _StockPageState extends State<StockPage> {
                 // height: MediaQuery.of(context).size.height * 0.6,
                 child: ListView.builder(
                     shrinkWrap: true,
+                    itemCount: DatabaseFunctionClass.cartList.length,
                     itemBuilder: (BuildContext context, index) {
                       //You should pass the List the Medicine card widget should use
                       return MedicineCardWidget(

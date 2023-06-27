@@ -35,12 +35,12 @@ class _MedicineCardWidgetState extends State<MedicineCardWidget> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    productName = _dbfc.cartMap[medicineName]!.product.productName;
-    price = _dbfc.cartMap[medicineName]!.product.price;
-    img = _dbfc.cartMap[medicineName]!.product.img;
+    productName = DatabaseFunctionClass.cartList[itemIndex].product.productName;
+    price = DatabaseFunctionClass.cartList[itemIndex].product.price;
+    img = DatabaseFunctionClass.cartList[itemIndex].product.img;
 
-    amount = _dbfc.cartMap[productName]?.amount ?? '0';
-    total = _dbfc.cartMap[productName]?.subTotal ?? '0';
+    amount = DatabaseFunctionClass.cartList[itemIndex].amount;
+    total = DatabaseFunctionClass.cartList[itemIndex].subTotal;
   }
 
   @override
@@ -118,7 +118,7 @@ class _MedicineCardWidgetState extends State<MedicineCardWidget> {
                                 setState(() {
                                   DatabaseFunctionClass
                                       .cartList[itemIndex].amount = value;
-                                  _dbfc.cartMap[productName]?.amount = value;
+                                  // _dbfc.cartMap[productName]?.amount = value;
                                   total = DatabaseFunctionClass
                                       .cartList[itemIndex].subTotal;
                                 });
@@ -138,9 +138,10 @@ class _MedicineCardWidgetState extends State<MedicineCardWidget> {
                             /// Then edit the Sub-Total
                             else {
                               setState(() {
-                                _dbfc.cartMap[productName]?.amount = '0';
-                                total =
-                                    _dbfc.cartMap[productName]?.subTotal ?? '0';
+                                DatabaseFunctionClass
+                                    .cartList[itemIndex].amount = '0';
+                                total = DatabaseFunctionClass
+                                    .cartList[itemIndex].subTotal;
                               });
                             }
                           },
