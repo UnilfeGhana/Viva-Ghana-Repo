@@ -22,7 +22,7 @@ class _DefaultHomeScreenState extends State<DefaultHomeScreen> {
       physics: const BouncingScrollPhysics(),
       controller: controller,
       child: Column(
-        mainAxisSize:MainAxisSize.max,
+        mainAxisSize: MainAxisSize.max,
         children: [
           const CarouselView(),
           const CategoriesViews(),

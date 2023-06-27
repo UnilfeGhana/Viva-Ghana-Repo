@@ -35,13 +35,6 @@ class ServerFunctions {
 
   Future<MemberClass> getMember(String phone) async {
     MemberClass member = MemberClass('None Member', [], [], '0', 0);
-    // DocumentSnapshot memberSnapshot =
-    //     await cloud.collection('Members').doc(phone).get();
-    // member.phone = memberSnapshot.get('phone');
-    // member.children = memberSnapshot.get('children');
-    // member.parents = memberSnapshot.get('parents');
-    // member.commission = memberSnapshot.get('commission');
-    // member.medicinesBought = memberSnapshot.get('medicinesBought');
 
     cloud.collection('Members').doc(phone).snapshots().listen((memberSnapshot) {
       member.phone = memberSnapshot['phone'];
@@ -85,12 +78,23 @@ class ServerFunctions {
     }
   }
 
+  submitNewLoginAsMember(String phone, String name, String parentPhone) async {
+    CollectionReference cloudMembers = cloud.collection('Members');
+    MemberClass new_member = MemberClass(phone, ['0'], ['00'], '0', 0);
+    Map<String, dynamic> memberMap = {
+      'phone': new_member.phone,
+      'commission': new_member.commission,
+      'children': new_member.children,
+      'parents': new_member.parents,
+      'new_member_buffer': 'none',
+    };
+    cloudMembers.doc(phone).set(memberMap);
+  }
+
   submitNewChild(String phone, String name, String parentPhone) async {
     CollectionReference cloudMembers = cloud.collection('Members');
 
-    await cloudMembers.doc(parentPhone).update({
-      'new_member_buffer': phone
-    });
+    await cloudMembers.doc(parentPhone).update({'new_member_buffer': phone});
   }
 
   getCommission(String phone) {

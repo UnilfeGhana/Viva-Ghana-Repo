@@ -123,7 +123,7 @@ class MemberFunction {
       MemberClass(UserFunction.user_.phone, [], [], '0', 0);
 
   MemberFunction() {
-    ServerFunctions().getCommission(member.phone);
+   member.commission =  ServerFunctions().getCommission(member.phone);
     ServerFunctions().getMember(member.phone);
   }
 
