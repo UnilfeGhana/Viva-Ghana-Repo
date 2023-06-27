@@ -1,33 +1,62 @@
 {
   "project_info": {
-    "project_number": "638143231440",
-    "project_id": "viva-ghana-app",
-    "storage_bucket": "viva-ghana-app.appspot.com"
+    "project_number": "734130940741",
+    "project_id": "vivainfinity-f1ff0",
+    "storage_bucket": "vivainfinity-f1ff0.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:638143231440:android:0d467dfbc6f33d1ddbf5d5",
+        "mobilesdk_app_id": "1:734130940741:android:c1835130a785aa9ebcec2c",
         "android_client_info": {
-          "package_name": "com.VivaPlus.vivaghana"
+          "package_name": "com.Unilife.viva_ghana_shops"
         }
       },
       "oauth_client": [
         {
-          "client_id": "638143231440-vlk40u5jc17ngd4ljhgaq4a070d2bi2l.apps.googleusercontent.com",
+          "client_id": "734130940741-3lk421dn7nvk4uac9j07n1t05ak63qq0.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBuuOXV4rLX-MnRvEXnuHemRL2na4SxrkI"
+          "current_key": "AIzaSyC_zasBrGTCqRxgCjAEYTGjxiYEIwsysMo"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "638143231440-vlk40u5jc17ngd4ljhgaq4a070d2bi2l.apps.googleusercontent.com",
+              "client_id": "734130940741-3lk421dn7nvk4uac9j07n1t05ak63qq0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:734130940741:android:63bd07059637787ebcec2c",
+        "android_client_info": {
+          "package_name": "com.VivaPlus.vivaghana"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "734130940741-3lk421dn7nvk4uac9j07n1t05ak63qq0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_zasBrGTCqRxgCjAEYTGjxiYEIwsysMo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "734130940741-3lk421dn7nvk4uac9j07n1t05ak63qq0.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
