@@ -51,8 +51,14 @@ class _NewMemberViewState extends State<NewMemberView> {
               child: TextField(
                 keyboardType: TextInputType.number,
                 onChanged: (value) {
+                  String newVal = value.trim();
+                  if (newVal[0] == '+233' || newVal[0] == '0') {
+                    newVal = newVal.split('+233')[1];
+                    newVal = newVal.split('0')[1];
+                  }
+                  newVal = '233$newVal';
                   setState(() {
-                    user.phone = value;
+                    user.phone = newVal;
                   });
                 },
                 decoration: InputDecoration(

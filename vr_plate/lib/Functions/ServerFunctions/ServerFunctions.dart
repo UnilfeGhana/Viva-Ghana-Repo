@@ -35,6 +35,10 @@ class ServerFunctions {
 
   Future<MemberClass> getMember(String phone) async {
     MemberClass member = MemberClass('None Member', [], [], '0', 0);
+    bool _isMember = await isMember(phone);
+    if(!_isMember){
+      return member;
+    }
 
     cloud.collection('Members').doc(phone).snapshots().listen((memberSnapshot) {
       member.phone = memberSnapshot['phone'];
