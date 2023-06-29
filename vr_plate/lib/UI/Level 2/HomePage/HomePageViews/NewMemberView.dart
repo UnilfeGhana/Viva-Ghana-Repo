@@ -10,7 +10,7 @@ class NewMemberView extends StatefulWidget {
 }
 
 class _NewMemberViewState extends State<NewMemberView> {
-  UserClass user = UserClass('', '', '', '', {}, false);
+  UserClass user = UserClass('', '', '', '', {});
   L1EventHandler eventHandler = L1EventHandler();
   @override
   Widget build(BuildContext context) {

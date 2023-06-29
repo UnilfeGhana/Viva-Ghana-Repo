@@ -13,22 +13,26 @@ class _MemberDetailViewState extends State<MemberDetailView> {
 
   initState() {
     super.initState();
+    setState(
+      () {
+        MemberFunction().getCommission();
+        MemberFunction().getMember();
+      },
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       controller: controller,
-      child: Column(
-        mainAxisAlignment:MainAxisAlignment.start,
-        children: [
+      child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
         //Add Viva Plus Background Picture here
         Container(
-          height: 100,
-          width: MediaQuery.of(context).size.width,
-          child:const Text('Member Profile')
-          // color: Colors.grey
-        ),
+            height: 100,
+            width: MediaQuery.of(context).size.width,
+            child: const Text('Member Profile')
+            // color: Colors.grey
+            ),
         const SizedBox(height: 20),
         //Container to Contain member Phone
         Container(
@@ -41,20 +45,17 @@ class _MemberDetailViewState extends State<MemberDetailView> {
         ),
         const SizedBox(height: 20),
         //Container for Commission
-          Container(
+        Container(
             child: Row(
           children: [
             const Text('Commission : '),
             Text(MemberFunction.member.commission)
           ],
         )),
-        
-        
+
         const SizedBox(height: 20),
         //Container to Contain List of Member Children
-        const SizedBox(
-          child:Text('Children')
-        ),
+        const SizedBox(child: Text('Children')),
         ListView.builder(
             controller: controller,
             shrinkWrap: true,
@@ -65,7 +66,6 @@ class _MemberDetailViewState extends State<MemberDetailView> {
                 child: Text(MemberFunction.member.children[index]),
               );
             }),
-        
       ]),
     );
   }

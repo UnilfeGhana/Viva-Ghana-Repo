@@ -107,19 +107,14 @@ class _HomePageState extends State<HomePage> {
           // backgroundColor: const Color.fromARGB(255, 43, 197, 151),
           unselectedItemColor: Colors.grey,
           selectedItemColor: Colors.lightGreen,
-          items: [
-            const BottomNavigationBarItem(
-                icon: Icon(Icons.house), label: 'Home'),
+          items: const [
+            BottomNavigationBarItem(icon: Icon(Icons.house), label: 'Home'),
             // const BottomNavigationBarItem(
             //     icon: Icon(Icons.shopping_bag), label: 'Orders'),
             BottomNavigationBarItem(
-                icon: const Icon(Icons.person_add),
-                label: (UserFunction.user_.isMember)
-                    ? 'Add Member'
-                    : 'Become a Member'),
+                icon: Icon(Icons.person_add), label: 'Add Member'),
             // BottomNavigationBarItem(icon: Icon(Icons.phone), label: 'Support'),
-            const BottomNavigationBarItem(
-                icon: Icon(Icons.person), label: 'Profile'),
+            BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
           ]),
     );
   }

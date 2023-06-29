@@ -8,9 +8,7 @@ class UserClass {
   String phone;
   String otp;
   Map<String, CartClass> cartMap;
-  bool isMember;
-  UserClass(this.uid, this.userName, this.phone, this.otp, this.cartMap,
-      this.isMember);
+  UserClass(this.uid, this.userName, this.phone, this.otp, this.cartMap);
 }
 
 class CartClass {
@@ -28,7 +26,8 @@ class OrderClass {
   String latitude;
   String longitude;
   String memberPhone = MemberFunction.member.phone;
-  OrderClass(this.username, this.phoneNumber, this.cartItems, this.latitude,this.longitude);
+  OrderClass(this.username, this.phoneNumber, this.cartItems, this.latitude,
+      this.longitude);
 }
 
 class MemberClass {

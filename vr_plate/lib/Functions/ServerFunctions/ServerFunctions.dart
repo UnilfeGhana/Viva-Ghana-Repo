@@ -93,7 +93,6 @@ class ServerFunctions {
 
   submitNewChild(String phone, String name, String parentPhone) async {
     CollectionReference cloudMembers = cloud.collection('Members');
-
     await cloudMembers.doc(parentPhone).update({'new_member_buffer': phone});
   }
 

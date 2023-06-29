@@ -21,7 +21,7 @@ class _CategoriesViewsState extends State<CategoriesViews> {
             style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
         const SizedBox(height: 5),
         Container(
-            height: 100,
+            height: 110,
             width: MediaQuery.of(context).size.width,
             // color: Colors.grey,
             child: ListView.builder(

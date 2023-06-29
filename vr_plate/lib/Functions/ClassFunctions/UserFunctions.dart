@@ -7,7 +7,7 @@ import 'package:vr_plate/Functions/ServerFunctions/ServerFunctions.dart';
 
 class UserFunction {
   static UserClass user_ =
-      UserClass('uid', 'userName', '0000000000', 'password', {}, false);
+      UserClass('uid', 'userName', '0000000000', 'password', {});
   static List<OrderClass> orders = [];
   static double total = 0;
   static bool otpSent = false;
@@ -75,7 +75,7 @@ class UserFunction {
   }
 
   logout() {
-    user_ = UserClass('uid', 'userName', '0000000000', 'password', {}, false);
+    user_ = UserClass('uid', 'userName', '0000000000', 'password', {});
     MemberFunction().reset();
     total = 0;
   }
@@ -123,8 +123,12 @@ class MemberFunction {
       MemberClass(UserFunction.user_.phone, [], [], '0', 0);
 
   MemberFunction() {
-   member.commission =  ServerFunctions().getCommission(member.phone);
-    ServerFunctions().getMember(member.phone);
+    member.commission = ServerFunctions().getCommission(member.phone);
+    getMember();
+  }
+
+  getMember() async {
+    member = await ServerFunctions().getMember(member.phone);
   }
 
   ServerFunctions serverFunctions = ServerFunctions();
