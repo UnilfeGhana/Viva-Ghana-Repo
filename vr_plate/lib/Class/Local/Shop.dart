@@ -52,11 +52,11 @@ class Shop {
       90,
       //Description
       '''
-Detoxification, particularly beneficial in cleansing the blood vessels leading to Cardiovascular wellbeing
+Detoxification is beneficial in cleansing the blood vessels leading to Cardiovascular wellbeing
 
 Good Blood Circulation is essential for maintaining overall health and well-being in humans by:
       -Delivering oxygen-rich blood to all organs and tissues. 
-      -Maintenance of otrgan functions 
+      -Maintenance of organ functions 
       -Improve immune response 
          
       (Recommended for 12 years and above,except pregnant women and lactating mothers).
@@ -73,11 +73,11 @@ Good Blood Circulation is essential for maintaining overall health and well-bein
       70,
       //Description
       '''
-Detoxification, particularly beneficial in cleansing the blood vessels leading to Cardiovascular wellbeing
+Detoxification is beneficial in cleansing the blood vessels leading to Cardiovascular wellbeing
 
 Good Blood Circulation is essential for maintaining overall health and well-being in humans by:
       -Delivering oxygen-rich blood to all organs and tissues. 
-      -Maintenance of otrgan functions 
+      -Maintenance of organ functions 
       -Improve immune response 
          
       (Recommended for 12 years and above,except pregnant women and lactating mothers).

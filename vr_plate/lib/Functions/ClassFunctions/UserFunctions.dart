@@ -119,16 +119,16 @@ class UserFunction {
 }
 
 class MemberFunction {
-  static MemberClass member =
-      MemberClass(UserFunction.user_.phone, [], [], '0', 0);
+  static MemberClass member = MemberClass('defaultMemberPhone', [], [], 'no commission', 0);
 
   MemberFunction() {
-    member.commission = ServerFunctions().getCommission(member.phone);
+    member.commission =
+        ServerFunctions().getCommission(UserFunction.user_.phone);
     getMember();
   }
 
   getMember() async {
-    member = await ServerFunctions().getMember(member.phone);
+    member = await ServerFunctions().getMember(UserFunction.user_.phone);
   }
 
   ServerFunctions serverFunctions = ServerFunctions();

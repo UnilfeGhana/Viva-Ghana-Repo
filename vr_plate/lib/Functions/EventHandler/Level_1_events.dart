@@ -23,30 +23,11 @@ class L1EventHandler {
       ServerFunctions()
           .submitNewLoginAsMember(UserFunction.user_.phone, 'name', '0');
     }
-    // UserFunction.total = 0;
-    // userF.setPhone(phone);
-    // UserFunction.user_.phone = phone;
-    //first validate _sFunctions.authenticateUser()
-    //Make every Login a Member here
     _navHandler.Level2Nav('HomePage', context);
 
     //This should be changed back to the isValid bool
     // _navHandler.clearLayers(context);
     _navHandler.PopUpSuccess(context, 'Successfully Logged In');
-    //Check if User Already exists
-
-    // if (await _sFunctions.isMember(UserFunction.user_.phone)) {
-    //   MemberFunction.member =
-    //       await _sFunctions.getMember(UserFunction.user_.phone);
-    //   UserFunction.user_.isMember = true;
-    // } else {
-    //   MemberClass member =
-    //       MemberClass(UserFunction.user_.phone, [], [], '0', 0);
-    //   MemberFunction.member = member;
-    //   _sFunctions.sumbitNewMember(member);
-    // }
-
-    // MemberFunction().pushNewMember(phone, 'name', '000');
 
     return;
   }
