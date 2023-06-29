@@ -61,7 +61,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         String newVal = value.trim();
                         if (newVal[0] == '+233' || newVal[0] == '0') {
                           newVal = newVal.split('+233')[1];
-                          newVal = newVal.split('0')[1];
+                          newVal = newVal.replaceFirst(RegExp(r'0'), '');
                         }
                         newVal = '233$newVal';
                         setState(() {
