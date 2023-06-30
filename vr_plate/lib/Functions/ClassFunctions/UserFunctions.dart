@@ -119,7 +119,8 @@ class UserFunction {
 }
 
 class MemberFunction {
-  static MemberClass member = MemberClass('defaultMemberPhone', [], [], 'no commission', 0);
+  static MemberClass member =
+      MemberClass('defaultMemberPhone', [], [], 'no commission', 0);
 
   MemberFunction() {
     member.commission =
@@ -129,6 +130,7 @@ class MemberFunction {
 
   getMember() async {
     member = await ServerFunctions().getMember(UserFunction.user_.phone);
+    return member;
   }
 
   ServerFunctions serverFunctions = ServerFunctions();

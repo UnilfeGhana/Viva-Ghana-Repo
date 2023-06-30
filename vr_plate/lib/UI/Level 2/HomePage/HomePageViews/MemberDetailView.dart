@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:vr_plate/Functions/ClassFunctions/UserFunctions.dart';
+import 'package:vr_plate/Class/Local/UserClass.dart';
+
+import '../HomePageCards/MemberCard.dart';
 
 class MemberDetailView extends StatefulWidget {
   const MemberDetailView({Key? key}) : super(key: key);
@@ -10,13 +13,15 @@ class MemberDetailView extends StatefulWidget {
 
 class _MemberDetailViewState extends State<MemberDetailView> {
   ScrollController controller = ScrollController();
+  late MemberClass member;
 
+  @override
   initState() {
     super.initState();
     setState(
       () {
         MemberFunction().getCommission();
-        MemberFunction().getMember();
+        member = MemberFunction().getMember();
       },
     );
   }
@@ -47,10 +52,7 @@ class _MemberDetailViewState extends State<MemberDetailView> {
         //Container for Commission
         Container(
             child: Row(
-          children: [
-            const Text('Commission : '),
-            Text(MemberFunction.member.commission)
-          ],
+          children: [const Text('Commission : '), Text(member.commission)],
         )),
 
         const SizedBox(height: 20),
@@ -59,12 +61,14 @@ class _MemberDetailViewState extends State<MemberDetailView> {
         ListView.builder(
             controller: controller,
             shrinkWrap: true,
-            itemCount: MemberFunction.member.children.length,
+            itemCount: member.children.length,
             itemBuilder: (BuildContext context, index) {
-              return Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(MemberFunction.member.children[index]),
-              );
+              return MemberCard(
+                  memberName: 'name', memberPhone: member.children[index]);
+              // return Padding(
+              //   padding: const EdgeInsets.all(8.0),
+              //   child: Text(member.children[index]),
+              // );
             }),
       ]),
     );
