@@ -13,17 +13,20 @@ class MemberDetailView extends StatefulWidget {
 
 class _MemberDetailViewState extends State<MemberDetailView> {
   ScrollController controller = ScrollController();
-  late MemberClass member;
+  MemberClass member = MemberClass('please wait', [], [], 'please wait', 1);
 
   @override
   initState() {
     super.initState();
-    setState(
-      () {
-        MemberFunction().getCommission();
-        member = MemberFunction().getMember();
-      },
-    );
+
+    tryGetDetails();
+  }
+
+  tryGetDetails() async {
+    MemberClass mem = await MemberFunction().getMember();
+    setState(() {
+      member = mem;
+    });
   }
 
   @override
@@ -43,8 +46,8 @@ class _MemberDetailViewState extends State<MemberDetailView> {
         Container(
           child: Row(
             children: [
-              const Text('Member Phone: '),
-              Text(MemberFunction.member.phone),
+              const Text('Member Phone: +'),
+              Text(member.phone),
             ],
           ),
         ),
@@ -61,10 +64,10 @@ class _MemberDetailViewState extends State<MemberDetailView> {
         ListView.builder(
             controller: controller,
             shrinkWrap: true,
-            itemCount: member.children.length,
+            itemCount: member.children.length - 1,
             itemBuilder: (BuildContext context, index) {
               return MemberCard(
-                  memberName: 'name', memberPhone: member.children[index]);
+                  memberName: 'name', memberPhone: member.children[index + 1]);
               // return Padding(
               //   padding: const EdgeInsets.all(8.0),
               //   child: Text(member.children[index]),

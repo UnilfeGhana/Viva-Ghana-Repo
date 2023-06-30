@@ -128,7 +128,7 @@ class MemberFunction {
     getMember();
   }
 
-  getMember() async {
+  Future<MemberClass> getMember() async {
     member = await ServerFunctions().getMember(UserFunction.user_.phone);
     return member;
   }

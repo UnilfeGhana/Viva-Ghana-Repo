@@ -36,16 +36,21 @@ class ServerFunctions {
   Future<MemberClass> getMember(String phone) async {
     MemberClass member = MemberClass('None Member', [], [], '0', 0);
     bool _isMember = await isMember(phone);
-    if(!_isMember){
+    if (!_isMember) {
       return member;
     }
 
     cloud.collection('Members').doc(phone).snapshots().listen((memberSnapshot) {
       member.phone = memberSnapshot['phone'];
-      member.children = memberSnapshot['children'];
-      member.parents = memberSnapshot['parents'];
       member.commission = memberSnapshot['commission'];
       member.medicinesBought = 1;
+
+      for (var child in memberSnapshot['children']) {
+        member.children.add(child.toString());
+      }
+      for (var parent in memberSnapshot['parents']) {
+        member.parents.add(parent.toString());
+      }
     });
 
     return member;

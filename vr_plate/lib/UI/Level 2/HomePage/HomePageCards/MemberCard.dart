@@ -18,12 +18,16 @@ class _MemberCardState extends State<MemberCard> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: 200,
+        margin: EdgeInsets.all(5),
+        height: 50,
         color: Colors.white,
         width: 400,
-        child: Row(children: [
-          Text('Member Name: $memberName'),
-          Text('Member Phone: $memberPhone')
-        ]));
+        child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text('Member Name: $memberName'),
+              Text('Member Phone: $memberPhone')
+            ]));
   }
 }
