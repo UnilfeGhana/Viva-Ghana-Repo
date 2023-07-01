@@ -10,6 +10,7 @@ import json
 def hello_firestore(cloud_event: CloudEvent) -> None:
     
     generation_number = 3
+    project_id = 'vivainfinity-f1ff0'
 
     """Triggers by a change to a Firestore document.
     Args:
@@ -37,20 +38,28 @@ def hello_firestore(cloud_event: CloudEvent) -> None:
     if old_value == next_value:
         return 'loop'
 
+    # if next_value == 'none':
+    #     return
+
     str_value = firestore_payload.old_value.fields['new_member_buffer']
     # str_value = str(str_value)
     print(f"String Value is {str_value}")
 
     #Check if the member already exists
-    member_url = f'https://firestore.googleapis.com/v1/projects/copy-1-dfbcf/databases/(default)/documents/Members/{str_value}'
+    member_url = f'https://firestore.googleapis.com/v1/projects/vivainfinity-f1ff0/databases/(default)/documents/Members/{str_value.string_value}'
+
+    print(f'Member url is {member_url}')
     try:
         with urllib.request.urlopen(member_url) as response:
             if response.getcode() ==200:
                 exists = True
+                print('old member')
+                return 'old member'
             else:
                 exists = False
     except:
         exists = False
+
     
 
     #saving old values
@@ -66,14 +75,16 @@ def hello_firestore(cloud_event: CloudEvent) -> None:
     update_member(phone,commission,parents,children,document_location)
     print(f'children are: {children}')
 
+    print(f"Parent phone is {phone}")
+
     #Then update the value of the New Member
     n_phone = str_value
     n_children = ['0']
     n_parents = [phone]
     n_commission = '0'
-    for i in range(generation_number):
+    for i in range(generation_number-1):
         if i < len(parents):
-            n_parents.append(parents[i])
+            n_parents.append(parents[i].string_value)
         else:
             break
 
@@ -84,7 +95,8 @@ def hello_firestore(cloud_event: CloudEvent) -> None:
 
 
 def update_member(phone,commission,parents,children,doc):
-    url = 'https://us-central1-copy-1-dfbcf.cloudfunctions.net/updateMember_http_func?'
+    project_id= 'vivainfinity-f1ff0'
+    url = f'https://us-central1-{project_id}.cloudfunctions.net/updateMember_http_func?'
 
     query_params = f'doc={doc}&phone={phone}&commission={commission}&collection=Members'
 
@@ -110,15 +122,23 @@ def update_member(phone,commission,parents,children,doc):
 
 
 def add_member(phone,commission,parents,children,doc):
-    url = 'https://us-central1-copy-1-dfbcf.cloudfunctions.net/addNewMember_http_func?'
+    print(f"AM phone: {phone}")
+    print(f"AM parents: {parents}")
+    print(f"AM doc: {doc}")
+    
+    phone = phone.string_value
+    doc = doc.string_value
+
+    project_id= 'vivainfinity-f1ff0'
+    url = f'https://us-central1-{project_id}.cloudfunctions.net/addNewMember_http_func?'
 
     query_params = f'doc={doc}&phone={phone}&commission={commission}&collection=Members'
 
     for value in parents:
-        query_params = f'{query_params}&parents={value.string_value}'
+        query_params = f'{query_params}&parents={value}'
 
     for value in children:
-        query_params = f'{query_params}&children={value.string_value}'
+        query_params = f'{query_params}&children={value}'
 
     req_url = f'{url}{query_params}'
     req_url = req_url.replace(" ","")
@@ -135,4 +155,4 @@ def add_member(phone,commission,parents,children,doc):
         return(f"HTTP request failed: {e.reason}")
 
     
-#https://us-central1-copy-1-dfbcf.cloudfunctions.net/addNewMember_http_func
+#https://us-central1-{project_id}.cloudfunctions.net/addNewMember_http_func

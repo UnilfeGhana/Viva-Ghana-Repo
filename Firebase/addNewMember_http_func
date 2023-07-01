@@ -6,6 +6,7 @@ import json
 def hello_http(request):
     request_json = request.get_json(silent=True)
     request_args = request.args
+    project_id = 'vivainfinity-f1ff0'
 
     if request_args and 'commission' in request_args and 'phone' in request_args and 'parents' in request_args and 'children' in request_args and 'collection' in request_args and 'doc' in request_args:
         pass
@@ -19,7 +20,7 @@ def hello_http(request):
     parents = request_args.getlist('parents')  # Get multiple values as a list
     children = request_args.getlist('children')  # Get multiple values as a list
 
-    req_url = f'https://firestore.googleapis.com/v1/projects/copy-1-dfbcf/databases/(default)/documents/{coll}/{doc}'
+    req_url = f'https://firestore.googleapis.com/v1/projects/{project_id}/databases/(default)/documents/{coll}/{doc}'
 
     payload = {
         'fields': {
@@ -44,7 +45,7 @@ def hello_http(request):
             }
         }
     }
-    req = urllib.request.Request(req_url, method='POST', data=json.dumps(payload).encode('utf-8'), headers={'Content-Type': 'application/json'})
+    req = urllib.request.Request(req_url, method='PATCH', data=json.dumps(payload).encode('utf-8'), headers={'Content-Type': 'application/json'})
 
     try:
         with urllib.request.urlopen(req) as response:
