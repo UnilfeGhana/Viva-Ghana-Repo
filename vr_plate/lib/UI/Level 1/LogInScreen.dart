@@ -61,9 +61,9 @@ class _LoginScreenState extends State<LoginScreen> {
                         String newVal = value.trim();
                         if (newVal[0] == '+233' || newVal[0] == '0') {
                           newVal = newVal.split('+233')[1];
-                          newVal = newVal.split('0')[1];
+                          newVal = newVal.replaceFirst(RegExp(r'0'), '');
                         }
-                        newVal = '+233$newVal';
+                        newVal = '233$newVal';
                         setState(() {
                           phone = newVal;
                           UserFunction.user_.phone = phone;
@@ -83,7 +83,6 @@ class _LoginScreenState extends State<LoginScreen> {
             ElevatedButton(
               onPressed: () {
                 setState(() {
-                  String phoneNum = 'phone';
                   eventHandler.onLogin(context, 'otp', phone);
                 });
                 // String verId = eventHandler.onSubmitPhone(phone);
