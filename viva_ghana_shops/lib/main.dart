@@ -46,3 +46,10 @@ class MyApp extends StatelessWidget {
 //Add buttons to refresh page to load orders
 //Also allow TextField in Creating Orders Work
 //Later do revamping
+
+//Please make sure to see that the correct index is sent to the Medicine Card Widget
+//In the cases of the previously generated orders since the index of the way the medicine
+// is arranged does not mean that was the index in the generated orders
+//To fix this try and get the index of a medicine "where product.product_name = 'Viva Lady...'"
+//This format would get the index of the 'specified viva lady in the Database function Class
+//and rather use this new found index as the argument to be passed into the MedicineCardWidget itemIndex
