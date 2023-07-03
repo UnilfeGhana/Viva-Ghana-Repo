@@ -6,9 +6,9 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="21"
-8-->C:\Users\HP\Viva Ghana Shops\viva_ghana_shops\android\app\src\main\AndroidManifest.xml
+8-->C:\Users\HP\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\android\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="31" />
-9-->C:\Users\HP\Viva Ghana Shops\viva_ghana_shops\android\app\src\main\AndroidManifest.xml
+9-->C:\Users\HP\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\android\app\src\main\AndroidManifest.xml
 10    <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
 11    <!-- <uses-sdk android:minSdkVersion="14" /> -->
 12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -20,29 +20,29 @@
 14
 15    <application
 16        android:name="android.app.Application"
-16-->C:\Users\HP\Viva Ghana Shops\viva_ghana_shops\android\app\src\main\AndroidManifest.xml:5:9-42
+16-->C:\Users\HP\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\android\app\src\main\AndroidManifest.xml:5:9-42
 17        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 17-->[androidx.core:core:1.6.0] C:\Users\HP\.gradle\caches\transforms-3\1141b72fb8be4e566e7814849b1aa3a2\transformed\core-1.6.0\AndroidManifest.xml:24:18-86
 18        android:icon="@mipmap/ic_launcher"
-18-->C:\Users\HP\Viva Ghana Shops\viva_ghana_shops\android\app\src\main\AndroidManifest.xml:6:9-43
+18-->C:\Users\HP\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\android\app\src\main\AndroidManifest.xml:6:9-43
 19        android:label="Viva Ghana Shops" >
-19-->C:\Users\HP\Viva Ghana Shops\viva_ghana_shops\android\app\src\main\AndroidManifest.xml:4:9-41
+19-->C:\Users\HP\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\android\app\src\main\AndroidManifest.xml:4:9-41
 20        <activity
-20-->C:\Users\HP\Viva Ghana Shops\viva_ghana_shops\android\app\src\main\AndroidManifest.xml:7:9-27:20
+20-->C:\Users\HP\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\android\app\src\main\AndroidManifest.xml:7:9-27:20
 21            android:name="com.Unilife.viva_ghana_shops.MainActivity"
-21-->C:\Users\HP\Viva Ghana Shops\viva_ghana_shops\android\app\src\main\AndroidManifest.xml:8:13-41
+21-->C:\Users\HP\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\android\app\src\main\AndroidManifest.xml:8:13-41
 22            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-22-->C:\Users\HP\Viva Ghana Shops\viva_ghana_shops\android\app\src\main\AndroidManifest.xml:12:13-163
+22-->C:\Users\HP\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\android\app\src\main\AndroidManifest.xml:12:13-163
 23            android:exported="true"
-23-->C:\Users\HP\Viva Ghana Shops\viva_ghana_shops\android\app\src\main\AndroidManifest.xml:9:13-36
+23-->C:\Users\HP\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\android\app\src\main\AndroidManifest.xml:9:13-36
 24            android:hardwareAccelerated="true"
-24-->C:\Users\HP\Viva Ghana Shops\viva_ghana_shops\android\app\src\main\AndroidManifest.xml:13:13-47
+24-->C:\Users\HP\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\android\app\src\main\AndroidManifest.xml:13:13-47
 25            android:launchMode="singleTop"
-25-->C:\Users\HP\Viva Ghana Shops\viva_ghana_shops\android\app\src\main\AndroidManifest.xml:10:13-43
+25-->C:\Users\HP\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\android\app\src\main\AndroidManifest.xml:10:13-43
 26            android:theme="@style/LaunchTheme"
-26-->C:\Users\HP\Viva Ghana Shops\viva_ghana_shops\android\app\src\main\AndroidManifest.xml:11:13-47
+26-->C:\Users\HP\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\android\app\src\main\AndroidManifest.xml:11:13-47
 27            android:windowSoftInputMode="adjustResize" >
-27-->C:\Users\HP\Viva Ghana Shops\viva_ghana_shops\android\app\src\main\AndroidManifest.xml:14:13-55
+27-->C:\Users\HP\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\android\app\src\main\AndroidManifest.xml:14:13-55
 28
 29            <!--
 30                 Specifies an Android theme to apply to this Activity as soon as
@@ -51,21 +51,21 @@
 33                 to determine the Window background behind the Flutter UI.
 34            -->
 35            <meta-data
-35-->C:\Users\HP\Viva Ghana Shops\viva_ghana_shops\android\app\src\main\AndroidManifest.xml:19:13-22:17
+35-->C:\Users\HP\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\android\app\src\main\AndroidManifest.xml:19:13-22:17
 36                android:name="io.flutter.embedding.android.NormalTheme"
-36-->C:\Users\HP\Viva Ghana Shops\viva_ghana_shops\android\app\src\main\AndroidManifest.xml:20:15-70
+36-->C:\Users\HP\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\android\app\src\main\AndroidManifest.xml:20:15-70
 37                android:resource="@style/NormalTheme" />
-37-->C:\Users\HP\Viva Ghana Shops\viva_ghana_shops\android\app\src\main\AndroidManifest.xml:21:15-52
+37-->C:\Users\HP\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\android\app\src\main\AndroidManifest.xml:21:15-52
 38
 39            <intent-filter>
-39-->C:\Users\HP\Viva Ghana Shops\viva_ghana_shops\android\app\src\main\AndroidManifest.xml:23:13-26:29
+39-->C:\Users\HP\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\android\app\src\main\AndroidManifest.xml:23:13-26:29
 40                <action android:name="android.intent.action.MAIN" />
-40-->C:\Users\HP\Viva Ghana Shops\viva_ghana_shops\android\app\src\main\AndroidManifest.xml:24:17-68
-40-->C:\Users\HP\Viva Ghana Shops\viva_ghana_shops\android\app\src\main\AndroidManifest.xml:24:25-66
+40-->C:\Users\HP\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\android\app\src\main\AndroidManifest.xml:24:17-68
+40-->C:\Users\HP\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\android\app\src\main\AndroidManifest.xml:24:25-66
 41
 42                <category android:name="android.intent.category.LAUNCHER" />
-42-->C:\Users\HP\Viva Ghana Shops\viva_ghana_shops\android\app\src\main\AndroidManifest.xml:25:17-76
-42-->C:\Users\HP\Viva Ghana Shops\viva_ghana_shops\android\app\src\main\AndroidManifest.xml:25:27-74
+42-->C:\Users\HP\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\android\app\src\main\AndroidManifest.xml:25:17-76
+42-->C:\Users\HP\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\android\app\src\main\AndroidManifest.xml:25:27-74
 43            </intent-filter>
 44        </activity>
 45        <!--
@@ -73,32 +73,32 @@
 47             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
 48        -->
 49        <meta-data
-49-->C:\Users\HP\Viva Ghana Shops\viva_ghana_shops\android\app\src\main\AndroidManifest.xml:30:9-32:33
+49-->C:\Users\HP\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\android\app\src\main\AndroidManifest.xml:30:9-32:33
 50            android:name="flutterEmbedding"
-50-->C:\Users\HP\Viva Ghana Shops\viva_ghana_shops\android\app\src\main\AndroidManifest.xml:31:13-44
+50-->C:\Users\HP\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\android\app\src\main\AndroidManifest.xml:31:13-44
 51            android:value="2" />
-51-->C:\Users\HP\Viva Ghana Shops\viva_ghana_shops\android\app\src\main\AndroidManifest.xml:32:13-30
+51-->C:\Users\HP\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\android\app\src\main\AndroidManifest.xml:32:13-30
 52
 53        <service
-53-->[:cloud_firestore] C:\Users\HP\Viva Ghana Shops\viva_ghana_shops\build\cloud_firestore\intermediates\merged_manifest\release\AndroidManifest.xml:10:9-14:19
+53-->[:cloud_firestore] C:\Users\HP\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\build\cloud_firestore\intermediates\merged_manifest\release\AndroidManifest.xml:10:9-14:19
 54            android:name="com.google.firebase.components.ComponentDiscoveryService"
-54-->[:cloud_firestore] C:\Users\HP\Viva Ghana Shops\viva_ghana_shops\build\cloud_firestore\intermediates\merged_manifest\release\AndroidManifest.xml:10:18-89
+54-->[:cloud_firestore] C:\Users\HP\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\build\cloud_firestore\intermediates\merged_manifest\release\AndroidManifest.xml:10:18-89
 55            android:directBootAware="true"
 55-->[com.google.firebase:firebase-common:20.3.2] C:\Users\HP\.gradle\caches\transforms-3\026de80ea9d0b63bfc94ec9a10c1d73c\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:34:13-43
 56            android:exported="false" >
 56-->[com.google.firebase:firebase-firestore:24.5.0] C:\Users\HP\.gradle\caches\transforms-3\fc58c4bb0c2ba423ba6b31f4487369bc\transformed\jetified-firebase-firestore-24.5.0\AndroidManifest.xml:18:13-37
 57            <meta-data
-57-->[:cloud_firestore] C:\Users\HP\Viva Ghana Shops\viva_ghana_shops\build\cloud_firestore\intermediates\merged_manifest\release\AndroidManifest.xml:11:13-13:85
+57-->[:cloud_firestore] C:\Users\HP\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\build\cloud_firestore\intermediates\merged_manifest\release\AndroidManifest.xml:11:13-13:85
 58                android:name="com.google.firebase.components:io.flutter.plugins.firebase.firestore.FlutterFirebaseFirestoreRegistrar"
-58-->[:cloud_firestore] C:\Users\HP\Viva Ghana Shops\viva_ghana_shops\build\cloud_firestore\intermediates\merged_manifest\release\AndroidManifest.xml:12:17-134
+58-->[:cloud_firestore] C:\Users\HP\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\build\cloud_firestore\intermediates\merged_manifest\release\AndroidManifest.xml:12:17-134
 59                android:value="com.google.firebase.components.ComponentRegistrar" />
-59-->[:cloud_firestore] C:\Users\HP\Viva Ghana Shops\viva_ghana_shops\build\cloud_firestore\intermediates\merged_manifest\release\AndroidManifest.xml:13:17-82
+59-->[:cloud_firestore] C:\Users\HP\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\build\cloud_firestore\intermediates\merged_manifest\release\AndroidManifest.xml:13:17-82
 60            <meta-data
-60-->[:firebase_core] C:\Users\HP\Viva Ghana Shops\viva_ghana_shops\build\firebase_core\intermediates\merged_manifest\release\AndroidManifest.xml:11:13-13:85
+60-->[:firebase_core] C:\Users\HP\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\build\firebase_core\intermediates\merged_manifest\release\AndroidManifest.xml:11:13-13:85
 61                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
-61-->[:firebase_core] C:\Users\HP\Viva Ghana Shops\viva_ghana_shops\build\firebase_core\intermediates\merged_manifest\release\AndroidManifest.xml:12:17-124
+61-->[:firebase_core] C:\Users\HP\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\build\firebase_core\intermediates\merged_manifest\release\AndroidManifest.xml:12:17-124
 62                android:value="com.google.firebase.components.ComponentRegistrar" />
-62-->[:firebase_core] C:\Users\HP\Viva Ghana Shops\viva_ghana_shops\build\firebase_core\intermediates\merged_manifest\release\AndroidManifest.xml:13:17-82
+62-->[:firebase_core] C:\Users\HP\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\build\firebase_core\intermediates\merged_manifest\release\AndroidManifest.xml:13:17-82
 63            <meta-data
 63-->[com.google.firebase:firebase-firestore:24.5.0] C:\Users\HP\.gradle\caches\transforms-3\fc58c4bb0c2ba423ba6b31f4487369bc\transformed\jetified-firebase-firestore-24.5.0\AndroidManifest.xml:19:13-21:85
 64                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"

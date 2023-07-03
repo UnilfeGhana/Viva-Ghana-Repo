@@ -2578,7 +2578,7 @@ Marking id:accessibility_custom_action_9:2131034144 used because it matches stri
 Marking attr:shortcutMatchRequired:2130771998 used because it matches string pool constant short
 Marking id:time:2131034194 used because it matches string pool constant time
 Marking id:light:2131034165 used because it matches string pool constant light
-Marking string:gcm_defaultSenderId:2131361812 used because it matches string pool constant gcm_defaultSenderId
+Marking string:gcm_defaultSenderId:2131361811 used because it matches string pool constant gcm_defaultSenderId
 Marking attr:secondaryActivityName:2130771997 used because it matches string pool constant secondaryActivityName
 Marking id:info:2131034163 used because it matches string pool constant info
 Marking id:title:2131034195 used because it matches string pool constant title
@@ -2593,8 +2593,8 @@ Marking id:actions:2131034149 used because it matches string pool constant actio
 Marking id:text:2131034192 used because it matches string pool constant text
 Marking id:text2:2131034193 used because it matches string pool constant text
 Marking integer:status_bar_notification_info_maxnum:2131099649 used because it matches string pool constant status
-Marking string:status_bar_notification_info_overflow:2131361818 used because it matches string pool constant status
-Marking string:google_api_key:2131361813 used because it matches string pool constant google_api_key
+Marking string:status_bar_notification_info_overflow:2131361817 used because it matches string pool constant status
+Marking string:google_api_key:2131361812 used because it matches string pool constant google_api_key
 Marking id:accessibility_action_clickable_span:2131034112 used because it matches string pool constant acc
 Marking id:accessibility_custom_action_0:2131034113 used because it matches string pool constant acc
 Marking id:accessibility_custom_action_1:2131034114 used because it matches string pool constant acc
@@ -2628,7 +2628,7 @@ Marking id:accessibility_custom_action_6:2131034141 used because it matches stri
 Marking id:accessibility_custom_action_7:2131034142 used because it matches string pool constant acc
 Marking id:accessibility_custom_action_8:2131034143 used because it matches string pool constant acc
 Marking id:accessibility_custom_action_9:2131034144 used because it matches string pool constant acc
-Marking string:google_storage_bucket:2131361816 used because it matches string pool constant google_storage_bucket
+Marking string:google_storage_bucket:2131361815 used because it matches string pool constant google_storage_bucket
 Marking color:androidx_core_ripple_material_light:2130837504 used because it matches string pool constant and
 Marking color:androidx_core_secondary_text_default_material_light:2130837505 used because it matches string pool constant and
 Marking id:androidx_window_activity_scope:2131034152 used because it matches string pool constant and
@@ -2681,12 +2681,11 @@ Marking attr:imageAspectRatioAdjust:2130771990 used because it matches string po
 Marking id:auto:2131034154 used because it matches string pool constant auto
 Marking attr:activityAction:2130771968 used because it matches string pool constant activity
 Marking attr:activityName:2130771969 used because it matches string pool constant activity
-Marking string:project_id:2131361817 used because it matches string pool constant project_id
+Marking string:project_id:2131361816 used because it matches string pool constant project_id
 Marking attr:queryPatterns:2130771994 used because it matches string pool constant query
 Marking id:none:2131034170 used because it matches string pool constant none
 Marking id:dark:2131034157 used because it matches string pool constant dark
-Marking string:firebase_database_url:2131361811 used because it matches string pool constant firebase_database_url
-Marking string:google_app_id:2131361814 used because it matches string pool constant google_app_id
+Marking string:google_app_id:2131361813 used because it matches string pool constant google_app_id
 Marking id:line1:2131034166 used because it matches string pool constant line
 Marking id:line3:2131034167 used because it matches string pool constant line
 @com.Unilife.viva_ghana_shops:attr/activityAction : reachable=true
@@ -2977,7 +2976,6 @@ Marking id:line3:2131034167 used because it matches string pool constant line
 @com.Unilife.viva_ghana_shops:string/common_signin_button_text : reachable=false
 @com.Unilife.viva_ghana_shops:string/common_signin_button_text_long : reachable=false
 @com.Unilife.viva_ghana_shops:string/default_web_client_id : reachable=false
-@com.Unilife.viva_ghana_shops:string/firebase_database_url : reachable=true
 @com.Unilife.viva_ghana_shops:string/gcm_defaultSenderId : reachable=true
 @com.Unilife.viva_ghana_shops:string/google_api_key : reachable=true
 @com.Unilife.viva_ghana_shops:string/google_app_id : reachable=true
@@ -3126,13 +3124,12 @@ The root reachable resources are:
  string:common_google_play_services_updating_text:2131361805
  string:common_google_play_services_wear_update_text:2131361806
  string:common_open_on_phone:2131361807
- string:firebase_database_url:2131361811
- string:gcm_defaultSenderId:2131361812
- string:google_api_key:2131361813
- string:google_app_id:2131361814
- string:google_storage_bucket:2131361816
- string:project_id:2131361817
- string:status_bar_notification_info_overflow:2131361818
+ string:gcm_defaultSenderId:2131361811
+ string:google_api_key:2131361812
+ string:google_app_id:2131361813
+ string:google_storage_bucket:2131361815
+ string:project_id:2131361816
+ string:status_bar_notification_info_overflow:2131361817
  style:LaunchTheme:2131427328
  style:NormalTheme:2131427329
 Skipped unused resource base/res/color/common_google_signin_btn_text_dark.xml: 1105 bytes (replaced with small dummy file of size 9 bytes)

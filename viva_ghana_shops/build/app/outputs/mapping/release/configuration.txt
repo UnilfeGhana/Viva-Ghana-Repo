@@ -1,4 +1,4 @@
-# The proguard configuration file for the following section is C:\Users\HP\Viva Ghana Shops\viva_ghana_shops\build\app\intermediates\default_proguard_files\global\proguard-android.txt-7.2.0
+# The proguard configuration file for the following section is C:\Users\HP\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\build\app\intermediates\default_proguard_files\global\proguard-android.txt-7.2.0
 # This is a configuration file for ProGuard.
 # http://proguard.sourceforge.net/index.html#manual/usage.html
 #
@@ -116,7 +116,7 @@
 # These classes are duplicated between android.jar and core-lambda-stubs.jar.
 -dontnote java.lang.invoke.**
 
-# End of content from C:\Users\HP\Viva Ghana Shops\viva_ghana_shops\build\app\intermediates\default_proguard_files\global\proguard-android.txt-7.2.0
+# End of content from C:\Users\HP\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\build\app\intermediates\default_proguard_files\global\proguard-android.txt-7.2.0
 # The proguard configuration file for the following section is C:\src\flutter\packages\flutter_tools\gradle\flutter_proguard_rules.pro
 # Build the ephemeral app in a module project.
 # Prevents: Warning: library class <plugin-package> depends on program class io.flutter.plugin.**
@@ -127,7 +127,7 @@
 -dontwarn android.**
 
 # End of content from C:\src\flutter\packages\flutter_tools\gradle\flutter_proguard_rules.pro
-# The proguard configuration file for the following section is C:\Users\HP\Viva Ghana Shops\viva_ghana_shops\build\app\intermediates\aapt_proguard_file\release\aapt_rules.txt
+# The proguard configuration file for the following section is C:\Users\HP\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\build\app\intermediates\aapt_proguard_file\release\aapt_rules.txt
 -keep class android.app.Application { <init>(); }
 -keep class androidx.core.app.CoreComponentFactory { <init>(); }
 -keep class com.Unilife.viva_ghana_shops.MainActivity { <init>(); }
@@ -135,7 +135,7 @@
 -keep class com.google.firebase.components.ComponentDiscoveryService { <init>(); }
 -keep class com.google.firebase.provider.FirebaseInitProvider { <init>(); }
 
-# End of content from C:\Users\HP\Viva Ghana Shops\viva_ghana_shops\build\app\intermediates\aapt_proguard_file\release\aapt_rules.txt
+# End of content from C:\Users\HP\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\build\app\intermediates\aapt_proguard_file\release\aapt_rules.txt
 # The proguard configuration file for the following section is C:\Users\HP\.gradle\caches\transforms-3\40ff8c014bc3b03149787e1d45a42dea\transformed\jetified-window-1.0.0-beta04\proguard.txt
 # Copyright (C) 2020 The Android Open Source Project
 #
