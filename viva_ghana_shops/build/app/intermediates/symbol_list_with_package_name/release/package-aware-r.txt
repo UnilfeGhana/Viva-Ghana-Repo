@@ -1,4 +1,4 @@
-com.Unilife.viva_ghana_shops
+com.Unilife.viva_gate_shops
 attr activityAction
 attr activityName
 attr alpha

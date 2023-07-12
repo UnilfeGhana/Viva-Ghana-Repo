@@ -1,4 +1,4 @@
-package com.Unilife.viva_ghana_shops
+package com.Unilife.viva_gate_shops
 
 import io.flutter.embedding.android.FlutterActivity
 

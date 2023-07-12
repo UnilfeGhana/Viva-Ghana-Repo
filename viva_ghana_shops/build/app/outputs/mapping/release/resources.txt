@@ -2688,315 +2688,315 @@ Marking id:dark:2131034157 used because it matches string pool constant dark
 Marking string:google_app_id:2131361813 used because it matches string pool constant google_app_id
 Marking id:line1:2131034166 used because it matches string pool constant line
 Marking id:line3:2131034167 used because it matches string pool constant line
-@com.Unilife.viva_ghana_shops:attr/activityAction : reachable=true
-@com.Unilife.viva_ghana_shops:attr/activityName : reachable=true
-@com.Unilife.viva_ghana_shops:attr/alpha : reachable=false
-@com.Unilife.viva_ghana_shops:attr/alwaysExpand : reachable=false
-@com.Unilife.viva_ghana_shops:attr/buttonSize : reachable=false
-@com.Unilife.viva_ghana_shops:attr/circleCrop : reachable=false
-@com.Unilife.viva_ghana_shops:attr/clearTop : reachable=false
-@com.Unilife.viva_ghana_shops:attr/colorScheme : reachable=false
-@com.Unilife.viva_ghana_shops:attr/finishPrimaryWithSecondary : reachable=false
-@com.Unilife.viva_ghana_shops:attr/finishSecondaryWithPrimary : reachable=false
-@com.Unilife.viva_ghana_shops:attr/font : reachable=false
-@com.Unilife.viva_ghana_shops:attr/fontProviderAuthority : reachable=false
-@com.Unilife.viva_ghana_shops:attr/fontProviderCerts : reachable=false
-@com.Unilife.viva_ghana_shops:attr/fontProviderFetchStrategy : reachable=false
-@com.Unilife.viva_ghana_shops:attr/fontProviderFetchTimeout : reachable=false
-@com.Unilife.viva_ghana_shops:attr/fontProviderPackage : reachable=false
-@com.Unilife.viva_ghana_shops:attr/fontProviderQuery : reachable=false
-@com.Unilife.viva_ghana_shops:attr/fontProviderSystemFontFamily : reachable=false
-@com.Unilife.viva_ghana_shops:attr/fontStyle : reachable=false
-@com.Unilife.viva_ghana_shops:attr/fontVariationSettings : reachable=false
-@com.Unilife.viva_ghana_shops:attr/fontWeight : reachable=false
-@com.Unilife.viva_ghana_shops:attr/imageAspectRatio : reachable=true
-@com.Unilife.viva_ghana_shops:attr/imageAspectRatioAdjust : reachable=true
-@com.Unilife.viva_ghana_shops:attr/nestedScrollViewStyle : reachable=false
-@com.Unilife.viva_ghana_shops:attr/placeholderActivityName : reachable=false
-@com.Unilife.viva_ghana_shops:attr/primaryActivityName : reachable=true
-@com.Unilife.viva_ghana_shops:attr/queryPatterns : reachable=true
-@com.Unilife.viva_ghana_shops:attr/scopeUris : reachable=false
-@com.Unilife.viva_ghana_shops:attr/secondaryActivityAction : reachable=true
-@com.Unilife.viva_ghana_shops:attr/secondaryActivityName : reachable=true
-@com.Unilife.viva_ghana_shops:attr/shortcutMatchRequired : reachable=true
-@com.Unilife.viva_ghana_shops:attr/splitLayoutDirection : reachable=false
-@com.Unilife.viva_ghana_shops:attr/splitMinSmallestWidth : reachable=false
-@com.Unilife.viva_ghana_shops:attr/splitMinWidth : reachable=false
-@com.Unilife.viva_ghana_shops:attr/splitRatio : reachable=false
-@com.Unilife.viva_ghana_shops:attr/ttcIndex : reachable=false
-@com.Unilife.viva_ghana_shops:color/androidx_core_ripple_material_light : reachable=true
-@com.Unilife.viva_ghana_shops:color/androidx_core_secondary_text_default_material_light : reachable=true
-@com.Unilife.viva_ghana_shops:color/common_google_signin_btn_text_dark : reachable=false
-    @com.Unilife.viva_ghana_shops:color/common_google_signin_btn_text_dark_disabled
-    @com.Unilife.viva_ghana_shops:color/common_google_signin_btn_text_dark_pressed
-    @com.Unilife.viva_ghana_shops:color/common_google_signin_btn_text_dark_focused
-    @com.Unilife.viva_ghana_shops:color/common_google_signin_btn_text_dark_default
-@com.Unilife.viva_ghana_shops:color/common_google_signin_btn_text_dark_default : reachable=false
-@com.Unilife.viva_ghana_shops:color/common_google_signin_btn_text_dark_disabled : reachable=false
-@com.Unilife.viva_ghana_shops:color/common_google_signin_btn_text_dark_focused : reachable=false
-@com.Unilife.viva_ghana_shops:color/common_google_signin_btn_text_dark_pressed : reachable=false
-@com.Unilife.viva_ghana_shops:color/common_google_signin_btn_text_light : reachable=false
-    @com.Unilife.viva_ghana_shops:color/common_google_signin_btn_text_light_disabled
-    @com.Unilife.viva_ghana_shops:color/common_google_signin_btn_text_light_pressed
-    @com.Unilife.viva_ghana_shops:color/common_google_signin_btn_text_light_focused
-    @com.Unilife.viva_ghana_shops:color/common_google_signin_btn_text_light_default
-@com.Unilife.viva_ghana_shops:color/common_google_signin_btn_text_light_default : reachable=false
-@com.Unilife.viva_ghana_shops:color/common_google_signin_btn_text_light_disabled : reachable=false
-@com.Unilife.viva_ghana_shops:color/common_google_signin_btn_text_light_focused : reachable=false
-@com.Unilife.viva_ghana_shops:color/common_google_signin_btn_text_light_pressed : reachable=false
-@com.Unilife.viva_ghana_shops:color/common_google_signin_btn_tint : reachable=false
-@com.Unilife.viva_ghana_shops:color/notification_action_color_filter : reachable=true
-    @com.Unilife.viva_ghana_shops:color/androidx_core_secondary_text_default_material_light
-@com.Unilife.viva_ghana_shops:color/notification_icon_bg_color : reachable=true
-@com.Unilife.viva_ghana_shops:dimen/compat_button_inset_horizontal_material : reachable=false
-@com.Unilife.viva_ghana_shops:dimen/compat_button_inset_vertical_material : reachable=false
-@com.Unilife.viva_ghana_shops:dimen/compat_button_padding_horizontal_material : reachable=false
-@com.Unilife.viva_ghana_shops:dimen/compat_button_padding_vertical_material : reachable=false
-@com.Unilife.viva_ghana_shops:dimen/compat_control_corner_material : reachable=false
-@com.Unilife.viva_ghana_shops:dimen/compat_notification_large_icon_max_height : reachable=false
-@com.Unilife.viva_ghana_shops:dimen/compat_notification_large_icon_max_width : reachable=false
-@com.Unilife.viva_ghana_shops:dimen/notification_action_icon_size : reachable=true
-@com.Unilife.viva_ghana_shops:dimen/notification_action_text_size : reachable=true
-@com.Unilife.viva_ghana_shops:dimen/notification_big_circle_margin : reachable=true
-@com.Unilife.viva_ghana_shops:dimen/notification_content_margin_start : reachable=true
-@com.Unilife.viva_ghana_shops:dimen/notification_large_icon_height : reachable=true
-@com.Unilife.viva_ghana_shops:dimen/notification_large_icon_width : reachable=true
-@com.Unilife.viva_ghana_shops:dimen/notification_main_column_padding_top : reachable=true
-@com.Unilife.viva_ghana_shops:dimen/notification_media_narrow_margin : reachable=true
-@com.Unilife.viva_ghana_shops:dimen/notification_right_icon_size : reachable=true
-@com.Unilife.viva_ghana_shops:dimen/notification_right_side_padding_top : reachable=true
-@com.Unilife.viva_ghana_shops:dimen/notification_small_icon_background_padding : reachable=true
-@com.Unilife.viva_ghana_shops:dimen/notification_small_icon_size_as_large : reachable=true
-@com.Unilife.viva_ghana_shops:dimen/notification_subtext_size : reachable=true
-@com.Unilife.viva_ghana_shops:dimen/notification_top_pad : reachable=true
-@com.Unilife.viva_ghana_shops:dimen/notification_top_pad_large_text : reachable=true
-@com.Unilife.viva_ghana_shops:drawable/common_full_open_on_phone : reachable=true
-@com.Unilife.viva_ghana_shops:drawable/common_google_signin_btn_icon_dark : reachable=false
-    @com.Unilife.viva_ghana_shops:drawable/common_google_signin_btn_icon_disabled
-    @com.Unilife.viva_ghana_shops:drawable/common_google_signin_btn_icon_dark_focused
-    @com.Unilife.viva_ghana_shops:drawable/common_google_signin_btn_icon_dark_normal
-@com.Unilife.viva_ghana_shops:drawable/common_google_signin_btn_icon_dark_focused : reachable=false
-    @com.Unilife.viva_ghana_shops:drawable/common_google_signin_btn_icon_dark_normal
-@com.Unilife.viva_ghana_shops:drawable/common_google_signin_btn_icon_dark_normal : reachable=false
-    @com.Unilife.viva_ghana_shops:drawable/common_google_signin_btn_icon_dark_normal_background
-    @com.Unilife.viva_ghana_shops:drawable/googleg_standard_color_18
-@com.Unilife.viva_ghana_shops:drawable/common_google_signin_btn_icon_dark_normal_background : reachable=false
-@com.Unilife.viva_ghana_shops:drawable/common_google_signin_btn_icon_disabled : reachable=false
-    @com.Unilife.viva_ghana_shops:drawable/googleg_disabled_color_18
-@com.Unilife.viva_ghana_shops:drawable/common_google_signin_btn_icon_light : reachable=false
-    @com.Unilife.viva_ghana_shops:drawable/common_google_signin_btn_icon_disabled
-    @com.Unilife.viva_ghana_shops:drawable/common_google_signin_btn_icon_light_focused
-    @com.Unilife.viva_ghana_shops:drawable/common_google_signin_btn_icon_light_normal
-@com.Unilife.viva_ghana_shops:drawable/common_google_signin_btn_icon_light_focused : reachable=false
-    @com.Unilife.viva_ghana_shops:drawable/common_google_signin_btn_icon_light_normal
-@com.Unilife.viva_ghana_shops:drawable/common_google_signin_btn_icon_light_normal : reachable=false
-    @com.Unilife.viva_ghana_shops:drawable/common_google_signin_btn_icon_light_normal_background
-    @com.Unilife.viva_ghana_shops:drawable/googleg_standard_color_18
-@com.Unilife.viva_ghana_shops:drawable/common_google_signin_btn_icon_light_normal_background : reachable=false
-@com.Unilife.viva_ghana_shops:drawable/common_google_signin_btn_text_dark : reachable=false
-    @com.Unilife.viva_ghana_shops:drawable/common_google_signin_btn_text_disabled
-    @com.Unilife.viva_ghana_shops:drawable/common_google_signin_btn_text_dark_focused
-    @com.Unilife.viva_ghana_shops:drawable/common_google_signin_btn_text_dark_normal
-@com.Unilife.viva_ghana_shops:drawable/common_google_signin_btn_text_dark_focused : reachable=false
-    @com.Unilife.viva_ghana_shops:drawable/common_google_signin_btn_text_dark_normal
-@com.Unilife.viva_ghana_shops:drawable/common_google_signin_btn_text_dark_normal : reachable=false
-    @com.Unilife.viva_ghana_shops:drawable/common_google_signin_btn_text_dark_normal_background
-    @com.Unilife.viva_ghana_shops:drawable/googleg_standard_color_18
-@com.Unilife.viva_ghana_shops:drawable/common_google_signin_btn_text_dark_normal_background : reachable=false
-@com.Unilife.viva_ghana_shops:drawable/common_google_signin_btn_text_disabled : reachable=false
-    @com.Unilife.viva_ghana_shops:drawable/googleg_disabled_color_18
-@com.Unilife.viva_ghana_shops:drawable/common_google_signin_btn_text_light : reachable=false
-    @com.Unilife.viva_ghana_shops:drawable/common_google_signin_btn_text_disabled
-    @com.Unilife.viva_ghana_shops:drawable/common_google_signin_btn_text_light_focused
-    @com.Unilife.viva_ghana_shops:drawable/common_google_signin_btn_text_light_normal
-@com.Unilife.viva_ghana_shops:drawable/common_google_signin_btn_text_light_focused : reachable=false
-    @com.Unilife.viva_ghana_shops:drawable/common_google_signin_btn_text_light_normal
-@com.Unilife.viva_ghana_shops:drawable/common_google_signin_btn_text_light_normal : reachable=false
-    @com.Unilife.viva_ghana_shops:drawable/common_google_signin_btn_text_light_normal_background
-    @com.Unilife.viva_ghana_shops:drawable/googleg_standard_color_18
-@com.Unilife.viva_ghana_shops:drawable/common_google_signin_btn_text_light_normal_background : reachable=false
-@com.Unilife.viva_ghana_shops:drawable/googleg_disabled_color_18 : reachable=false
-@com.Unilife.viva_ghana_shops:drawable/googleg_standard_color_18 : reachable=false
-@com.Unilife.viva_ghana_shops:drawable/launch_background : reachable=false
-@com.Unilife.viva_ghana_shops:drawable/notification_action_background : reachable=true
-    @com.Unilife.viva_ghana_shops:color/androidx_core_ripple_material_light
-    @com.Unilife.viva_ghana_shops:dimen/compat_button_inset_horizontal_material
-    @com.Unilife.viva_ghana_shops:dimen/compat_button_inset_vertical_material
-    @com.Unilife.viva_ghana_shops:dimen/compat_control_corner_material
-    @com.Unilife.viva_ghana_shops:dimen/compat_button_padding_horizontal_material
-    @com.Unilife.viva_ghana_shops:dimen/compat_button_padding_vertical_material
-@com.Unilife.viva_ghana_shops:drawable/notification_bg : reachable=true
-    @com.Unilife.viva_ghana_shops:drawable/notification_bg_normal_pressed
-    @com.Unilife.viva_ghana_shops:drawable/notification_bg_normal
-@com.Unilife.viva_ghana_shops:drawable/notification_bg_low : reachable=true
-    @com.Unilife.viva_ghana_shops:drawable/notification_bg_low_pressed
-    @com.Unilife.viva_ghana_shops:drawable/notification_bg_low_normal
-@com.Unilife.viva_ghana_shops:drawable/notification_bg_low_normal : reachable=true
-@com.Unilife.viva_ghana_shops:drawable/notification_bg_low_pressed : reachable=true
-@com.Unilife.viva_ghana_shops:drawable/notification_bg_normal : reachable=true
-@com.Unilife.viva_ghana_shops:drawable/notification_bg_normal_pressed : reachable=true
-@com.Unilife.viva_ghana_shops:drawable/notification_icon_background : reachable=true
-    @com.Unilife.viva_ghana_shops:color/notification_icon_bg_color
-@com.Unilife.viva_ghana_shops:drawable/notification_template_icon_bg : reachable=true
-@com.Unilife.viva_ghana_shops:drawable/notification_template_icon_low_bg : reachable=true
-@com.Unilife.viva_ghana_shops:drawable/notification_tile_bg : reachable=true
-    @com.Unilife.viva_ghana_shops:drawable/notify_panel_notification_icon_bg
-@com.Unilife.viva_ghana_shops:drawable/notify_panel_notification_icon_bg : reachable=false
-@com.Unilife.viva_ghana_shops:id/accessibility_action_clickable_span : reachable=true
-@com.Unilife.viva_ghana_shops:id/accessibility_custom_action_0 : reachable=true
-@com.Unilife.viva_ghana_shops:id/accessibility_custom_action_1 : reachable=true
-@com.Unilife.viva_ghana_shops:id/accessibility_custom_action_10 : reachable=true
-@com.Unilife.viva_ghana_shops:id/accessibility_custom_action_11 : reachable=true
-@com.Unilife.viva_ghana_shops:id/accessibility_custom_action_12 : reachable=true
-@com.Unilife.viva_ghana_shops:id/accessibility_custom_action_13 : reachable=true
-@com.Unilife.viva_ghana_shops:id/accessibility_custom_action_14 : reachable=true
-@com.Unilife.viva_ghana_shops:id/accessibility_custom_action_15 : reachable=true
-@com.Unilife.viva_ghana_shops:id/accessibility_custom_action_16 : reachable=true
-@com.Unilife.viva_ghana_shops:id/accessibility_custom_action_17 : reachable=true
-@com.Unilife.viva_ghana_shops:id/accessibility_custom_action_18 : reachable=true
-@com.Unilife.viva_ghana_shops:id/accessibility_custom_action_19 : reachable=true
-@com.Unilife.viva_ghana_shops:id/accessibility_custom_action_2 : reachable=true
-@com.Unilife.viva_ghana_shops:id/accessibility_custom_action_20 : reachable=true
-@com.Unilife.viva_ghana_shops:id/accessibility_custom_action_21 : reachable=true
-@com.Unilife.viva_ghana_shops:id/accessibility_custom_action_22 : reachable=true
-@com.Unilife.viva_ghana_shops:id/accessibility_custom_action_23 : reachable=true
-@com.Unilife.viva_ghana_shops:id/accessibility_custom_action_24 : reachable=true
-@com.Unilife.viva_ghana_shops:id/accessibility_custom_action_25 : reachable=true
-@com.Unilife.viva_ghana_shops:id/accessibility_custom_action_26 : reachable=true
-@com.Unilife.viva_ghana_shops:id/accessibility_custom_action_27 : reachable=true
-@com.Unilife.viva_ghana_shops:id/accessibility_custom_action_28 : reachable=true
-@com.Unilife.viva_ghana_shops:id/accessibility_custom_action_29 : reachable=true
-@com.Unilife.viva_ghana_shops:id/accessibility_custom_action_3 : reachable=true
-@com.Unilife.viva_ghana_shops:id/accessibility_custom_action_30 : reachable=true
-@com.Unilife.viva_ghana_shops:id/accessibility_custom_action_31 : reachable=true
-@com.Unilife.viva_ghana_shops:id/accessibility_custom_action_4 : reachable=true
-@com.Unilife.viva_ghana_shops:id/accessibility_custom_action_5 : reachable=true
-@com.Unilife.viva_ghana_shops:id/accessibility_custom_action_6 : reachable=true
-@com.Unilife.viva_ghana_shops:id/accessibility_custom_action_7 : reachable=true
-@com.Unilife.viva_ghana_shops:id/accessibility_custom_action_8 : reachable=true
-@com.Unilife.viva_ghana_shops:id/accessibility_custom_action_9 : reachable=true
-@com.Unilife.viva_ghana_shops:id/action_container : reachable=true
-@com.Unilife.viva_ghana_shops:id/action_divider : reachable=true
-@com.Unilife.viva_ghana_shops:id/action_image : reachable=true
-@com.Unilife.viva_ghana_shops:id/action_text : reachable=true
-@com.Unilife.viva_ghana_shops:id/actions : reachable=true
-@com.Unilife.viva_ghana_shops:id/adjust_height : reachable=false
-@com.Unilife.viva_ghana_shops:id/adjust_width : reachable=false
-@com.Unilife.viva_ghana_shops:id/androidx_window_activity_scope : reachable=true
-@com.Unilife.viva_ghana_shops:id/async : reachable=false
-@com.Unilife.viva_ghana_shops:id/auto : reachable=true
-@com.Unilife.viva_ghana_shops:id/blocking : reachable=false
-@com.Unilife.viva_ghana_shops:id/chronometer : reachable=false
-@com.Unilife.viva_ghana_shops:id/dark : reachable=true
-@com.Unilife.viva_ghana_shops:id/dialog_button : reachable=false
-@com.Unilife.viva_ghana_shops:id/forever : reachable=false
-@com.Unilife.viva_ghana_shops:id/icon : reachable=true
-@com.Unilife.viva_ghana_shops:id/icon_group : reachable=true
-@com.Unilife.viva_ghana_shops:id/icon_only : reachable=true
-@com.Unilife.viva_ghana_shops:id/info : reachable=true
-@com.Unilife.viva_ghana_shops:id/italic : reachable=false
-@com.Unilife.viva_ghana_shops:id/light : reachable=true
-@com.Unilife.viva_ghana_shops:id/line1 : reachable=true
-@com.Unilife.viva_ghana_shops:id/line3 : reachable=true
-@com.Unilife.viva_ghana_shops:id/locale : reachable=true
-@com.Unilife.viva_ghana_shops:id/ltr : reachable=false
-@com.Unilife.viva_ghana_shops:id/none : reachable=true
-@com.Unilife.viva_ghana_shops:id/normal : reachable=false
-@com.Unilife.viva_ghana_shops:id/notification_background : reachable=true
-@com.Unilife.viva_ghana_shops:id/notification_main_column : reachable=true
-@com.Unilife.viva_ghana_shops:id/notification_main_column_container : reachable=true
-@com.Unilife.viva_ghana_shops:id/right_icon : reachable=false
-@com.Unilife.viva_ghana_shops:id/right_side : reachable=false
-@com.Unilife.viva_ghana_shops:id/rtl : reachable=false
-@com.Unilife.viva_ghana_shops:id/standard : reachable=false
-@com.Unilife.viva_ghana_shops:id/tag_accessibility_actions : reachable=false
-@com.Unilife.viva_ghana_shops:id/tag_accessibility_clickable_spans : reachable=false
-@com.Unilife.viva_ghana_shops:id/tag_accessibility_heading : reachable=false
-@com.Unilife.viva_ghana_shops:id/tag_accessibility_pane_title : reachable=true
-@com.Unilife.viva_ghana_shops:id/tag_on_apply_window_listener : reachable=false
-@com.Unilife.viva_ghana_shops:id/tag_on_receive_content_listener : reachable=false
-@com.Unilife.viva_ghana_shops:id/tag_on_receive_content_mime_types : reachable=false
-@com.Unilife.viva_ghana_shops:id/tag_screen_reader_focusable : reachable=false
-@com.Unilife.viva_ghana_shops:id/tag_state_description : reachable=false
-@com.Unilife.viva_ghana_shops:id/tag_transition_group : reachable=false
-@com.Unilife.viva_ghana_shops:id/tag_unhandled_key_event_manager : reachable=true
-@com.Unilife.viva_ghana_shops:id/tag_unhandled_key_listeners : reachable=true
-@com.Unilife.viva_ghana_shops:id/tag_window_insets_animation_callback : reachable=false
-@com.Unilife.viva_ghana_shops:id/text : reachable=true
-@com.Unilife.viva_ghana_shops:id/text2 : reachable=true
-@com.Unilife.viva_ghana_shops:id/time : reachable=true
-@com.Unilife.viva_ghana_shops:id/title : reachable=true
-@com.Unilife.viva_ghana_shops:id/wide : reachable=false
-@com.Unilife.viva_ghana_shops:integer/google_play_services_version : reachable=true
-@com.Unilife.viva_ghana_shops:integer/status_bar_notification_info_maxnum : reachable=true
-@com.Unilife.viva_ghana_shops:layout/custom_dialog : reachable=false
-@com.Unilife.viva_ghana_shops:layout/notification_action : reachable=true
-    @com.Unilife.viva_ghana_shops:style/Widget_Compat_NotificationActionContainer
-    @com.Unilife.viva_ghana_shops:dimen/notification_action_icon_size
-    @com.Unilife.viva_ghana_shops:style/Widget_Compat_NotificationActionText
-@com.Unilife.viva_ghana_shops:layout/notification_action_tombstone : reachable=true
-    @com.Unilife.viva_ghana_shops:style/Widget_Compat_NotificationActionContainer
-    @com.Unilife.viva_ghana_shops:dimen/notification_action_icon_size
-    @com.Unilife.viva_ghana_shops:style/Widget_Compat_NotificationActionText
-@com.Unilife.viva_ghana_shops:layout/notification_template_custom_big : reachable=true
-    @com.Unilife.viva_ghana_shops:layout/notification_template_icon_group
-    @com.Unilife.viva_ghana_shops:dimen/notification_large_icon_width
-    @com.Unilife.viva_ghana_shops:dimen/notification_large_icon_height
-    @com.Unilife.viva_ghana_shops:dimen/notification_right_side_padding_top
-    @com.Unilife.viva_ghana_shops:layout/notification_template_part_time
-    @com.Unilife.viva_ghana_shops:layout/notification_template_part_chronometer
-    @com.Unilife.viva_ghana_shops:style/TextAppearance_Compat_Notification_Info
-@com.Unilife.viva_ghana_shops:layout/notification_template_icon_group : reachable=true
-    @com.Unilife.viva_ghana_shops:dimen/notification_large_icon_width
-    @com.Unilife.viva_ghana_shops:dimen/notification_large_icon_height
-    @com.Unilife.viva_ghana_shops:dimen/notification_big_circle_margin
-    @com.Unilife.viva_ghana_shops:dimen/notification_right_icon_size
-@com.Unilife.viva_ghana_shops:layout/notification_template_part_chronometer : reachable=true
-    @com.Unilife.viva_ghana_shops:style/TextAppearance_Compat_Notification_Time
-@com.Unilife.viva_ghana_shops:layout/notification_template_part_time : reachable=true
-    @com.Unilife.viva_ghana_shops:style/TextAppearance_Compat_Notification_Time
-@com.Unilife.viva_ghana_shops:mipmap/ic_launcher : reachable=true
-@com.Unilife.viva_ghana_shops:raw/firebase_common_keep : reachable=false
-@com.Unilife.viva_ghana_shops:string/common_google_play_services_enable_button : reachable=true
-@com.Unilife.viva_ghana_shops:string/common_google_play_services_enable_text : reachable=true
-@com.Unilife.viva_ghana_shops:string/common_google_play_services_enable_title : reachable=true
-@com.Unilife.viva_ghana_shops:string/common_google_play_services_install_button : reachable=true
-@com.Unilife.viva_ghana_shops:string/common_google_play_services_install_text : reachable=true
-@com.Unilife.viva_ghana_shops:string/common_google_play_services_install_title : reachable=true
-@com.Unilife.viva_ghana_shops:string/common_google_play_services_notification_channel_name : reachable=true
-@com.Unilife.viva_ghana_shops:string/common_google_play_services_notification_ticker : reachable=true
-@com.Unilife.viva_ghana_shops:string/common_google_play_services_unknown_issue : reachable=true
-@com.Unilife.viva_ghana_shops:string/common_google_play_services_unsupported_text : reachable=true
-@com.Unilife.viva_ghana_shops:string/common_google_play_services_update_button : reachable=true
-@com.Unilife.viva_ghana_shops:string/common_google_play_services_update_text : reachable=true
-@com.Unilife.viva_ghana_shops:string/common_google_play_services_update_title : reachable=true
-@com.Unilife.viva_ghana_shops:string/common_google_play_services_updating_text : reachable=true
-@com.Unilife.viva_ghana_shops:string/common_google_play_services_wear_update_text : reachable=true
-@com.Unilife.viva_ghana_shops:string/common_open_on_phone : reachable=true
-@com.Unilife.viva_ghana_shops:string/common_signin_button_text : reachable=false
-@com.Unilife.viva_ghana_shops:string/common_signin_button_text_long : reachable=false
-@com.Unilife.viva_ghana_shops:string/default_web_client_id : reachable=false
-@com.Unilife.viva_ghana_shops:string/gcm_defaultSenderId : reachable=true
-@com.Unilife.viva_ghana_shops:string/google_api_key : reachable=true
-@com.Unilife.viva_ghana_shops:string/google_app_id : reachable=true
-@com.Unilife.viva_ghana_shops:string/google_crash_reporting_api_key : reachable=false
-@com.Unilife.viva_ghana_shops:string/google_storage_bucket : reachable=true
-@com.Unilife.viva_ghana_shops:string/project_id : reachable=true
-@com.Unilife.viva_ghana_shops:string/status_bar_notification_info_overflow : reachable=true
-@com.Unilife.viva_ghana_shops:style/LaunchTheme : reachable=true
-    @com.Unilife.viva_ghana_shops:drawable/launch_background
-@com.Unilife.viva_ghana_shops:style/NormalTheme : reachable=true
-@com.Unilife.viva_ghana_shops:style/TextAppearance_Compat_Notification : reachable=false
-@com.Unilife.viva_ghana_shops:style/TextAppearance_Compat_Notification_Info : reachable=false
-@com.Unilife.viva_ghana_shops:style/TextAppearance_Compat_Notification_Line2 : reachable=false
-    @com.Unilife.viva_ghana_shops:style/TextAppearance_Compat_Notification_Info
-@com.Unilife.viva_ghana_shops:style/TextAppearance_Compat_Notification_Time : reachable=false
-@com.Unilife.viva_ghana_shops:style/TextAppearance_Compat_Notification_Title : reachable=false
-@com.Unilife.viva_ghana_shops:style/Widget_Compat_NotificationActionContainer : reachable=false
-    @com.Unilife.viva_ghana_shops:drawable/notification_action_background
-@com.Unilife.viva_ghana_shops:style/Widget_Compat_NotificationActionText : reachable=false
-    @com.Unilife.viva_ghana_shops:color/androidx_core_secondary_text_default_material_light
-    @com.Unilife.viva_ghana_shops:dimen/notification_action_text_size
+@com.Unilife.viva_gate_shops:attr/activityAction : reachable=true
+@com.Unilife.viva_gate_shops:attr/activityName : reachable=true
+@com.Unilife.viva_gate_shops:attr/alpha : reachable=false
+@com.Unilife.viva_gate_shops:attr/alwaysExpand : reachable=false
+@com.Unilife.viva_gate_shops:attr/buttonSize : reachable=false
+@com.Unilife.viva_gate_shops:attr/circleCrop : reachable=false
+@com.Unilife.viva_gate_shops:attr/clearTop : reachable=false
+@com.Unilife.viva_gate_shops:attr/colorScheme : reachable=false
+@com.Unilife.viva_gate_shops:attr/finishPrimaryWithSecondary : reachable=false
+@com.Unilife.viva_gate_shops:attr/finishSecondaryWithPrimary : reachable=false
+@com.Unilife.viva_gate_shops:attr/font : reachable=false
+@com.Unilife.viva_gate_shops:attr/fontProviderAuthority : reachable=false
+@com.Unilife.viva_gate_shops:attr/fontProviderCerts : reachable=false
+@com.Unilife.viva_gate_shops:attr/fontProviderFetchStrategy : reachable=false
+@com.Unilife.viva_gate_shops:attr/fontProviderFetchTimeout : reachable=false
+@com.Unilife.viva_gate_shops:attr/fontProviderPackage : reachable=false
+@com.Unilife.viva_gate_shops:attr/fontProviderQuery : reachable=false
+@com.Unilife.viva_gate_shops:attr/fontProviderSystemFontFamily : reachable=false
+@com.Unilife.viva_gate_shops:attr/fontStyle : reachable=false
+@com.Unilife.viva_gate_shops:attr/fontVariationSettings : reachable=false
+@com.Unilife.viva_gate_shops:attr/fontWeight : reachable=false
+@com.Unilife.viva_gate_shops:attr/imageAspectRatio : reachable=true
+@com.Unilife.viva_gate_shops:attr/imageAspectRatioAdjust : reachable=true
+@com.Unilife.viva_gate_shops:attr/nestedScrollViewStyle : reachable=false
+@com.Unilife.viva_gate_shops:attr/placeholderActivityName : reachable=false
+@com.Unilife.viva_gate_shops:attr/primaryActivityName : reachable=true
+@com.Unilife.viva_gate_shops:attr/queryPatterns : reachable=true
+@com.Unilife.viva_gate_shops:attr/scopeUris : reachable=false
+@com.Unilife.viva_gate_shops:attr/secondaryActivityAction : reachable=true
+@com.Unilife.viva_gate_shops:attr/secondaryActivityName : reachable=true
+@com.Unilife.viva_gate_shops:attr/shortcutMatchRequired : reachable=true
+@com.Unilife.viva_gate_shops:attr/splitLayoutDirection : reachable=false
+@com.Unilife.viva_gate_shops:attr/splitMinSmallestWidth : reachable=false
+@com.Unilife.viva_gate_shops:attr/splitMinWidth : reachable=false
+@com.Unilife.viva_gate_shops:attr/splitRatio : reachable=false
+@com.Unilife.viva_gate_shops:attr/ttcIndex : reachable=false
+@com.Unilife.viva_gate_shops:color/androidx_core_ripple_material_light : reachable=true
+@com.Unilife.viva_gate_shops:color/androidx_core_secondary_text_default_material_light : reachable=true
+@com.Unilife.viva_gate_shops:color/common_google_signin_btn_text_dark : reachable=false
+    @com.Unilife.viva_gate_shops:color/common_google_signin_btn_text_dark_disabled
+    @com.Unilife.viva_gate_shops:color/common_google_signin_btn_text_dark_pressed
+    @com.Unilife.viva_gate_shops:color/common_google_signin_btn_text_dark_focused
+    @com.Unilife.viva_gate_shops:color/common_google_signin_btn_text_dark_default
+@com.Unilife.viva_gate_shops:color/common_google_signin_btn_text_dark_default : reachable=false
+@com.Unilife.viva_gate_shops:color/common_google_signin_btn_text_dark_disabled : reachable=false
+@com.Unilife.viva_gate_shops:color/common_google_signin_btn_text_dark_focused : reachable=false
+@com.Unilife.viva_gate_shops:color/common_google_signin_btn_text_dark_pressed : reachable=false
+@com.Unilife.viva_gate_shops:color/common_google_signin_btn_text_light : reachable=false
+    @com.Unilife.viva_gate_shops:color/common_google_signin_btn_text_light_disabled
+    @com.Unilife.viva_gate_shops:color/common_google_signin_btn_text_light_pressed
+    @com.Unilife.viva_gate_shops:color/common_google_signin_btn_text_light_focused
+    @com.Unilife.viva_gate_shops:color/common_google_signin_btn_text_light_default
+@com.Unilife.viva_gate_shops:color/common_google_signin_btn_text_light_default : reachable=false
+@com.Unilife.viva_gate_shops:color/common_google_signin_btn_text_light_disabled : reachable=false
+@com.Unilife.viva_gate_shops:color/common_google_signin_btn_text_light_focused : reachable=false
+@com.Unilife.viva_gate_shops:color/common_google_signin_btn_text_light_pressed : reachable=false
+@com.Unilife.viva_gate_shops:color/common_google_signin_btn_tint : reachable=false
+@com.Unilife.viva_gate_shops:color/notification_action_color_filter : reachable=true
+    @com.Unilife.viva_gate_shops:color/androidx_core_secondary_text_default_material_light
+@com.Unilife.viva_gate_shops:color/notification_icon_bg_color : reachable=true
+@com.Unilife.viva_gate_shops:dimen/compat_button_inset_horizontal_material : reachable=false
+@com.Unilife.viva_gate_shops:dimen/compat_button_inset_vertical_material : reachable=false
+@com.Unilife.viva_gate_shops:dimen/compat_button_padding_horizontal_material : reachable=false
+@com.Unilife.viva_gate_shops:dimen/compat_button_padding_vertical_material : reachable=false
+@com.Unilife.viva_gate_shops:dimen/compat_control_corner_material : reachable=false
+@com.Unilife.viva_gate_shops:dimen/compat_notification_large_icon_max_height : reachable=false
+@com.Unilife.viva_gate_shops:dimen/compat_notification_large_icon_max_width : reachable=false
+@com.Unilife.viva_gate_shops:dimen/notification_action_icon_size : reachable=true
+@com.Unilife.viva_gate_shops:dimen/notification_action_text_size : reachable=true
+@com.Unilife.viva_gate_shops:dimen/notification_big_circle_margin : reachable=true
+@com.Unilife.viva_gate_shops:dimen/notification_content_margin_start : reachable=true
+@com.Unilife.viva_gate_shops:dimen/notification_large_icon_height : reachable=true
+@com.Unilife.viva_gate_shops:dimen/notification_large_icon_width : reachable=true
+@com.Unilife.viva_gate_shops:dimen/notification_main_column_padding_top : reachable=true
+@com.Unilife.viva_gate_shops:dimen/notification_media_narrow_margin : reachable=true
+@com.Unilife.viva_gate_shops:dimen/notification_right_icon_size : reachable=true
+@com.Unilife.viva_gate_shops:dimen/notification_right_side_padding_top : reachable=true
+@com.Unilife.viva_gate_shops:dimen/notification_small_icon_background_padding : reachable=true
+@com.Unilife.viva_gate_shops:dimen/notification_small_icon_size_as_large : reachable=true
+@com.Unilife.viva_gate_shops:dimen/notification_subtext_size : reachable=true
+@com.Unilife.viva_gate_shops:dimen/notification_top_pad : reachable=true
+@com.Unilife.viva_gate_shops:dimen/notification_top_pad_large_text : reachable=true
+@com.Unilife.viva_gate_shops:drawable/common_full_open_on_phone : reachable=true
+@com.Unilife.viva_gate_shops:drawable/common_google_signin_btn_icon_dark : reachable=false
+    @com.Unilife.viva_gate_shops:drawable/common_google_signin_btn_icon_disabled
+    @com.Unilife.viva_gate_shops:drawable/common_google_signin_btn_icon_dark_focused
+    @com.Unilife.viva_gate_shops:drawable/common_google_signin_btn_icon_dark_normal
+@com.Unilife.viva_gate_shops:drawable/common_google_signin_btn_icon_dark_focused : reachable=false
+    @com.Unilife.viva_gate_shops:drawable/common_google_signin_btn_icon_dark_normal
+@com.Unilife.viva_gate_shops:drawable/common_google_signin_btn_icon_dark_normal : reachable=false
+    @com.Unilife.viva_gate_shops:drawable/common_google_signin_btn_icon_dark_normal_background
+    @com.Unilife.viva_gate_shops:drawable/googleg_standard_color_18
+@com.Unilife.viva_gate_shops:drawable/common_google_signin_btn_icon_dark_normal_background : reachable=false
+@com.Unilife.viva_gate_shops:drawable/common_google_signin_btn_icon_disabled : reachable=false
+    @com.Unilife.viva_gate_shops:drawable/googleg_disabled_color_18
+@com.Unilife.viva_gate_shops:drawable/common_google_signin_btn_icon_light : reachable=false
+    @com.Unilife.viva_gate_shops:drawable/common_google_signin_btn_icon_disabled
+    @com.Unilife.viva_gate_shops:drawable/common_google_signin_btn_icon_light_focused
+    @com.Unilife.viva_gate_shops:drawable/common_google_signin_btn_icon_light_normal
+@com.Unilife.viva_gate_shops:drawable/common_google_signin_btn_icon_light_focused : reachable=false
+    @com.Unilife.viva_gate_shops:drawable/common_google_signin_btn_icon_light_normal
+@com.Unilife.viva_gate_shops:drawable/common_google_signin_btn_icon_light_normal : reachable=false
+    @com.Unilife.viva_gate_shops:drawable/common_google_signin_btn_icon_light_normal_background
+    @com.Unilife.viva_gate_shops:drawable/googleg_standard_color_18
+@com.Unilife.viva_gate_shops:drawable/common_google_signin_btn_icon_light_normal_background : reachable=false
+@com.Unilife.viva_gate_shops:drawable/common_google_signin_btn_text_dark : reachable=false
+    @com.Unilife.viva_gate_shops:drawable/common_google_signin_btn_text_disabled
+    @com.Unilife.viva_gate_shops:drawable/common_google_signin_btn_text_dark_focused
+    @com.Unilife.viva_gate_shops:drawable/common_google_signin_btn_text_dark_normal
+@com.Unilife.viva_gate_shops:drawable/common_google_signin_btn_text_dark_focused : reachable=false
+    @com.Unilife.viva_gate_shops:drawable/common_google_signin_btn_text_dark_normal
+@com.Unilife.viva_gate_shops:drawable/common_google_signin_btn_text_dark_normal : reachable=false
+    @com.Unilife.viva_gate_shops:drawable/common_google_signin_btn_text_dark_normal_background
+    @com.Unilife.viva_gate_shops:drawable/googleg_standard_color_18
+@com.Unilife.viva_gate_shops:drawable/common_google_signin_btn_text_dark_normal_background : reachable=false
+@com.Unilife.viva_gate_shops:drawable/common_google_signin_btn_text_disabled : reachable=false
+    @com.Unilife.viva_gate_shops:drawable/googleg_disabled_color_18
+@com.Unilife.viva_gate_shops:drawable/common_google_signin_btn_text_light : reachable=false
+    @com.Unilife.viva_gate_shops:drawable/common_google_signin_btn_text_disabled
+    @com.Unilife.viva_gate_shops:drawable/common_google_signin_btn_text_light_focused
+    @com.Unilife.viva_gate_shops:drawable/common_google_signin_btn_text_light_normal
+@com.Unilife.viva_gate_shops:drawable/common_google_signin_btn_text_light_focused : reachable=false
+    @com.Unilife.viva_gate_shops:drawable/common_google_signin_btn_text_light_normal
+@com.Unilife.viva_gate_shops:drawable/common_google_signin_btn_text_light_normal : reachable=false
+    @com.Unilife.viva_gate_shops:drawable/common_google_signin_btn_text_light_normal_background
+    @com.Unilife.viva_gate_shops:drawable/googleg_standard_color_18
+@com.Unilife.viva_gate_shops:drawable/common_google_signin_btn_text_light_normal_background : reachable=false
+@com.Unilife.viva_gate_shops:drawable/googleg_disabled_color_18 : reachable=false
+@com.Unilife.viva_gate_shops:drawable/googleg_standard_color_18 : reachable=false
+@com.Unilife.viva_gate_shops:drawable/launch_background : reachable=false
+@com.Unilife.viva_gate_shops:drawable/notification_action_background : reachable=true
+    @com.Unilife.viva_gate_shops:color/androidx_core_ripple_material_light
+    @com.Unilife.viva_gate_shops:dimen/compat_button_inset_horizontal_material
+    @com.Unilife.viva_gate_shops:dimen/compat_button_inset_vertical_material
+    @com.Unilife.viva_gate_shops:dimen/compat_control_corner_material
+    @com.Unilife.viva_gate_shops:dimen/compat_button_padding_horizontal_material
+    @com.Unilife.viva_gate_shops:dimen/compat_button_padding_vertical_material
+@com.Unilife.viva_gate_shops:drawable/notification_bg : reachable=true
+    @com.Unilife.viva_gate_shops:drawable/notification_bg_normal_pressed
+    @com.Unilife.viva_gate_shops:drawable/notification_bg_normal
+@com.Unilife.viva_gate_shops:drawable/notification_bg_low : reachable=true
+    @com.Unilife.viva_gate_shops:drawable/notification_bg_low_pressed
+    @com.Unilife.viva_gate_shops:drawable/notification_bg_low_normal
+@com.Unilife.viva_gate_shops:drawable/notification_bg_low_normal : reachable=true
+@com.Unilife.viva_gate_shops:drawable/notification_bg_low_pressed : reachable=true
+@com.Unilife.viva_gate_shops:drawable/notification_bg_normal : reachable=true
+@com.Unilife.viva_gate_shops:drawable/notification_bg_normal_pressed : reachable=true
+@com.Unilife.viva_gate_shops:drawable/notification_icon_background : reachable=true
+    @com.Unilife.viva_gate_shops:color/notification_icon_bg_color
+@com.Unilife.viva_gate_shops:drawable/notification_template_icon_bg : reachable=true
+@com.Unilife.viva_gate_shops:drawable/notification_template_icon_low_bg : reachable=true
+@com.Unilife.viva_gate_shops:drawable/notification_tile_bg : reachable=true
+    @com.Unilife.viva_gate_shops:drawable/notify_panel_notification_icon_bg
+@com.Unilife.viva_gate_shops:drawable/notify_panel_notification_icon_bg : reachable=false
+@com.Unilife.viva_gate_shops:id/accessibility_action_clickable_span : reachable=true
+@com.Unilife.viva_gate_shops:id/accessibility_custom_action_0 : reachable=true
+@com.Unilife.viva_gate_shops:id/accessibility_custom_action_1 : reachable=true
+@com.Unilife.viva_gate_shops:id/accessibility_custom_action_10 : reachable=true
+@com.Unilife.viva_gate_shops:id/accessibility_custom_action_11 : reachable=true
+@com.Unilife.viva_gate_shops:id/accessibility_custom_action_12 : reachable=true
+@com.Unilife.viva_gate_shops:id/accessibility_custom_action_13 : reachable=true
+@com.Unilife.viva_gate_shops:id/accessibility_custom_action_14 : reachable=true
+@com.Unilife.viva_gate_shops:id/accessibility_custom_action_15 : reachable=true
+@com.Unilife.viva_gate_shops:id/accessibility_custom_action_16 : reachable=true
+@com.Unilife.viva_gate_shops:id/accessibility_custom_action_17 : reachable=true
+@com.Unilife.viva_gate_shops:id/accessibility_custom_action_18 : reachable=true
+@com.Unilife.viva_gate_shops:id/accessibility_custom_action_19 : reachable=true
+@com.Unilife.viva_gate_shops:id/accessibility_custom_action_2 : reachable=true
+@com.Unilife.viva_gate_shops:id/accessibility_custom_action_20 : reachable=true
+@com.Unilife.viva_gate_shops:id/accessibility_custom_action_21 : reachable=true
+@com.Unilife.viva_gate_shops:id/accessibility_custom_action_22 : reachable=true
+@com.Unilife.viva_gate_shops:id/accessibility_custom_action_23 : reachable=true
+@com.Unilife.viva_gate_shops:id/accessibility_custom_action_24 : reachable=true
+@com.Unilife.viva_gate_shops:id/accessibility_custom_action_25 : reachable=true
+@com.Unilife.viva_gate_shops:id/accessibility_custom_action_26 : reachable=true
+@com.Unilife.viva_gate_shops:id/accessibility_custom_action_27 : reachable=true
+@com.Unilife.viva_gate_shops:id/accessibility_custom_action_28 : reachable=true
+@com.Unilife.viva_gate_shops:id/accessibility_custom_action_29 : reachable=true
+@com.Unilife.viva_gate_shops:id/accessibility_custom_action_3 : reachable=true
+@com.Unilife.viva_gate_shops:id/accessibility_custom_action_30 : reachable=true
+@com.Unilife.viva_gate_shops:id/accessibility_custom_action_31 : reachable=true
+@com.Unilife.viva_gate_shops:id/accessibility_custom_action_4 : reachable=true
+@com.Unilife.viva_gate_shops:id/accessibility_custom_action_5 : reachable=true
+@com.Unilife.viva_gate_shops:id/accessibility_custom_action_6 : reachable=true
+@com.Unilife.viva_gate_shops:id/accessibility_custom_action_7 : reachable=true
+@com.Unilife.viva_gate_shops:id/accessibility_custom_action_8 : reachable=true
+@com.Unilife.viva_gate_shops:id/accessibility_custom_action_9 : reachable=true
+@com.Unilife.viva_gate_shops:id/action_container : reachable=true
+@com.Unilife.viva_gate_shops:id/action_divider : reachable=true
+@com.Unilife.viva_gate_shops:id/action_image : reachable=true
+@com.Unilife.viva_gate_shops:id/action_text : reachable=true
+@com.Unilife.viva_gate_shops:id/actions : reachable=true
+@com.Unilife.viva_gate_shops:id/adjust_height : reachable=false
+@com.Unilife.viva_gate_shops:id/adjust_width : reachable=false
+@com.Unilife.viva_gate_shops:id/androidx_window_activity_scope : reachable=true
+@com.Unilife.viva_gate_shops:id/async : reachable=false
+@com.Unilife.viva_gate_shops:id/auto : reachable=true
+@com.Unilife.viva_gate_shops:id/blocking : reachable=false
+@com.Unilife.viva_gate_shops:id/chronometer : reachable=false
+@com.Unilife.viva_gate_shops:id/dark : reachable=true
+@com.Unilife.viva_gate_shops:id/dialog_button : reachable=false
+@com.Unilife.viva_gate_shops:id/forever : reachable=false
+@com.Unilife.viva_gate_shops:id/icon : reachable=true
+@com.Unilife.viva_gate_shops:id/icon_group : reachable=true
+@com.Unilife.viva_gate_shops:id/icon_only : reachable=true
+@com.Unilife.viva_gate_shops:id/info : reachable=true
+@com.Unilife.viva_gate_shops:id/italic : reachable=false
+@com.Unilife.viva_gate_shops:id/light : reachable=true
+@com.Unilife.viva_gate_shops:id/line1 : reachable=true
+@com.Unilife.viva_gate_shops:id/line3 : reachable=true
+@com.Unilife.viva_gate_shops:id/locale : reachable=true
+@com.Unilife.viva_gate_shops:id/ltr : reachable=false
+@com.Unilife.viva_gate_shops:id/none : reachable=true
+@com.Unilife.viva_gate_shops:id/normal : reachable=false
+@com.Unilife.viva_gate_shops:id/notification_background : reachable=true
+@com.Unilife.viva_gate_shops:id/notification_main_column : reachable=true
+@com.Unilife.viva_gate_shops:id/notification_main_column_container : reachable=true
+@com.Unilife.viva_gate_shops:id/right_icon : reachable=false
+@com.Unilife.viva_gate_shops:id/right_side : reachable=false
+@com.Unilife.viva_gate_shops:id/rtl : reachable=false
+@com.Unilife.viva_gate_shops:id/standard : reachable=false
+@com.Unilife.viva_gate_shops:id/tag_accessibility_actions : reachable=false
+@com.Unilife.viva_gate_shops:id/tag_accessibility_clickable_spans : reachable=false
+@com.Unilife.viva_gate_shops:id/tag_accessibility_heading : reachable=false
+@com.Unilife.viva_gate_shops:id/tag_accessibility_pane_title : reachable=true
+@com.Unilife.viva_gate_shops:id/tag_on_apply_window_listener : reachable=false
+@com.Unilife.viva_gate_shops:id/tag_on_receive_content_listener : reachable=false
+@com.Unilife.viva_gate_shops:id/tag_on_receive_content_mime_types : reachable=false
+@com.Unilife.viva_gate_shops:id/tag_screen_reader_focusable : reachable=false
+@com.Unilife.viva_gate_shops:id/tag_state_description : reachable=false
+@com.Unilife.viva_gate_shops:id/tag_transition_group : reachable=false
+@com.Unilife.viva_gate_shops:id/tag_unhandled_key_event_manager : reachable=true
+@com.Unilife.viva_gate_shops:id/tag_unhandled_key_listeners : reachable=true
+@com.Unilife.viva_gate_shops:id/tag_window_insets_animation_callback : reachable=false
+@com.Unilife.viva_gate_shops:id/text : reachable=true
+@com.Unilife.viva_gate_shops:id/text2 : reachable=true
+@com.Unilife.viva_gate_shops:id/time : reachable=true
+@com.Unilife.viva_gate_shops:id/title : reachable=true
+@com.Unilife.viva_gate_shops:id/wide : reachable=false
+@com.Unilife.viva_gate_shops:integer/google_play_services_version : reachable=true
+@com.Unilife.viva_gate_shops:integer/status_bar_notification_info_maxnum : reachable=true
+@com.Unilife.viva_gate_shops:layout/custom_dialog : reachable=false
+@com.Unilife.viva_gate_shops:layout/notification_action : reachable=true
+    @com.Unilife.viva_gate_shops:style/Widget_Compat_NotificationActionContainer
+    @com.Unilife.viva_gate_shops:dimen/notification_action_icon_size
+    @com.Unilife.viva_gate_shops:style/Widget_Compat_NotificationActionText
+@com.Unilife.viva_gate_shops:layout/notification_action_tombstone : reachable=true
+    @com.Unilife.viva_gate_shops:style/Widget_Compat_NotificationActionContainer
+    @com.Unilife.viva_gate_shops:dimen/notification_action_icon_size
+    @com.Unilife.viva_gate_shops:style/Widget_Compat_NotificationActionText
+@com.Unilife.viva_gate_shops:layout/notification_template_custom_big : reachable=true
+    @com.Unilife.viva_gate_shops:layout/notification_template_icon_group
+    @com.Unilife.viva_gate_shops:dimen/notification_large_icon_width
+    @com.Unilife.viva_gate_shops:dimen/notification_large_icon_height
+    @com.Unilife.viva_gate_shops:dimen/notification_right_side_padding_top
+    @com.Unilife.viva_gate_shops:layout/notification_template_part_time
+    @com.Unilife.viva_gate_shops:layout/notification_template_part_chronometer
+    @com.Unilife.viva_gate_shops:style/TextAppearance_Compat_Notification_Info
+@com.Unilife.viva_gate_shops:layout/notification_template_icon_group : reachable=true
+    @com.Unilife.viva_gate_shops:dimen/notification_large_icon_width
+    @com.Unilife.viva_gate_shops:dimen/notification_large_icon_height
+    @com.Unilife.viva_gate_shops:dimen/notification_big_circle_margin
+    @com.Unilife.viva_gate_shops:dimen/notification_right_icon_size
+@com.Unilife.viva_gate_shops:layout/notification_template_part_chronometer : reachable=true
+    @com.Unilife.viva_gate_shops:style/TextAppearance_Compat_Notification_Time
+@com.Unilife.viva_gate_shops:layout/notification_template_part_time : reachable=true
+    @com.Unilife.viva_gate_shops:style/TextAppearance_Compat_Notification_Time
+@com.Unilife.viva_gate_shops:mipmap/ic_launcher : reachable=true
+@com.Unilife.viva_gate_shops:raw/firebase_common_keep : reachable=false
+@com.Unilife.viva_gate_shops:string/common_google_play_services_enable_button : reachable=true
+@com.Unilife.viva_gate_shops:string/common_google_play_services_enable_text : reachable=true
+@com.Unilife.viva_gate_shops:string/common_google_play_services_enable_title : reachable=true
+@com.Unilife.viva_gate_shops:string/common_google_play_services_install_button : reachable=true
+@com.Unilife.viva_gate_shops:string/common_google_play_services_install_text : reachable=true
+@com.Unilife.viva_gate_shops:string/common_google_play_services_install_title : reachable=true
+@com.Unilife.viva_gate_shops:string/common_google_play_services_notification_channel_name : reachable=true
+@com.Unilife.viva_gate_shops:string/common_google_play_services_notification_ticker : reachable=true
+@com.Unilife.viva_gate_shops:string/common_google_play_services_unknown_issue : reachable=true
+@com.Unilife.viva_gate_shops:string/common_google_play_services_unsupported_text : reachable=true
+@com.Unilife.viva_gate_shops:string/common_google_play_services_update_button : reachable=true
+@com.Unilife.viva_gate_shops:string/common_google_play_services_update_text : reachable=true
+@com.Unilife.viva_gate_shops:string/common_google_play_services_update_title : reachable=true
+@com.Unilife.viva_gate_shops:string/common_google_play_services_updating_text : reachable=true
+@com.Unilife.viva_gate_shops:string/common_google_play_services_wear_update_text : reachable=true
+@com.Unilife.viva_gate_shops:string/common_open_on_phone : reachable=true
+@com.Unilife.viva_gate_shops:string/common_signin_button_text : reachable=false
+@com.Unilife.viva_gate_shops:string/common_signin_button_text_long : reachable=false
+@com.Unilife.viva_gate_shops:string/default_web_client_id : reachable=false
+@com.Unilife.viva_gate_shops:string/gcm_defaultSenderId : reachable=true
+@com.Unilife.viva_gate_shops:string/google_api_key : reachable=true
+@com.Unilife.viva_gate_shops:string/google_app_id : reachable=true
+@com.Unilife.viva_gate_shops:string/google_crash_reporting_api_key : reachable=false
+@com.Unilife.viva_gate_shops:string/google_storage_bucket : reachable=true
+@com.Unilife.viva_gate_shops:string/project_id : reachable=true
+@com.Unilife.viva_gate_shops:string/status_bar_notification_info_overflow : reachable=true
+@com.Unilife.viva_gate_shops:style/LaunchTheme : reachable=true
+    @com.Unilife.viva_gate_shops:drawable/launch_background
+@com.Unilife.viva_gate_shops:style/NormalTheme : reachable=true
+@com.Unilife.viva_gate_shops:style/TextAppearance_Compat_Notification : reachable=false
+@com.Unilife.viva_gate_shops:style/TextAppearance_Compat_Notification_Info : reachable=false
+@com.Unilife.viva_gate_shops:style/TextAppearance_Compat_Notification_Line2 : reachable=false
+    @com.Unilife.viva_gate_shops:style/TextAppearance_Compat_Notification_Info
+@com.Unilife.viva_gate_shops:style/TextAppearance_Compat_Notification_Time : reachable=false
+@com.Unilife.viva_gate_shops:style/TextAppearance_Compat_Notification_Title : reachable=false
+@com.Unilife.viva_gate_shops:style/Widget_Compat_NotificationActionContainer : reachable=false
+    @com.Unilife.viva_gate_shops:drawable/notification_action_background
+@com.Unilife.viva_gate_shops:style/Widget_Compat_NotificationActionText : reachable=false
+    @com.Unilife.viva_gate_shops:color/androidx_core_secondary_text_default_material_light
+    @com.Unilife.viva_gate_shops:dimen/notification_action_text_size
 
 The root reachable resources are:
  attr:activityAction:2130771968

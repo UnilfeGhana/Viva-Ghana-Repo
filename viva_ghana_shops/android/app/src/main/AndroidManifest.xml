@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.Unilife.viva_ghana_shops">
+    package="com.Unilife.viva_gate_shops">
    <application
         android:label="Viva Ghana Shops"
         android:name="${applicationName}"

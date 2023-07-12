@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.Unilife.viva_ghana_shops.app-mergeReleaseResources-13:/values-gu/values-gu.xml",
+            "outputFile": "com.Unilife.viva_gate_shops.app-mergeReleaseResources-13:/values-gu/values-gu.xml",
             "map": [
                 {
                     "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-3\\8f31701e663a8c1514b353cc4d7239a2\\transformed\\jetified-play-services-base-18.0.1\\res\\values-gu\\values.xml",

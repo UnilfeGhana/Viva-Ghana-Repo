@@ -120,7 +120,7 @@
     <string name="default_web_client_id" translatable="false">734130940741-3lk421dn7nvk4uac9j07n1t05ak63qq0.apps.googleusercontent.com</string>
     <string name="gcm_defaultSenderId" translatable="false">734130940741</string>
     <string name="google_api_key" translatable="false">AIzaSyC_zasBrGTCqRxgCjAEYTGjxiYEIwsysMo</string>
-    <string name="google_app_id" translatable="false">1:734130940741:android:c1835130a785aa9ebcec2c</string>
+    <string name="google_app_id" translatable="false">1:734130940741:android:dfa07850fb1bcdf2bcec2c</string>
     <string name="google_crash_reporting_api_key" translatable="false">AIzaSyC_zasBrGTCqRxgCjAEYTGjxiYEIwsysMo</string>
     <string name="google_storage_bucket" translatable="false">vivainfinity-f1ff0.appspot.com</string>
     <string name="project_id" translatable="false">vivainfinity-f1ff0</string>

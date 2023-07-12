@@ -1,6 +1,6 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-3    package="com.Unilife.viva_ghana_shops"
+3    package="com.Unilife.viva_gate_shops"
 4    android:versionCode="4"
 5    android:versionName="4.0.0" >
 6
@@ -29,7 +29,7 @@
 19-->C:\Users\HP\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\android\app\src\main\AndroidManifest.xml:4:9-41
 20        <activity
 20-->C:\Users\HP\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\android\app\src\main\AndroidManifest.xml:7:9-27:20
-21            android:name="com.Unilife.viva_ghana_shops.MainActivity"
+21            android:name="com.Unilife.viva_gate_shops.MainActivity"
 21-->C:\Users\HP\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\android\app\src\main\AndroidManifest.xml:8:13-41
 22            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
 22-->C:\Users\HP\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\android\app\src\main\AndroidManifest.xml:12:13-163
@@ -124,7 +124,7 @@
 75-->[com.google.firebase:firebase-common:20.3.2] C:\Users\HP\.gradle\caches\transforms-3\026de80ea9d0b63bfc94ec9a10c1d73c\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:25:9-30:39
 76            android:name="com.google.firebase.provider.FirebaseInitProvider"
 76-->[com.google.firebase:firebase-common:20.3.2] C:\Users\HP\.gradle\caches\transforms-3\026de80ea9d0b63bfc94ec9a10c1d73c\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:26:13-77
-77            android:authorities="com.Unilife.viva_ghana_shops.firebaseinitprovider"
+77            android:authorities="com.Unilife.viva_gate_shops.firebaseinitprovider"
 77-->[com.google.firebase:firebase-common:20.3.2] C:\Users\HP\.gradle\caches\transforms-3\026de80ea9d0b63bfc94ec9a10c1d73c\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:27:13-72
 78            android:directBootAware="true"
 78-->[com.google.firebase:firebase-common:20.3.2] C:\Users\HP\.gradle\caches\transforms-3\026de80ea9d0b63bfc94ec9a10c1d73c\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:28:13-43

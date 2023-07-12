@@ -7,6 +7,35 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:734130940741:android:dfa07850fb1bcdf2bcec2c",
+        "android_client_info": {
+          "package_name": "com.Unilife.viva_gate_shops"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "734130940741-3lk421dn7nvk4uac9j07n1t05ak63qq0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_zasBrGTCqRxgCjAEYTGjxiYEIwsysMo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "734130940741-3lk421dn7nvk4uac9j07n1t05ak63qq0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:734130940741:android:c1835130a785aa9ebcec2c",
         "android_client_info": {
           "package_name": "com.Unilife.viva_ghana_shops"
