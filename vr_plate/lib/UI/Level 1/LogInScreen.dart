@@ -32,7 +32,7 @@ class _LoginScreenState extends State<LoginScreen> {
             const SizedBox(
               height: 80,
             ),
-            const Text('Viva Life\nLogin/Sign Up',
+            const Text('Viva Life\nLogin/Sign Up ~2.0',
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
             const SizedBox(height: 100),
@@ -59,10 +59,10 @@ class _LoginScreenState extends State<LoginScreen> {
                       keyboardType: TextInputType.number,
                       onChanged: (value) {
                         String newVal = value.trim();
-                        if (newVal[0] == '+233' || newVal[0] == '0') {
-                          newVal = newVal.split('+233')[1];
+                          newVal = newVal..replaceFirst(RegExp(r'\+233'), '');
                           newVal = newVal.replaceFirst(RegExp(r'0'), '');
-                        }
+                          newVal = newVal.trim();
+                        
                         newVal = '233$newVal';
                         setState(() {
                           phone = newVal;

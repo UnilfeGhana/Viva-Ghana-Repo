@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.Unilife.viva_ghana_shops.app-mergeDebugResources-13:/values-night-v8/values-night-v8.xml",
+            "outputFile": "com.Unilife.viva_gate_shops.app-mergeDebugResources-13:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\HP\\Viva Ghana Shops\\viva_ghana_shops\\android\\app\\src\\main\\res\\values-night\\styles.xml",
+                    "source": "C:\\Users\\HP\\Documents\\GitHub\\Viva-Ghana-Repo\\viva_ghana_shops\\android\\app\\src\\main\\res\\values-night\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",

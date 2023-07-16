@@ -54,7 +54,8 @@ class _IntroScreenState extends State<IntroScreen> {
                   Text('Please Turn on your Device Location before proceeding',
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        fontSize: 20,
+                        color:Colors.green,
+                        fontSize: 15,
                       )),
                 ],
               )),

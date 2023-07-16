@@ -108,7 +108,6 @@ class _MedicineCardWidgetState extends State<MedicineCardWidget> {
                           ),
                           keyboardType: TextInputType.number,
                           //Change to read only if canEdit bool is false
-                          readOnly: !canEdit,
                           onChanged: (value) {
                             if (int.tryParse(value) != null) {
                               // return;

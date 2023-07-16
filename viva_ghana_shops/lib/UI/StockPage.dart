@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:viva_ghana_shops/Classes/EventHandler.dart';
-import 'package:viva_ghana_shops/UI/Widgets/MedicineCardWidget.dart';
+import 'package:viva_ghana_shops/UI/Widgets/StockMedicineCardWidget.dart';
 import 'package:viva_ghana_shops/Classes/EventHandler.dart';
 
 import '../Classes/DatabaseFunctionClass.dart';
@@ -45,7 +45,7 @@ class _StockPageState extends State<StockPage> {
                     itemCount: DatabaseFunctionClass.cartList.length,
                     itemBuilder: (BuildContext context, index) {
                       //You should pass the List the Medicine card widget should use
-                      return MedicineCardWidget(
+                      return StockMedicineCardWidget(
                           medicineName: (index).toString(),
                           canEdit: false,
                           itemIndex: index,
