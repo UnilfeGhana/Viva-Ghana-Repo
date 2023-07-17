@@ -19,6 +19,7 @@ class L1EventHandler {
     UserFunction userF = UserFunction();
     _locationClass.getDeviceLocation();
     bool isMember = await ServerFunctions().isMember(UserFunction.user_.phone);
+    print('Debug Home MemNo is ${MemberFunction().getMemberPhone()}');
     if (isMember == false) {
       ServerFunctions()
           .submitNewLoginAsMember(UserFunction.user_.phone, 'name', '0');
@@ -84,7 +85,8 @@ class L1EventHandler {
     _navHandler.clearLayers(context);
     _navHandler.Level2Nav('HomePage', context);
     // bool success = mf.addMember(user.phone, user.userName);\
-    mf.pushNewMember(user.phone, user.userName, MemberFunction.member.phone);
+    mf.pushNewMember(
+        user.phone, user.userName, MemberFunction().getMemberPhone());
     // bool success = mf.pushNewMember(
     //     user.phone, user.userName, MemberFunction.member.phone);
     // mf.http_submitMember(user.phone, MemberFunction.member.phone);

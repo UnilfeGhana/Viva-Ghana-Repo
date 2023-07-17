@@ -59,14 +59,15 @@ class _LoginScreenState extends State<LoginScreen> {
                       keyboardType: TextInputType.number,
                       onChanged: (value) {
                         String newVal = value.trim();
-                          newVal = newVal..replaceFirst(RegExp(r'\+233'), '');
-                          newVal = newVal.replaceFirst(RegExp(r'0'), '');
-                          newVal = newVal.trim();
-                        
+                        newVal = newVal..replaceFirst(RegExp(r'\+233'), '');
+                        newVal = newVal.replaceFirst(RegExp(r'0'), '');
+                        newVal = newVal.trim();
+
                         newVal = '233$newVal';
                         setState(() {
                           phone = newVal;
                           UserFunction.user_.phone = phone;
+                          MemberFunction().setMemberPhone(phone);
                         });
                       },
                       decoration: const InputDecoration(
@@ -82,6 +83,7 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
             ElevatedButton(
               onPressed: () {
+                print("Debug memberPhone is ${UserFunction.user_.phone}");
                 setState(() {
                   eventHandler.onLogin(context, 'otp', phone);
                 });

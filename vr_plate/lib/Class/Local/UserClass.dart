@@ -25,15 +25,15 @@ class OrderClass {
   Map<String, CartClass> cartItems;
   String latitude;
   String longitude;
-  String memberPhone = MemberFunction.member.phone;
+  String memberPhone = MemberFunction().getMemberPhone();
   OrderClass(this.username, this.phoneNumber, this.cartItems, this.latitude,
       this.longitude);
 }
 
 class MemberClass {
   String phone;
-  List<String> children;
-  List<String> parents;
+  List children;
+  List parents;
   String commission;
   int medicinesBought;
   MemberClass(this.phone, this.children, this.parents, this.commission,

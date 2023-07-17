@@ -35,7 +35,7 @@ class ServerFunctions {
 
   Future<MemberClass> getMember(String phone) async {
     MemberClass member = MemberClass('None Member', [], [], '0', 0);
-
+    print('Debug Phone is $phone');
     cloud.collection('Members').doc(phone).snapshots().listen((memberSnapshot) {
       member.phone = memberSnapshot['phone'];
       member.children = memberSnapshot['children'];
@@ -43,7 +43,7 @@ class ServerFunctions {
       member.commission = memberSnapshot['commission'];
       member.medicinesBought = 1;
     });
-
+    print('Debug Member is $member');
     return member;
   }
 
@@ -81,34 +81,40 @@ class ServerFunctions {
   submitNewLoginAsMember(String phone, String name, String parentPhone) async {
     CollectionReference cloudMembers = cloud.collection('Members');
     MemberClass new_member = MemberClass(phone, ['0'], ['00'], '0', 0);
+    List<String> emptyBuffer = [];
     Map<String, dynamic> memberMap = {
       'phone': new_member.phone,
       'commission': new_member.commission,
       'children': new_member.children,
       'parents': new_member.parents,
-      'new_member_buffer': 'none',
+      'new_member_buffer': emptyBuffer,
     };
     cloudMembers.doc(phone).set(memberMap);
   }
 
   submitNewChild(String phone, String name, String parentPhone) async {
     CollectionReference cloudMembers = cloud.collection('Members');
-    await cloudMembers.doc(parentPhone).update({'new_member_buffer': phone});
+    // await cloudMembers.doc(parentPhone).update({'new_member_buffer': phone});
+    await cloudMembers.doc(parentPhone).update({
+      'new_member_buffer': FieldValue.arrayUnion([phone])
+    });
   }
 
-  getCommission(String phone) {
+  Future<String> getCommission(String phone) async {
     CollectionReference cloudMembers = cloud.collection('Members');
     String commission = '';
+
     cloudMembers.doc(phone).snapshots().listen((event) {
       commission = event['commission'];
     });
+    print('Debug comm 1 is $commission');
     return commission;
   }
 
   //On buy product
   //Loop through all parents and increase commission by 1
   memberBuyProduct() {
-    MemberFunction.member.parents.forEach((parent) {
+    MemberFunction().getMemberParents().forEach((parent) {
       _increaseCommission(parent);
     });
   }

@@ -39,7 +39,7 @@ class _MemberDetailViewState extends State<MemberDetailView> {
           child: Row(
             children: [
               const Text('Member Phone: '),
-              Text(MemberFunction.member.phone),
+              Text(MemberFunction().getMemberPhone()),
             ],
           ),
         ),
@@ -49,7 +49,7 @@ class _MemberDetailViewState extends State<MemberDetailView> {
             child: Row(
           children: [
             const Text('Commission : '),
-            Text(MemberFunction.member.commission)
+            Text(MemberFunction().getMemberCommission())
           ],
         )),
 
@@ -59,11 +59,11 @@ class _MemberDetailViewState extends State<MemberDetailView> {
         ListView.builder(
             controller: controller,
             shrinkWrap: true,
-            itemCount: MemberFunction.member.children.length,
+            itemCount: MemberFunction().getMemberChildren().length,
             itemBuilder: (BuildContext context, index) {
               return Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text(MemberFunction.member.children[index]),
+                child: Text(MemberFunction().getMemberChildren()[index]),
               );
             }),
       ]),

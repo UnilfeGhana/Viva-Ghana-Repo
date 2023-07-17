@@ -119,35 +119,69 @@ class UserFunction {
 }
 
 class MemberFunction {
-  static MemberClass member =
+  static MemberClass _member =
       MemberClass(UserFunction.user_.phone, [], [], '0', 0);
 
+  ServerFunctions serverFunctions = ServerFunctions();
+
   MemberFunction() {
-    member.commission = ServerFunctions().getCommission(member.phone);
+    _member.phone = UserFunction.user_.phone;
+    setMemberCommission();
     getMember();
   }
 
   getMember() async {
-    member = await ServerFunctions().getMember(member.phone);
+    print(
+        'Debug FIRST member Phone from get is ${MemberFunction._member.phone}');
+    _member = await ServerFunctions().getMember(_member.phone);
+    print('Debug member Phone from get is ${MemberFunction._member.phone}');
   }
 
-  ServerFunctions serverFunctions = ServerFunctions();
+  setMemberPhone(String phone) {
+    _member.phone = phone;
+  }
+
+  setMemberCommission() async {
+    _member.commission = await ServerFunctions().getCommission(_member.phone);
+  }
+
+//////////////////////////////////
+  ///   Getters             /////
+//////////////////////////////////
+  String getMemberPhone() {
+    String phone = _member.phone;
+    return phone;
+  }
+
+  List getMemberChildren() {
+    return _member.children;
+  }
+
+  String getMemberCommission() {
+    setMemberCommission();
+    print('Debug Member Commission is ${_member.commission}');
+    return _member.commission;
+  }
+
+  List getMemberParents() {
+    return _member.parents;
+  }
 
 //Default functions
   addChild(String phone) {
-    member.children.add(phone);
+    _member.children.add(phone);
   }
 
   addParent(String phone) {
-    member.parents.add(phone);
+    _member.parents.add(phone);
   }
 
   getCommission() {
-    return member.commission;
+    return _member.commission;
   }
 
   reset() {
-    MemberFunction.member =
+    MemberFunction._member =
         MemberClass(UserFunction.user_.phone, [], [], '0', 0);
   }
 
@@ -193,21 +227,21 @@ class MemberFunction {
 
   addMember(String phone, String name) {
     addChild(phone);
-    int limit = (member.parents.length < 2) ? member.parents.length : 3;
+    int limit = (_member.parents.length < 2) ? _member.parents.length : 3;
     MemberClass newMember = MemberClass(phone, [], [], '0', 0);
     //Add all ancestors except farthest one including the parent to the new
     for (var i = 0; i < limit - 1; i++) {
       //This means that the farthest ancestor would be skipped until the last
       //Meaning only 2 out of the 3 parents of the parent would be added to the new Member
       //This is done before the parent itself is added as a parent making 3 new parents in total
-      newMember.parents.add(member.parents[i + 1]);
+      newMember.parents.add(_member.parents[i + 1]);
     }
-    newMember.parents.add(member.phone);
+    newMember.parents.add(_member.phone);
 
     //Next create new Database file for member
     bool succesful = serverFunctions.sumbitNewMember(newMember);
     if (succesful) {
-      serverFunctions.saveMemberChanges(member);
+      serverFunctions.saveMemberChanges(_member);
       return true;
     }
     return false;

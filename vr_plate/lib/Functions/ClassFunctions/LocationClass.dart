@@ -46,6 +46,7 @@ class LocationClass {
       }
     } else {
       await Geolocator.openLocationSettings();
+      getDeviceLocation();
     }
     return position;
   }
