@@ -25,9 +25,9 @@ def hello_firestore(cloud_event: CloudEvent) -> None:
 
     document_location = source_array[-1]
     try:
-        old_value = firestore_payload.old_value.fields['new_member_buffer'].string_value
-
-        next_value = firestore_payload.value.fields['new_member_buffer'].string_value
+        old_value = firestore_payload.old_value.fields['new_member_buffer'].array_value.values
+        next_value = firestore_payload.value.fields['new_member_buffer'].array_value.values
+        print(f"next Value is  {next_value}")
     except:
         print("Couldn't get old and New Values")
         return 'Not good'
@@ -41,26 +41,13 @@ def hello_firestore(cloud_event: CloudEvent) -> None:
     # if next_value == 'none':
     #     return
 
-    str_value = firestore_payload.old_value.fields['new_member_buffer']
-    # str_value = str(str_value)
-    print(f"String Value is {str_value}")
+    new_member_buffer_array = firestore_payload.value.fields['new_member_buffer'].array_value.values
+    print(f"New Member Buffer is {new_member_buffer_array}")
 
-    #Check if the member already exists
-    member_url = f'https://firestore.googleapis.com/v1/projects/vivainfinity-f1ff0/databases/(default)/documents/Members/{str_value.string_value}'
-
-    print(f'Member url is {member_url}')
-    try:
-        with urllib.request.urlopen(member_url) as response:
-            if response.getcode() ==200:
-                exists = True
-                print('old member')
-                return 'old member'
-            else:
-                exists = False
-    except:
-        exists = False
-
-    
+    # Check if new_member_buffer is ['none']
+    print(f'Array value is {new_member_buffer_array}')
+    if len(new_member_buffer_array) == 1 and new_member_buffer_array[0].string_value == 'none':
+        return 'Skipped'
 
     #saving old values
     phone = firestore_payload.old_value.fields['phone'].string_value
@@ -68,27 +55,63 @@ def hello_firestore(cloud_event: CloudEvent) -> None:
     children = firestore_payload.old_value.fields['children'].array_value.values
     parents = firestore_payload.old_value.fields['parents'].array_value.values
 
-    #Adding new Member to Parent
-    children.append(str_value)
+
+    #Start Loop
+
+    for new_member in new_member_buffer_array:
+        str_value = new_member
+        if str_value.string_value == 'none':
+            continue
+        # str_value = firestore_payload.old_value.fields['new_member_buffer']
+        # str_value = str(str_value)
+        print(f"String Value is {str_value}")
+
+        #Check if the member already exists
+        member_url = f'https://firestore.googleapis.com/v1/projects/vivainfinity-f1ff0/databases/(default)/documents/Members/{str_value.string_value}'
+
+        print(f'Member url is {member_url}')
+        try:
+            with urllib.request.urlopen(member_url) as response:
+                if response.getcode() ==200:
+                    exists = True
+                    print('old member')
+                    break;
+                    # return 'old member'
+                else:
+                    exists = False
+        except:
+            exists = False
+
+        
+
+        
+        #Adding new Member to Parent
+        children.append(str_value)
+
+
+
+    
+        print(f"Parent phone is {phone}")
+
+        #Then update the value of the New Member
+        n_phone = str_value
+        n_children = ['0']
+        n_parents = [phone]
+        n_commission = '0'
+        for i in range(generation_number-1):
+            if i < len(parents):
+                n_parents.append(parents[i].string_value)
+            else:
+                break
+
+        add_member(n_phone,n_commission,n_parents,n_children,n_phone)
+    
+    #End Loop
 
     #Update the value of the parent
     update_member(phone,commission,parents,children,document_location)
     print(f'children are: {children}')
 
-    print(f"Parent phone is {phone}")
-
-    #Then update the value of the New Member
-    n_phone = str_value
-    n_children = ['0']
-    n_parents = [phone]
-    n_commission = '0'
-    for i in range(generation_number-1):
-        if i < len(parents):
-            n_parents.append(parents[i].string_value)
-        else:
-            break
-
-    add_member(n_phone,n_commission,n_parents,n_children,n_phone)
     
 
     return 'Successful'
@@ -105,6 +128,7 @@ def update_member(phone,commission,parents,children,doc):
 
     for value in children:
         query_params = f'{query_params}&children={value.string_value}'
+
 
     req_url = f'{url}{query_params}'
     req_url = req_url.replace(" ","")
@@ -128,6 +152,7 @@ def add_member(phone,commission,parents,children,doc):
     
     phone = phone.string_value
     doc = doc.string_value
+
 
     project_id= 'vivainfinity-f1ff0'
     url = f'https://us-central1-{project_id}.cloudfunctions.net/addNewMember_http_func?'
@@ -156,3 +181,18 @@ def add_member(phone,commission,parents,children,doc):
 
     
 #https://us-central1-{project_id}.cloudfunctions.net/addNewMember_http_func
+
+
+
+
+
+
+######################################
+#       REQUIREMENT.TXT             ##
+#                                   ##
+# functions-framework==3.3.0        ##
+# google-events==0.4.0              ##
+# google-api-core==2.6.0            ##
+# protobuf==4.22.1                  ##
+# cloudevents==1.9.0                ##
+######################################

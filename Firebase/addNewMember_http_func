@@ -41,7 +41,9 @@ def hello_http(request):
                 }
             },
             'new_member_buffer':{
-                'stringValue': 'none'
+               'arrayValue':{
+                'values':[{'stringValue': 'none'}]
+                }
             }
         }
     }
@@ -55,3 +57,11 @@ def hello_http(request):
                 return 'Value update failed'
     except urllib.error.HTTPError as e:
         return f'Value update failed: {e.code} {e.reason}'
+
+
+
+
+#################################
+##      REQUIREMENTS.TXT       ##
+## functions-framework==3.*    ##
+#################################

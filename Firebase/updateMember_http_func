@@ -19,6 +19,7 @@ def hello_http(request):
     parents = request_args.getlist('parents')  # Get multiple values as a list
     children = request_args.getlist('children')  # Get multiple values as a list
 
+
     update_url = f'https://firestore.googleapis.com/v1/projects/vivainfinity-f1ff0/databases/(default)/documents/{coll}/{doc}'
 
     payload = {
@@ -40,7 +41,9 @@ def hello_http(request):
                 }
             },
             'new_member_buffer':{
-                'stringValue': 'none'
+                'arrayValue': {
+                    'values': [{'stringValue': 'none'}]
+                }
             }
         }
     }
@@ -54,3 +57,14 @@ def hello_http(request):
                 return 'Value update failed'
     except urllib.error.HTTPError as e:
         return f'Value update failed: {e.code} {e.reason}'
+
+
+
+
+
+
+
+################################
+##      REQUIREMENTS.TXT      ##
+##  functions-framework==3.*  ##
+################################
