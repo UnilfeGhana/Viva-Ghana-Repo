@@ -32,7 +32,7 @@ class _LoginScreenState extends State<LoginScreen> {
             const SizedBox(
               height: 80,
             ),
-            const Text('Viva Life\nLogin/Sign Up ~2.0',
+            const Text('Viva Life\nLogin/Sign Up',
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
             const SizedBox(height: 100),
@@ -106,6 +106,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   )),
             ),
             const SizedBox(height: 10),
+            const Text('~v3.0'),
             const SizedBox(height: 10),
           ],
         ),
