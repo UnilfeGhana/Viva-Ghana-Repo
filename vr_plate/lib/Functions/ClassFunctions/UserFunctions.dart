@@ -131,10 +131,7 @@ class MemberFunction {
   }
 
   getMember() async {
-    print(
-        'Debug FIRST member Phone from get is ${MemberFunction._member.phone}');
     _member = await ServerFunctions().getMember(_member.phone);
-    print('Debug member Phone from get is ${MemberFunction._member.phone}');
   }
 
   setMemberPhone(String phone) {
