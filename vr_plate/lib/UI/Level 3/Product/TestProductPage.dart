@@ -43,7 +43,7 @@ class _NewProductPageState extends State<NewProductPage> {
                       onPressed: () {
                         eventHandler.viewCart();
                       },
-                      icon: const Icon(Icons.shopping_bag_outlined, size: 15)))
+                      icon: const Icon(Icons.shopping_bag_outlined, size: 40)))
             ]),
         body: SingleChildScrollView(
           /////////////////////////////////////

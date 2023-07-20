@@ -30,14 +30,14 @@ class Shop {
     ProductClass(
       'Viva Lady',
       'Viva Lady',
-      100,
+      150,
       //Description
       '''
-      Viva Lady is a complete well-being nutritional formula for Women.
+      Viva Lady is a general well-being food supplement for Women.
 
       Viva Lady Tablets contains herbal products that aid in Weight Loss, and flattening the Stomach.
 
-      *visible results are guaranteed within one month.
+      *visible results within one month.
       (Recommended for females 12 years and above except pregnant women and lactating mothers)
 ''',
       // 'Viva Lady is a complete well-being nutritional formula for the Lady. \n\n\n .',
@@ -49,14 +49,14 @@ class Shop {
     ProductClass(
       'Viva Plus\n(120)',
       'Viva Plus\n(120)',
-      90,
+      100,
       //Description
       '''
-Detoxification, particularly beneficial in cleansing the blood vessels leading to Cardiovascular wellbeing
+Detoxification, is beneficial in cleansing the blood vessels leading to Cardiovascular wellbeing
 
 Good Blood Circulation is essential for maintaining overall health and well-being in humans by:
       -Delivering oxygen-rich blood to all organs and tissues. 
-      -Maintenance of otrgan functions 
+      -Maintenance of organ functions 
       -Improve immune response 
          
       (Recommended for 12 years and above,except pregnant women and lactating mothers).
@@ -70,14 +70,14 @@ Good Blood Circulation is essential for maintaining overall health and well-bein
     ProductClass(
       'Viva Plus\n(90)',
       'Viva Plus\n(90)',
-      70,
+      80,
       //Description
       '''
-Detoxification, particularly beneficial in cleansing the blood vessels leading to Cardiovascular wellbeing
+Detoxification, is beneficial in cleansing the blood vessels leading to Cardiovascular wellbeing
 
 Good Blood Circulation is essential for maintaining overall health and well-being in humans by:
       -Delivering oxygen-rich blood to all organs and tissues. 
-      -Maintenance of otrgan functions 
+      -Maintenance of organ functions 
       -Improve immune response 
          
       (Recommended for 12 years and above,except pregnant women and lactating mothers).

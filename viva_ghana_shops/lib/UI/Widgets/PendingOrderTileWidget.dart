@@ -22,6 +22,7 @@ class _PendingOrderTileWidgetState extends State<PendingOrderTileWidget> {
   @override
   Widget build(BuildContext context) {
     eventH = EventHandler(context);
+    print("Debug Order from Tile is ${order.orders}");
     return GestureDetector(
         onTap: () {
           eventH.on_open_pending_order(order, context);

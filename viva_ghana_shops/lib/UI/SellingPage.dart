@@ -56,11 +56,7 @@ class _SellingPageState extends State<SellingPage> {
                       itemCount: DatabaseFunctionClass.cartList.length,
                       itemBuilder: (BuildContext context, index) {
                         return MedicineCardWidget(
-                            medicineName: DatabaseFunctionClass
-                                .products[index].productName,
-                            canEdit: true,
-                            in_dbfc: dbfc,
-                            itemIndex: index);
+                            in_dbfc: dbfc, itemIndex: index);
                       }),
                 ),
                 Row(
@@ -74,11 +70,16 @@ class _SellingPageState extends State<SellingPage> {
                       String total =
                           calculateTotal(DatabaseFunctionClass.cartList);
                       //Creating Order Map
-                      Map<String, CartClass> orderMap = {};
+                      Map<String, dynamic> orderMap = {};
                       //adding entries to orderMap
-                      for (var element in DatabaseFunctionClass.cartList) {
-                        orderMap.addAll({element.product.productName: element});
+                      for (CartClass element
+                          in DatabaseFunctionClass.cartList) {
+                        print(
+                            'Debug element is ${element.product.productName}: ${element.amount}');
+                        orderMap.addAll(
+                            {element.product.productName: element.amount});
                       }
+                      print("Order Map is $orderMap");
                       //Creating the Order
                       OrderClass order = OrderClass(rName, rPhone, orderMap,
                           total, 'order_db_location', member);

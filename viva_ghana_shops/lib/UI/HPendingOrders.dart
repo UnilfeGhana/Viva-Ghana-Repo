@@ -25,13 +25,14 @@ class _PendingOrdersPageState extends State<PendingOrdersPage> {
     // TODO: implement initState
     super.initState();
     //Callingthe get pending orders event
-    // eventH.on_get_pending_orders();
+    eventH.on_get_pending_orders();
 
     get_orders();
   }
 
   get_orders() async {
     var temp = await dbfc.get_pending_orders();
+    print("Debug taken ${temp}");
     setState(() {
       pendingOrders = temp;
     });

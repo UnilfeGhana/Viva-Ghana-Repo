@@ -65,7 +65,7 @@ class _HomePageState extends State<HomePage> {
                     },
                     icon: const Icon(Icons.shopping_bag_outlined, size: 40)))
           ],
-          title: const Text('Uni-Life'),
+          title: const Text('Viva-Gate'),
           leading: IconButton(
               onPressed: () {
                 showDialog(

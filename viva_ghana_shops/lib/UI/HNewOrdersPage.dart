@@ -32,6 +32,7 @@ class _NewOrdersPageState extends State<NewOrdersPage> {
   getNewOrders() async {
     //Change function call to get fulfilled Orders
     var temp = await dbfc.get_new_orders();
+    print("Debug2");
     setState(() {
       newOrders = temp;
     });
@@ -49,7 +50,7 @@ class _NewOrdersPageState extends State<NewOrdersPage> {
             //return OrderTileWidget
             return OrderTileWidget(
               order: newOrders[index],
-              orderNumber: index,
+              orderNumber: index + 1,
             );
           },
         ));

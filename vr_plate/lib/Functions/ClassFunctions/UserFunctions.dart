@@ -151,13 +151,25 @@ class MemberFunction {
   }
 
   List getMemberChildren() {
-    return _member.children;
+    List visibleChildren = [];
+    // for (int child = _member.children.length; child > 0; child--) {
+    //   String phone = _member.children[child];
+    //   visibleChildren.add('+$phone');
+    // }
+    for (int i = 1; i < _member.children.length; i++) {
+      String phone = _member.children[i];
+      print("Debug Adding phone");
+      visibleChildren.add('+$phone');
+    }
+    print("Debug visible is $visibleChildren");
+    return visibleChildren;
   }
 
   String getMemberCommission() {
     setMemberCommission();
     print('Debug Member Commission is ${_member.commission}');
-    return _member.commission;
+    String commission_cedis = '${_member.commission}.00';
+    return commission_cedis;
   }
 
   List getMemberParents() {

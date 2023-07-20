@@ -42,6 +42,7 @@ class DatabaseFunctionClass {
         (await serverFunction.get_shop_new_orders(shop.shopName, shop.pin))!;
     List<OrderClass> newOrders =
         (await serverFunction.get_shop_new_orders(shop.shopName, shop.pin))!;
+    var ans = serverFunction.get_shop_new_orders(shop.shopName, shop.pin);
     return newOrders;
   }
 
@@ -75,6 +76,7 @@ class DatabaseFunctionClass {
     DatabaseFunctionClass.shop.stock =
         await serverFunction.get_shop_stock(shop.shopName, shop.pin);
     var checker = DatabaseFunctionClass.shop.stock;
+    print('Debug Stock is ${checker}');
     return shop.stock;
   }
 

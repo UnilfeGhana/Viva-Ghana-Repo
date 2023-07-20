@@ -32,7 +32,7 @@ class _LoginScreenState extends State<LoginScreen> {
             const SizedBox(
               height: 80,
             ),
-            const Text('Viva Life\nLogin/Sign Up',
+            const Text('Viva-Gate\nLogin/Sign Up',
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
             const SizedBox(height: 100),
@@ -60,7 +60,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       onChanged: (value) {
                         String newVal = value.trim();
                         newVal = newVal..replaceFirst(RegExp(r'\+233'), '');
-                        newVal = newVal.replaceFirst(RegExp(r'0'), '');
+                        if (newVal[0] == '0') {
+                          newVal = newVal.replaceFirst(RegExp(r'0'), '');
+                        }
                         newVal = newVal.trim();
 
                         newVal = '233$newVal';

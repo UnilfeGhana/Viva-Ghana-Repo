@@ -52,7 +52,7 @@ class _StockMedicineCardWidgetState extends State<StockMedicineCardWidget> {
         elevation: 4,
         margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
         child: Container(
-            height: 200,
+            height: 150,
             width: 400,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -63,9 +63,10 @@ class _StockMedicineCardWidgetState extends State<StockMedicineCardWidget> {
                 Container(
                   height: 250,
                   width: 120,
-                  decoration: BoxDecoration(
-                      image: DecorationImage(
-                          image: AssetImage(img), fit: BoxFit.cover)),
+                  color: Colors.grey,
+                  // decoration: BoxDecoration(
+                  //     image: DecorationImage(
+                  //         image: AssetImage(img), fit: BoxFit.cover)),
                 ),
                 ///////////////////////////////////////////////////////////
                 ///   Main Container for Product Price and Name Details ///
@@ -95,62 +96,15 @@ class _StockMedicineCardWidgetState extends State<StockMedicineCardWidget> {
                       ),
                       ///////////////////////////
                       ///       Spacer     /////
-                      const SizedBox(height: 10),
+                      const SizedBox(height: 5),
                       /////////End//////////////
                       /////////////////////////////////////////
                       ///   Container for Text Input Fied   ///
                       ////////////////////////////////////////
-                      Container(
-                        width: 50,
-                        child: TextField(
-                          controller: TextEditingController(),
-                          decoration: InputDecoration(
-                            hintText: amount,
-                          ),
-                          keyboardType: TextInputType.number,
-                          //Change to read only if canEdit bool is false
-                          readOnly: true,
-                          onChanged: (value) {
-                            if (int.tryParse(value) != null) {
-                              // return;
-                              //////// If the value is greater than zero edit the amount
-                              ////// Then edit the Sub-Total
-                              if (int.tryParse(value)! > 0) {
-                                setState(() {
-                                  DatabaseFunctionClass
-                                      .cartList[itemIndex].amount = value;
-                                  // _dbfc.cartMap[productName]?.amount = value;
-                                  total = DatabaseFunctionClass
-                                      .cartList[itemIndex].subTotal;
-                                });
-                              }
-                              ////If the value is less than 1 remove the medicine from the cart
-                              ////// Then edit the Sub-Total
-                              else if (int.tryParse(value)! < 1) {
-                                setState(() {
-                                  DatabaseFunctionClass
-                                      .cartList[itemIndex].amount = '0';
-                                  total = DatabaseFunctionClass
-                                      .cartList[itemIndex].subTotal;
-                                });
-                              }
-                            }
-                            /////Here a non-valid value was entered so set amount to zero
-                            /// Then edit the Sub-Total
-                            else {
-                              setState(() {
-                                DatabaseFunctionClass
-                                    .cartList[itemIndex].amount = '0';
-                                total = DatabaseFunctionClass
-                                    .cartList[itemIndex].subTotal;
-                              });
-                            }
-                          },
-                        ),
-                      ),
+                      Container(width: 70, child: Text('Amount is $amount')),
                       ///////////////////////////
                       ///       Spacer     /////
-                      const SizedBox(height: 20),
+                      const SizedBox(height: 10),
                       /////////End//////////////
                       Text(
                         total,

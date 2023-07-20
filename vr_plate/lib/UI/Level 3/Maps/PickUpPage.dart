@@ -45,7 +45,7 @@ class _PickUpLocationPageState extends State<PickUpLocationPage> {
             Container(
                 height: 600, // MediaQuery.of(context).size.height * 0.59,
                 width: 500,
-                color: Colors.yellow,
+                color: Colors.white,
                 //for google maps
                 child: GoogleMap(
                     myLocationButtonEnabled: true,
