@@ -12,9 +12,9 @@ class DatabaseFunctionClass {
   ///       List of Products                 ////
 ////////////////////////////////////////////////
   static final List<ProductClass> products = [
-    ProductClass('Viva Plus (90)', '70', '90tabsViva.png'),
-    ProductClass('Viva Plus (120)', '90', '120tabsViva.png'),
-    ProductClass('Viva Lady', '100', 'Vivalady.png')
+    ProductClass('Viva Plus (90)', '70', 'images/Viva90.jpg'),
+    ProductClass('Viva Plus (120)', '90', 'images/Viva120.jpg'),
+    ProductClass('Viva Lady', '100', 'images/VivaLady.jpg')
   ];
 
   static final List<CartClass> cartList = [
@@ -102,15 +102,21 @@ class DatabaseFunctionClass {
 
     //The process steps through each of the keys in the order and
     //updates the shops stock to the difference between them
+    print("reducing Stock for keys ${order.orders.keys}");
     var old_stock = shop.stock;
     for (var key in order.orders.keys) {
-      int ordered_amt = order.orders[key];
+      print("Difference is ${int.parse(shop.stock[key])}");
+
+      int ordered_amt = int.parse(order.orders[key]);
       int stocked_amt = int.parse(shop.stock[key]);
+
       int difference = stocked_amt - ordered_amt;
+
       shop.stock.update(key, (value) => difference.toString());
     }
     var new_stock = shop.stock;
     //Sending the New Stock to the Server
+    print("New stock is $new_stock");
     serverFunction.update_shop_stock(new_stock, shop.shopName, shop.pin);
     //Below line is used to reset the stock of the shop in case of an error
     // serverFunction.update_shop_stock(old_stock, shop.shopName, shop.pin);
@@ -133,16 +139,23 @@ class DatabaseFunctionClass {
 
   bool can_fulfill_order(OrderClass order) {
     get_stock();
+
     for (var key in order.orders.keys) {
+      String val = order.orders[key].toString();
       try {
         int stock_amt = int.parse(DatabaseFunctionClass.shop.stock[key]);
-        if (stock_amt < order.orders[key]) {
+        print("Stock amount is $stock_amt and value is: ${order.orders[key]}");
+        int value = int.tryParse(val) ?? 0;
+        print("Debug Value is $value");
+        if (stock_amt < value) {
           return false;
         }
       } catch (e) {
+        print('error caught: $e');
         return false;
       }
     }
+    print("Valid Stock");
     return true;
   }
 }

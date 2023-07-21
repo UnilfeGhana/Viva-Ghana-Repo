@@ -4,6 +4,7 @@ import 'package:viva_ghana_shops/Classes/EventHandler.dart';
 
 import '../Classes/OrderClass.dart';
 import 'Widgets/MedicineCardWidget.dart';
+import 'Widgets/OrderMedicineCardWidget.dart';
 
 class OrderDetailsPage extends StatefulWidget {
   OrderClass order;
@@ -50,17 +51,6 @@ class _OrderDetailsPageState extends State<OrderDetailsPage> {
         relativeIndexArray.add(relativeIndex);
       });
     }
-
-    // for (int i = 0; i < keyList.length; i++) {
-    //   print('Debug Keys');
-
-    //   int relativeIndex = DatabaseFunctionClass.products
-    //       .indexWhere((product) => product.productName == keyList[i]);
-
-    //   setState(() {
-    //     relativeIndexArray.add(relativeIndex);
-    //   });
-    // }
   }
 
   @override
@@ -74,19 +64,49 @@ class _OrderDetailsPageState extends State<OrderDetailsPage> {
         controller: controller,
         child: Column(
           children: [
+            /////////Spacer////////
+            const SizedBox(height: 20),
             ////Recipient Name
             Row(
               children: [
-                const Text('Recipient Name: '),
-                Text(order.recipientName),
+                Text(
+                  'Recipient Name: ',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w400,
+                    fontSize: 18,
+                  ),
+                ),
+                Text(
+                  order.recipientName,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
               ],
             ),
+            /////////Spacer////////
+            const SizedBox(height: 15),
             Row(
               children: [
-                const Text('Recipient Phone: '),
-                Text(order.recipientPhone)
+                const Text(
+                  'Recipient Phone: ',
+                  style: TextStyle(
+                    // fontWeight: FontWeight.bold,
+                    fontSize: 15,
+                  ),
+                ),
+                Text(
+                  order.recipientPhone,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                )
               ],
             ),
+            /////////Spacer////////
+            const SizedBox(height: 20),
             SizedBox(
                 height: 400,
                 child: ListView.builder(
@@ -96,11 +116,10 @@ class _OrderDetailsPageState extends State<OrderDetailsPage> {
                       BuildContext context,
                       index,
                     ) {
-                      return CustomCard(relativeIndexArray[index], 'total');
-                      // return MedicineCardWidget(
-                      //     //  'Viva Plus (90)',
-                      //     in_dbfc: dbfc,
-                      //     itemIndex: relativeIndexArray[index]);
+                      return OrderMedicineCard(
+                          medicineName: order.orders.keys.toList()[index],
+                          order: order,
+                          itemIndex: index);
                     })),
             //For spacing
             const SizedBox(height: 20),
@@ -169,69 +188,21 @@ class _OrderDetailsPageState extends State<OrderDetailsPage> {
                   const SizedBox(height: 15),
                   /////////End//////////////
                   Text(
-                    price,
+                    'Price: $price',
                     style: const TextStyle(
                         fontSize: 15, fontWeight: FontWeight.bold),
                   ),
                   ///////////////////////////
                   ///       Spacer     /////
-                  const SizedBox(height: 10),
+                  const SizedBox(height: 0),
                   /////////End//////////////
-                  /////////////////////////////////////////
-                  ///   Container for Text Input Fied   ///
-                  ////////////////////////////////////////
-                  Container(
-                    width: 50,
-                    child: TextField(
-                      decoration: InputDecoration(
-                        hintText: amount,
-                      ),
-                      keyboardType: TextInputType.number,
-                      //Change to read only if canEdit bool is false
-                      onChanged: (value) {
-                        if (int.tryParse(value) != null) {
-                          // return;
-                          //////// If the value is greater than zero edit the amount
-                          ////// Then edit the Sub-Total
-                          if (int.tryParse(value)! > 0) {
-                            setState(() {
-                              DatabaseFunctionClass.cartList[itemIndex].amount =
-                                  value;
-                              // _dbfc.cartMap[productName]?.amount = value;
-                              total = DatabaseFunctionClass
-                                  .cartList[itemIndex].subTotal;
-                            });
-                          }
-                          ////If the value is less than 1 remove the medicine from the cart
-                          ////// Then edit the Sub-Total
-                          else if (int.tryParse(value)! < 1) {
-                            setState(() {
-                              DatabaseFunctionClass.cartList[itemIndex].amount =
-                                  '0';
-                              total = DatabaseFunctionClass
-                                  .cartList[itemIndex].subTotal;
-                            });
-                          }
-                        }
-                        /////Here a non-valid value was entered so set amount to zero
-                        /// Then edit the Sub-Total
-                        else {
-                          setState(() {
-                            DatabaseFunctionClass.cartList[itemIndex].amount =
-                                '0';
-                            total = DatabaseFunctionClass
-                                .cartList[itemIndex].subTotal;
-                          });
-                        }
-                      },
-                    ),
-                  ),
+
                   ///////////////////////////
                   ///       Spacer     /////
-                  const SizedBox(height: 20),
+                  const SizedBox(height: 10),
                   /////////End//////////////
                   Text(
-                    total,
+                    'Quantity: $amount',
                     style: const TextStyle(
                         fontSize: 15, fontWeight: FontWeight.bold),
                   ),

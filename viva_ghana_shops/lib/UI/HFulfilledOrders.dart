@@ -33,6 +33,9 @@ class _FulfilledOrdersPageState extends State<FulfilledOrdersPage> {
 
   @override
   Widget build(BuildContext context) {
+    if (fulfilledOrders.isEmpty) {
+      getFulfilled();
+    }
     return Container(
         color: Colors.white,
         height: MediaQuery.of(context).size.height * 0.7,

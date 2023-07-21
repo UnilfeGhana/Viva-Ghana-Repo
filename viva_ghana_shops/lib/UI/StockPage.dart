@@ -38,7 +38,8 @@ class _StockPageState extends State<StockPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const Text('Amount of Medicines in-Stock'),
+              const SizedBox(height: 20),
+              const Text('Quantity of Medicines in-Stock'),
               const SizedBox(height: 20),
               ListView.builder(
                   controller: controller,

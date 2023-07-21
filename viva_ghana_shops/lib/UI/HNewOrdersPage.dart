@@ -23,7 +23,7 @@ class _NewOrdersPageState extends State<NewOrdersPage> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    getNewOrders();
+    newOrders.clear();
   }
 
   //////////////////////////////////////////////////
@@ -32,14 +32,18 @@ class _NewOrdersPageState extends State<NewOrdersPage> {
   getNewOrders() async {
     //Change function call to get fulfilled Orders
     var temp = await dbfc.get_new_orders();
-    print("Debug2");
+    print("Debug2 temp is $temp");
     setState(() {
       newOrders = temp;
     });
+    print("Debug 3");
   }
 
   @override
   Widget build(BuildContext context) {
+    if (newOrders.isEmpty) {
+      getNewOrders();
+    }
     return Container(
         color: Colors.white,
         height: MediaQuery.of(context).size.height * 0.7,

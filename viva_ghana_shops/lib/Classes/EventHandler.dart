@@ -38,7 +38,7 @@ class EventHandler {
 
   on_pend_order(OrderClass order) async {
     NavigationHandler navHandler = NavigationHandler(context);
-
+    print("Pending order: ${order.orders}");
     if (dbfClass.can_fulfill_order(order)) {
       dbfClass.reduce_stock(order);
       dbfClass.pend_order(order);

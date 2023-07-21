@@ -32,7 +32,7 @@ class _HomePageState extends State<HomePage> {
     eventH = EventHandler(context);
     return Scaffold(
       appBar: AppBar(
-        title: Text('${DatabaseFunctionClass.shop.shopName} Page'),
+        title: Text('Home'),
         leading: TextButton(
           child: Icon(Icons.logout),
           onPressed: () {
@@ -45,7 +45,6 @@ class _HomePageState extends State<HomePage> {
                 eventH.on_show_stock();
               },
               child: const CircleAvatar(
-                  radius: 30,
                   child: Text('Stock', style: TextStyle(fontSize: 10)))),
           GestureDetector(
               onTap: () {

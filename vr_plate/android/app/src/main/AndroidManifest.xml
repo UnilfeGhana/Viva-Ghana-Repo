@@ -2,7 +2,7 @@
     package="com.VivaPlus.vivaghana">
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
    <application
-        android:label="Viva Ghana"
+        android:label="Viva Gate"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

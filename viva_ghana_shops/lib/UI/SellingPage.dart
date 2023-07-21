@@ -44,27 +44,44 @@ class _SellingPageState extends State<SellingPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                const Text('Selling Page'),
-                textFieldFormWidget('Recipient Name', 'Name'),
-                textFieldFormWidget('Recipient Phone', '+233...'),
-                textFieldFormWidget('Member Phone', '+233...'),
-                SizedBox(
-                  // height: 300,
-                  child: ListView.builder(
-                      shrinkWrap: true,
-                      controller: controller,
-                      itemCount: DatabaseFunctionClass.cartList.length,
-                      itemBuilder: (BuildContext context, index) {
-                        return MedicineCardWidget(
-                            in_dbfc: dbfc, itemIndex: index);
-                      }),
+                // const SizedBox(height: 10),
+                // const Text('Selling Page'),
+                const SizedBox(height: 20),
+                // const SizedBox(height: 10),
+                // textFieldFormWidget('Phone', '+233...'),
+                // const SizedBox(height: 10),
+                textFieldFormWidget('Phone', '+233...'),
+                GestureDetector(
+                  onTapCancel: () {
+                    setState(() {
+                      calculateTotal(DatabaseFunctionClass.cartList);
+                    });
+                  },
+                  onTap: () {
+                    setState(() {
+                      calculateTotal(DatabaseFunctionClass.cartList);
+                    });
+                  },
+                  child: SizedBox(
+                    // height: 300,
+                    child: ListView.builder(
+                        shrinkWrap: true,
+                        controller: controller,
+                        itemCount: DatabaseFunctionClass.cartList.length,
+                        itemBuilder: (BuildContext context, index) {
+                          return MedicineCardWidget(
+                              in_dbfc: dbfc, itemIndex: index);
+                        }),
+                  ),
                 ),
+                const SizedBox(height: 20),
                 Row(
                   children: [
                     const Text('Total:'),
                     Text(calculateTotal(DatabaseFunctionClass.cartList))
                   ],
                 ),
+                const SizedBox(height: 20),
                 ElevatedButton(
                     onPressed: () {
                       String total =
@@ -74,18 +91,16 @@ class _SellingPageState extends State<SellingPage> {
                       //adding entries to orderMap
                       for (CartClass element
                           in DatabaseFunctionClass.cartList) {
-                        print(
-                            'Debug element is ${element.product.productName}: ${element.amount}');
                         orderMap.addAll(
                             {element.product.productName: element.amount});
                       }
-                      print("Order Map is $orderMap");
                       //Creating the Order
                       OrderClass order = OrderClass(rName, rPhone, orderMap,
                           total, 'order_db_location', member);
-                      eventH.on_fulfill_order(order);
+                      eventH.on_pend_order(order);
                     },
-                    child: const Text('Confirm'))
+                    child: const Text('Confirm')),
+                const SizedBox(height: 20)
               ],
             )));
   }
@@ -97,9 +112,6 @@ class _SellingPageState extends State<SellingPage> {
     for (var element in cartItems) {
       total_val += int.parse(element.subTotal);
     }
-    // cartMap.entries.forEach((element) {
-    //   total_val += int.parse(element.value.subTotal);
-    // });
     total = total_val.toString();
     return total;
   }
@@ -112,7 +124,7 @@ class _SellingPageState extends State<SellingPage> {
         children: [
           Text(
             fieldName,
-            style: const TextStyle(fontSize: 10),
+            style: const TextStyle(fontSize: 15),
           ),
           Container(
             height: 80,
@@ -126,17 +138,18 @@ class _SellingPageState extends State<SellingPage> {
                 });
                 String newVal = value.trim();
                 switch (fieldName) {
-                  case 'Recipient Name':
+                  case 'Name':
                     setState(() {
                       rName = newVal;
                     });
                     break;
-                  case 'Recipient Phone':
+                  case 'Phone':
                     setState(() {
                       rPhone = newVal;
+                      member = newVal;
                     });
                     break;
-                  case 'Member Phone':
+                  case 'Member\'s Phone':
                     setState(() {
                       member = newVal;
                     });

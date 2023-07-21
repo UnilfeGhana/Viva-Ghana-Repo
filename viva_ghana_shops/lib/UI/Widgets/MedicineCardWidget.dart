@@ -42,7 +42,7 @@ class _MedicineCardWidgetState extends State<MedicineCardWidget> {
       child: Container(
         height: 200,
         width: 400,
-        color: Colors.yellow,
+        // color: Colors.yellow,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -51,11 +51,11 @@ class _MedicineCardWidgetState extends State<MedicineCardWidget> {
             /////////////////////////////////
             Container(
               height: 250,
-              width: 120,
-              color: Colors.grey,
-              // decoration: BoxDecoration(
-              //     image: DecorationImage(
-              //         image: AssetImage(img), fit: BoxFit.cover)),
+              width: 150,
+              decoration: BoxDecoration(
+                  // color: Colors.yellow,
+                  image: DecorationImage(
+                      image: AssetImage(img), fit: BoxFit.fitHeight)),
             ),
             ///////////////////////////////////////////////////////////
             ///   Main Container for Product Price and Name Details ///
@@ -91,7 +91,7 @@ class _MedicineCardWidgetState extends State<MedicineCardWidget> {
                   ///   Container for Text Input Fied   ///
                   ////////////////////////////////////////
                   Container(
-                    width: 50,
+                    width: 20,
                     child: TextField(
                       decoration: InputDecoration(
                         hintText: amount,
@@ -140,11 +140,11 @@ class _MedicineCardWidgetState extends State<MedicineCardWidget> {
                   ///       Spacer     /////
                   const SizedBox(height: 20),
                   /////////End//////////////
-                  Text(
-                    total,
-                    style: const TextStyle(
-                        fontSize: 15, fontWeight: FontWeight.bold),
-                  ),
+                  // Text(
+                  //   total,
+                  //   style: const TextStyle(
+                  //       fontSize: 15, fontWeight: FontWeight.bold),
+                  // ),
                 ],
               ),
             ),

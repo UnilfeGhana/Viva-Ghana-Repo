@@ -1,30 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:viva_ghana_shops/Classes/DatabaseFunctionClass.dart';
 
-class StockMedicineCardWidget extends StatefulWidget {
+import '../../Classes/OrderClass.dart';
+
+class OrderMedicineCard extends StatefulWidget {
   String medicineName;
-  bool canEdit;
-  DatabaseFunctionClass in_dbfc;
+  OrderClass order;
   int itemIndex;
-  StockMedicineCardWidget(
+  OrderMedicineCard(
       {super.key,
       required this.medicineName,
-      required this.canEdit,
-      required this.in_dbfc,
+      required this.order,
       required this.itemIndex});
 
   @override
-  State<StockMedicineCardWidget> createState() => _StockMedicineCardWidgetState(
-      this.medicineName, this.canEdit, this.in_dbfc, this.itemIndex);
+  State<OrderMedicineCard> createState() =>
+      _OrderMedicineCardState(this.itemIndex, this.order);
 }
 
-class _StockMedicineCardWidgetState extends State<StockMedicineCardWidget> {
-  String medicineName;
-  bool canEdit;
-  DatabaseFunctionClass _dbfc;
+class _OrderMedicineCardState extends State<OrderMedicineCard> {
   int itemIndex;
-  _StockMedicineCardWidgetState(
-      this.medicineName, this.canEdit, this._dbfc, this.itemIndex);
+  OrderClass order;
+  _OrderMedicineCardState(this.itemIndex, this.order);
   String productName = '';
   String price = '';
   String img = '';
@@ -39,8 +36,9 @@ class _StockMedicineCardWidgetState extends State<StockMedicineCardWidget> {
     price = DatabaseFunctionClass.cartList[itemIndex].product.price;
     img = DatabaseFunctionClass.cartList[itemIndex].product.img;
 
-    // amount = DatabaseFunctionClass.cartList[itemIndex].amount;
-    amount = DatabaseFunctionClass.shop.stock[productName];
+    print("Order.orders is : ${order.orders[productName]}");
+
+    amount = '${order.orders[productName]}';
     total = DatabaseFunctionClass.cartList[itemIndex].subTotal;
   }
 
@@ -64,6 +62,7 @@ class _StockMedicineCardWidgetState extends State<StockMedicineCardWidget> {
                   height: 250,
                   width: 120,
                   decoration: BoxDecoration(
+                      // color: Colors.grey,
                       image: DecorationImage(
                           image: AssetImage(img), fit: BoxFit.fitHeight)),
                 ),
@@ -98,7 +97,7 @@ class _StockMedicineCardWidgetState extends State<StockMedicineCardWidget> {
                       const SizedBox(height: 10),
                       /////////End//////////////
                       Text(
-                        'Stock: $amount',
+                        'Quantity: $amount',
                         style: const TextStyle(
                             fontSize: 15, fontWeight: FontWeight.bold),
                       ),

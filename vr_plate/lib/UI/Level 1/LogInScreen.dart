@@ -32,9 +32,19 @@ class _LoginScreenState extends State<LoginScreen> {
             const SizedBox(
               height: 80,
             ),
-            const Text('Viva-Gate\nLogin/Sign Up',
-                textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
+            Container(
+              height: 150,
+              width: 250,
+              decoration: const BoxDecoration(
+                  image: DecorationImage(
+                image: AssetImage('images/VivaLogo.png'),
+                fit: BoxFit.cover,
+              )),
+              // child: const Text('Viva-Gate\nLogin/Sign Up',
+              //     textAlign: TextAlign.center,
+              //     style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
+            ),
+
             const SizedBox(height: 100),
             //SizedBox for Phone Number field
             SizedBox(

@@ -25,9 +25,6 @@ class _PendingOrdersPageState extends State<PendingOrdersPage> {
     // TODO: implement initState
     super.initState();
     //Callingthe get pending orders event
-    eventH.on_get_pending_orders();
-
-    get_orders();
   }
 
   get_orders() async {
@@ -36,6 +33,7 @@ class _PendingOrdersPageState extends State<PendingOrdersPage> {
     setState(() {
       pendingOrders = temp;
     });
+    print("Debug taken 3");
   }
 
   @override
@@ -50,7 +48,7 @@ class _PendingOrdersPageState extends State<PendingOrdersPage> {
             //return OrderTileWidget
             return PendingOrderTileWidget(
               order: pendingOrders[index],
-              orderNumber: index,
+              orderNumber: index + 1,
             );
           },
         ));
