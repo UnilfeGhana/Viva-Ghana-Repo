@@ -24,27 +24,27 @@ class _NewMemberViewState extends State<NewMemberView> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            //Container for Title of Page
+            const SizedBox(height: 20),
             const Text('Add a New Member to Earn Monthly',
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
             const SizedBox(height: 20),
             //Container for Username
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-              child: TextField(
-                onChanged: (value) {
-                  setState(() {
-                    user.userName = value;
-                  });
-                },
-                decoration: InputDecoration(
-                    labelText: 'New Member\'s Name',
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide())),
-              ),
-            ),
+            // Container(
+            //   padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            //   child: TextField(
+            //     onChanged: (value) {
+            //       setState(() {
+            //         user.userName = value;
+            //       });
+            //     },
+            //     decoration: InputDecoration(
+            //         labelText: 'New Member\'s Name',
+            //         border: OutlineInputBorder(
+            //             borderRadius: BorderRadius.circular(10),
+            //             borderSide: BorderSide())),
+            //   ),
+            // ),
             //Container for Password
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),

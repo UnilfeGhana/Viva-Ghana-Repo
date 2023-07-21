@@ -46,26 +46,26 @@ class Shop {
       'composition',
       'instruction',
     ),
-    ProductClass(
-      'Viva Plus\n(120)',
-      'Viva Plus\n(120)',
-      100,
-      //Description
-      '''
-Detoxification, is beneficial in cleansing the blood vessels leading to Cardiovascular wellbeing
+//     ProductClass(
+//       'Viva Plus\n(120)',
+//       'Viva Plus\n(120)',
+//       100,
+//       //Description
+//       '''
+// Detoxification, is beneficial in cleansing the blood vessels leading to Cardiovascular wellbeing
 
-Good Blood Circulation is essential for maintaining overall health and well-being in humans by:
-      -Delivering oxygen-rich blood to all organs and tissues. 
-      -Maintenance of organ functions 
-      -Improve immune response 
-         
-      (Recommended for 12 years and above,except pregnant women and lactating mothers).
-         ''',
-      'images/120tabsViva.png',
-      ['Detoxification', 'Blood Circulation'],
-      'composition',
-      'instruction',
-    ),
+// Good Blood Circulation is essential for maintaining overall health and well-being in humans by:
+//       -Delivering oxygen-rich blood to all organs and tissues.
+//       -Maintenance of organ functions
+//       -Improve immune response
+
+//       (Recommended for 12 years and above,except pregnant women and lactating mothers).
+//          ''',
+//       'images/120tabsViva.png',
+//       ['Detoxification', 'Blood Circulation'],
+//       'composition',
+//       'instruction',
+//     ),
 
     ProductClass(
       'Viva Plus\n(90)',

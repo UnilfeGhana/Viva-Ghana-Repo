@@ -30,7 +30,7 @@ class _LoginScreenState extends State<LoginScreen> {
           mainAxisSize: MainAxisSize.max,
           children: [
             const SizedBox(
-              height: 80,
+              height: 20,
             ),
             Container(
               height: 150,
@@ -45,7 +45,7 @@ class _LoginScreenState extends State<LoginScreen> {
               //     style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
             ),
 
-            const SizedBox(height: 100),
+            const SizedBox(height: 160),
             //SizedBox for Phone Number field
             SizedBox(
               child: Row(
