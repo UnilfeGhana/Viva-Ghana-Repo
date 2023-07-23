@@ -62,77 +62,80 @@ class _OrderDetailsPageState extends State<OrderDetailsPage> {
       ),
       body: SingleChildScrollView(
         controller: controller,
-        child: Column(
-          children: [
-            /////////Spacer////////
-            const SizedBox(height: 20),
-            ////Recipient Name
-            Row(
-              children: [
-                Text(
-                  'Recipient Name: ',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w400,
-                    fontSize: 18,
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            children: [
+              /////////Spacer////////
+              const SizedBox(height: 20),
+              ////Recipient Name
+              Row(
+                children: [
+                  const Text(
+                    'Recipient Name: ',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w400,
+                      fontSize: 18,
+                    ),
                   ),
-                ),
-                Text(
-                  order.recipientName,
-                  style: const TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
+                  Text(
+                    order.recipientName,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 15,
+                    ),
                   ),
-                ),
-              ],
-            ),
-            /////////Spacer////////
-            const SizedBox(height: 15),
-            Row(
-              children: [
-                const Text(
-                  'Recipient Phone: ',
-                  style: TextStyle(
-                    // fontWeight: FontWeight.bold,
-                    fontSize: 15,
+                ],
+              ),
+              /////////Spacer////////
+              const SizedBox(height: 15),
+              Row(
+                children: [
+                  const Text(
+                    'Recipient Phone: ',
+                    style: TextStyle(
+                      // fontWeight: FontWeight.bold,
+                      fontSize: 15,
+                    ),
                   ),
-                ),
-                Text(
-                  order.recipientPhone,
-                  style: const TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
-                  ),
-                )
-              ],
-            ),
-            /////////Spacer////////
-            const SizedBox(height: 20),
-            SizedBox(
-                height: 400,
-                child: ListView.builder(
-                    controller: controller,
-                    itemCount: relativeIndexArray.length,
-                    itemBuilder: (
-                      BuildContext context,
-                      index,
-                    ) {
-                      return OrderMedicineCard(
-                          medicineName: order.orders.keys.toList()[index],
-                          order: order,
-                          itemIndex: index);
-                    })),
-            //For spacing
-            const SizedBox(height: 20),
-            Row(
-              children: [const Text('Total:'), Text(order.total)],
-            ),
+                  SelectableText(
+                    order.recipientPhone,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                    ),
+                  )
+                ],
+              ),
+              /////////Spacer////////
+              const SizedBox(height: 20),
+              SizedBox(
+                  height: 400,
+                  child: ListView.builder(
+                      controller: controller,
+                      itemCount: relativeIndexArray.length,
+                      itemBuilder: (
+                        BuildContext context,
+                        index,
+                      ) {
+                        return OrderMedicineCard(
+                            medicineName: order.orders.keys.toList()[index],
+                            order: order,
+                            itemIndex: index);
+                      })),
+              //For spacing
+              const SizedBox(height: 20),
+              Row(
+                children: [const Text('Total:'), Text(order.total)],
+              ),
 
-            ElevatedButton(
-                onPressed: () {
-                  EventHandler(context).on_pend_order(order);
-                },
-                child: const Text('Pend Order'))
-          ],
+              ElevatedButton(
+                  onPressed: () {
+                    EventHandler(context).on_pend_order(order);
+                  },
+                  child: const Text('Pend Order'))
+            ],
+          ),
         ),
       ),
     );

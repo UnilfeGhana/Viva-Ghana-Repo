@@ -24,7 +24,6 @@ class _PendingOrdersPageState extends State<PendingOrdersPage> {
     eventH = EventHandler(context);
     // TODO: implement initState
     super.initState();
-    //Callingthe get pending orders event
   }
 
   get_orders() async {
@@ -38,6 +37,9 @@ class _PendingOrdersPageState extends State<PendingOrdersPage> {
 
   @override
   Widget build(BuildContext context) {
+    if (pendingOrders.isEmpty) {
+      get_orders();
+    }
     return Container(
         color: Colors.white,
         height: MediaQuery.of(context).size.height * 0.7,

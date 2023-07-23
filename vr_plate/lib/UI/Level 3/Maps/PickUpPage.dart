@@ -79,7 +79,7 @@ class _PickUpLocationPageState extends State<PickUpLocationPage> {
             DraggableScrollableSheet(
                 minChildSize: 0.31,
                 initialChildSize: 0.4,
-                maxChildSize: 0.8,
+                maxChildSize: 0.95,
                 builder: (BuildContext context, ScrollController controller) {
                   return SingleChildScrollView(
                     controller: controller,
@@ -95,7 +95,9 @@ class _PickUpLocationPageState extends State<PickUpLocationPage> {
                         const SizedBox(height: 10),
                         const Text('Please Scroll to Enter your Details',
                             style: TextStyle(
-                                fontSize: 15, fontWeight: FontWeight.bold)),
+                                color: Colors.lightGreen,
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold)),
                         const SizedBox(height: 50),
                         SizedBox(
                           height: 40,
@@ -155,13 +157,15 @@ class _PickUpLocationPageState extends State<PickUpLocationPage> {
                           ),
                         ),
                         const SizedBox(height: 50),
-                        Text(
-                          'Above location would be used during delivery by Vendor:\n${selectedShop}',
+                        const Text(
+                          'Above location would be used during delivery by Vendor\n please Screenshot the summary',
                           textAlign: TextAlign.center,
                         ),
+                        Text(selectedShop),
                         const SizedBox(
                           height: 20,
                         ),
+                        const SizedBox(),
                         const Text('Order Summary',
                             style: TextStyle(
                               fontSize: 20,

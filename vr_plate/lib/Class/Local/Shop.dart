@@ -39,6 +39,8 @@ class Shop {
 
       *visible results within one month.
       (Recommended for females 12 years and above except pregnant women and lactating mothers)
+
+      Price: 150.00 GHC
 ''',
       // 'Viva Lady is a complete well-being nutritional formula for the Lady. \n\n\n .',
       'images/VivaLadytabs.png',
@@ -73,7 +75,7 @@ class Shop {
       80,
       //Description
       '''
-Detoxification, is beneficial in cleansing the blood vessels leading to Cardiovascular wellbeing
+Detoxification is beneficial in cleansing the blood vessels leading to Cardiovascular wellbeing
 
 Good Blood Circulation is essential for maintaining overall health and well-being in humans by:
       -Delivering oxygen-rich blood to all organs and tissues. 
@@ -81,6 +83,8 @@ Good Blood Circulation is essential for maintaining overall health and well-bein
       -Improve immune response 
          
       (Recommended for 12 years and above,except pregnant women and lactating mothers).
+
+      Price: 80.00 GHC
          ''',
       'images/90tabsViva.png',
       ['Detoxification', 'Blood Circulation'],

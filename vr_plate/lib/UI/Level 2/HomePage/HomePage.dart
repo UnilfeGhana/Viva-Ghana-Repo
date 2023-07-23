@@ -65,7 +65,15 @@ class _HomePageState extends State<HomePage> {
                     },
                     icon: const Icon(Icons.shopping_bag_outlined, size: 40)))
           ],
-          title: const Text('Viva-Gate'),
+          title: Container(
+            height: 90,
+            width: 190,
+            decoration: const BoxDecoration(
+                image: DecorationImage(
+              image: AssetImage('images/VivaLogo.png'),
+              fit: BoxFit.cover,
+            )),
+          ),
           leading: IconButton(
               onPressed: () {
                 showDialog(

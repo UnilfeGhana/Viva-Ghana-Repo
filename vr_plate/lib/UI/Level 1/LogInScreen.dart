@@ -40,12 +40,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 image: AssetImage('images/VivaLogo.png'),
                 fit: BoxFit.cover,
               )),
-              // child: const Text('Viva-Gate\nLogin/Sign Up',
-              //     textAlign: TextAlign.center,
-              //     style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
             ),
 
-            const SizedBox(height: 160),
+            const SizedBox(height: 100),
             //SizedBox for Phone Number field
             SizedBox(
               child: Row(
@@ -56,10 +53,10 @@ class _LoginScreenState extends State<LoginScreen> {
                     'Phone',
                     style: TextStyle(fontSize: 20),
                   ),
-                  const Text(
-                    ' +233',
-                    style: TextStyle(fontSize: 15),
-                  ),
+                  // const Text(
+                  //   ' +233',
+                  //   style: TextStyle(fontSize: 15),
+                  // ),
                   Container(
                     height: 80,
                     width: 230,
@@ -83,7 +80,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         });
                       },
                       decoration: const InputDecoration(
-                        hintText: 'xx-xxxx-xxx',
+                        hintText: '+233-xx-xxxx-xxx',
                         border: UnderlineInputBorder(
                           borderSide: BorderSide(width: 10),
                         ),
@@ -118,7 +115,10 @@ class _LoginScreenState extends State<LoginScreen> {
                   )),
             ),
             const SizedBox(height: 10),
-            const Text('~v3.0'),
+            const Text(
+              '~v3.0',
+              style: TextStyle(fontSize: 10),
+            ),
             const SizedBox(height: 10),
           ],
         ),

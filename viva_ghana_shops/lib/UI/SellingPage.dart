@@ -44,26 +44,21 @@ class _SellingPageState extends State<SellingPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                // const SizedBox(height: 10),
-                // const Text('Selling Page'),
                 const SizedBox(height: 20),
-                // const SizedBox(height: 10),
-                // textFieldFormWidget('Phone', '+233...'),
-                // const SizedBox(height: 10),
+                textFieldFormWidget('Name', 'recipient'),
                 textFieldFormWidget('Phone', '+233...'),
                 GestureDetector(
-                  onTapCancel: () {
-                    setState(() {
-                      calculateTotal(DatabaseFunctionClass.cartList);
-                    });
-                  },
-                  onTap: () {
-                    setState(() {
-                      calculateTotal(DatabaseFunctionClass.cartList);
-                    });
-                  },
+                  // onTapCancel: () {
+                  //   setState(() {
+                  //     calculateTotal(DatabaseFunctionClass.cartList);
+                  //   });
+                  // },
+                  // onTap: () {
+                  //   setState(() {
+                  //     calculateTotal(DatabaseFunctionClass.cartList);
+                  //   });
+                  // },
                   child: SizedBox(
-                    // height: 300,
                     child: ListView.builder(
                         shrinkWrap: true,
                         controller: controller,
@@ -75,13 +70,13 @@ class _SellingPageState extends State<SellingPage> {
                   ),
                 ),
                 const SizedBox(height: 20),
-                Row(
-                  children: [
-                    const Text('Total:'),
-                    Text(calculateTotal(DatabaseFunctionClass.cartList))
-                  ],
-                ),
-                const SizedBox(height: 20),
+                // Row(
+                //   children: [
+                //     const Text('Total:'),
+                //     Text(calculateTotal(DatabaseFunctionClass.cartList))
+                //   ],
+                // ),
+                // const SizedBox(height: 20),
                 ElevatedButton(
                     onPressed: () {
                       String total =
@@ -144,6 +139,11 @@ class _SellingPageState extends State<SellingPage> {
                     });
                     break;
                   case 'Phone':
+                    newVal = newVal..replaceFirst(RegExp(r'\+233'), '');
+                    if (newVal[0] == '0') {
+                      newVal = newVal.replaceFirst(RegExp(r'0'), '');
+                    }
+                    newVal = '233$newVal';
                     setState(() {
                       rPhone = newVal;
                       member = newVal;

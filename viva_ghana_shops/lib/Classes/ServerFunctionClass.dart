@@ -24,7 +24,7 @@ class ServerFunctionClass {
     ////////////////////////////////////////////
     ///     Using Listener to Get Info       //
     ///////////////////////////////////////////
-    ///
+
     print('Shop Id is: $shopName:$pin');
 
     ////Shop Pending Orders SnapShot Listener
@@ -57,8 +57,8 @@ class ServerFunctionClass {
   Future<List<OrderClass>?> get_shop_new_orders(
       String shopName, String pin) async {
     List<OrderClass> newOrders = [];
-    int price_of_viva_90 = 70;
-    int price_of_viva_120 = 90;
+    int price_of_viva_90 = 80;
+    int price_of_viva_120 = 100;
 
     cloud
         .collection(shopsLocation)

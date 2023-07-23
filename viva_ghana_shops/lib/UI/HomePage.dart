@@ -24,7 +24,7 @@ class _HomePageState extends State<HomePage> {
     PendingOrdersPage(),
     FulfilledOrdersPage(),
     SellingPage(),
-    HistoryPage()
+    // HistoryPage()
   ];
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,8 @@ class _HomePageState extends State<HomePage> {
     eventH = EventHandler(context);
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home'),
+        elevation: 0,
+        title: const Text('Orders'),
         leading: TextButton(
           child: Icon(Icons.logout),
           onPressed: () {
@@ -45,19 +46,8 @@ class _HomePageState extends State<HomePage> {
                 eventH.on_show_stock();
               },
               child: const CircleAvatar(
+                  backgroundColor: Colors.white,
                   child: Text('Stock', style: TextStyle(fontSize: 10)))),
-          GestureDetector(
-              onTap: () {
-                setState(() {
-                  eventH.on_get_new_orders();
-                  eventH.on_get_pending_orders();
-                  eventH.on_get_fulfilled_orders();
-                  eventH.on_get_history();
-                });
-              },
-              child: const CircleAvatar(
-                  radius: 30,
-                  child: Text('Refresh', style: TextStyle(fontSize: 10))))
         ],
       ),
       body: PageView.builder(
@@ -92,8 +82,8 @@ class _HomePageState extends State<HomePage> {
                 icon: Icon(Icons.done), label: 'Fulfilled Orders'),
             BottomNavigationBarItem(
                 icon: Icon(Icons.create), label: 'Create Order'),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.history), label: 'Monthly History'),
+            // BottomNavigationBarItem(
+            //     icon: Icon(Icons.history), label: 'Monthly History'),
           ]),
     );
   }

@@ -24,10 +24,10 @@ class _NewMemberViewState extends State<NewMemberView> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const SizedBox(height: 20),
+            const SizedBox(height: 30),
             const Text('Add a New Member to Earn Monthly',
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
+                style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold)),
             const SizedBox(height: 20),
             //Container for Username
             // Container(
@@ -51,8 +51,16 @@ class _NewMemberViewState extends State<NewMemberView> {
               child: TextField(
                 keyboardType: TextInputType.number,
                 onChanged: (value) {
+                  String newVal = value.trim();
+                  newVal = newVal..replaceFirst(RegExp(r'\+233'), '');
+                  if (newVal[0] == '0') {
+                    newVal = newVal.replaceFirst(RegExp(r'0'), '');
+                  }
+                  newVal = newVal.trim();
+
+                  newVal = '233$newVal';
                   setState(() {
-                    user.phone = value;
+                    user.phone = newVal;
                   });
                 },
                 decoration: InputDecoration(
@@ -80,7 +88,8 @@ class _NewMemberViewState extends State<NewMemberView> {
                     eventHandler.onAddNewMember(user, context);
                   });
                 },
-                child: const Text('Add Member'))
+                child: const Text('Add Member')),
+            const SizedBox(height: 20),
           ],
         ),
       ),

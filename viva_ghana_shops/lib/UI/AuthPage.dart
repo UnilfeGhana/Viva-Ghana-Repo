@@ -17,28 +17,34 @@ class _AuthPageState extends State<AuthPage> {
     EventHandler eventH = EventHandler(context);
     return Scaffold(
         //AppBar may be removed
-        appBar: AppBar(
-            title: const Text(
-          'Welcome to Viva Shops',
-          textAlign: TextAlign.center,
-        )),
+
         body: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          //Shop Name Field
-          textFieldFormWidget('Shop Name', ''),
-          const SizedBox(
-            height: 20,
-          ),
-          //Shop Pin Field
-          textFieldFormWidget('Shop Pin', 'XXXX'),
-          const SizedBox(height: 30),
-          ElevatedButton(
-              onPressed: () {
-                setState(() {
-                  eventH.on_login(shopName, pin);
-                });
-              },
-              child: const Text('Continue'))
-        ]));
+      const SizedBox(height: 40),
+      Container(
+              height: 150,
+              width: 250,
+              decoration: const BoxDecoration(
+                  image: DecorationImage(
+                image: AssetImage('images/VivaLogo.png'),
+                fit: BoxFit.cover,
+              )),
+            ),
+      //Shop Name Field
+      textFieldFormWidget('Shop Name', ''),
+      const SizedBox(
+        height: 20,
+      ),
+      //Shop Pin Field
+      textFieldFormWidget('Shop Pin', 'XXXX'),
+      const SizedBox(height: 30),
+      ElevatedButton(
+          onPressed: () {
+            setState(() {
+              eventH.on_login(shopName, pin);
+            });
+          },
+          child: const Text('Continue'))
+    ]));
   }
 
   Widget textFieldFormWidget(String fieldName, String hintText) {

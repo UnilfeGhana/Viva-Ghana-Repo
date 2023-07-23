@@ -12,9 +12,9 @@ class DatabaseFunctionClass {
   ///       List of Products                 ////
 ////////////////////////////////////////////////
   static final List<ProductClass> products = [
-    ProductClass('Viva Plus (90)', '70', 'images/Viva90.jpg'),
-    ProductClass('Viva Plus (120)', '90', 'images/Viva120.jpg'),
-    ProductClass('Viva Lady', '100', 'images/VivaLady.jpg')
+    ProductClass('Viva Plus (90)', '80', 'images/Viva90.jpg'),
+    ProductClass('Viva Plus (120)', '100', 'images/Viva120.jpg'),
+    ProductClass('Viva Lady', '150', 'images/VivaLady.jpg')
   ];
 
   static final List<CartClass> cartList = [
@@ -126,7 +126,7 @@ class DatabaseFunctionClass {
     //////  INVERSE OF REDUCE STOCK////////////
 
     for (var key in order.orders.keys) {
-      int ordered_amt = order.orders[key];
+      int ordered_amt = int.parse(order.orders[key]);
       int stocked_amt = int.parse(shop.stock[key]);
       int difference = stocked_amt + ordered_amt;
       shop.stock.update(key, (value) => difference.toString());

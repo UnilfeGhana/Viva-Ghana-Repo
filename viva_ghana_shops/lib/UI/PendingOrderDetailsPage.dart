@@ -49,7 +49,7 @@ class _PendingOrderDetailsPageState extends State<PendingOrderDetailsPage> {
             Row(
               children: [
                 const Text('Recipient Phone: '),
-                Text(order.recipientPhone)
+                SelectableText(order.recipientPhone)
               ],
             ),
             SizedBox(
