@@ -26,7 +26,7 @@ class _OrderDetailsPageState extends State<OrderDetailsPage> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    print('Debug Order name is ${order.orders.keys}');
+    // print('Debug Order name is ${order.orders.keys}');
     //First getting the index at which the selected medicine is located in the
     //DatabaseFunctionClass's productList
     appendArray();

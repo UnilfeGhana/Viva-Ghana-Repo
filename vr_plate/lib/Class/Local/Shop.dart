@@ -43,7 +43,7 @@ class Shop {
       Price: 150.00 GHC
 ''',
       // 'Viva Lady is a complete well-being nutritional formula for the Lady. \n\n\n .',
-      'images/VivaLadytabs.png',
+      'images/VivaLadyTablet.png',
       ['Ladies Companion'],
       'composition',
       'instruction',

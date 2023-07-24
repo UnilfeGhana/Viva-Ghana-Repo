@@ -85,7 +85,7 @@ class ServerFunctionClass {
         //End of Conversion//////////////
         //Creating a variable to store current iterated order
         OrderClass _order = OrderClass(order['Recipient'], order['Phone'], nmap,
-            order['Total'].toString(), order.id, order['Phone']);
+            order['Total'].toString(), order.id, order['Member Phone']);
 
         print("Debug order is : ${_order.orders}");
         //First Checking to see if Pending Order has already been loaded
@@ -96,7 +96,7 @@ class ServerFunctionClass {
         } else {
           print("Debug Server Else Order: $_order");
           newOrders.add(_order);
-          print("Debug Else NewOrder: ${newOrders[1].orders}");
+          // print("Debug Else NewOrder: ${newOrders[1].orders}");
         }
       }
     });
@@ -121,19 +121,8 @@ class ServerFunctionClass {
         //Converting Medicine List to Map//////
         Map<String, dynamic> medicines_order = order['Medicines'];
         // print("Debug order is ${medicines_order}");
-        List<Map<String, dynamic>> testList = [];
-        for (String medicine in medicines_order.keys) {
-          testList.add({medicine: medicines_order[medicine]});
-        }
-
-        // print("Debug order2 is $order");
-        Map<int, Map<String, dynamic>> tmap = testList.asMap();
-        // print("Debug tmap is ${tmap[0]![tmap[0]!.keys.toList()[0]]}");
-        Map<String, dynamic> nmap = {};
-        for (var i = 0; i < tmap.length; i++) {
-          nmap.addAll(
-              {tmap[i]!.keys.toList()[0]: tmap[i]![tmap[i]!.keys.toList()[0]]});
-        }
+        Map<String, dynamic> tempOrder = order['Medicines'];
+        Map<String, dynamic> nmap = tempOrder;
         // print("Debug nmap is $nmap");
         //End of Conversion//////////////
         //Creating a variable to store current iterated order
@@ -142,13 +131,13 @@ class ServerFunctionClass {
             order['Total'].toString(), order.id, 'order[]');
         // print("Debug test is: ${test.orders}");
         OrderClass n_order = OrderClass(order['Recipient'], order['Phone'],
-            nmap, order['Total'].toString(), order.id, order['Phone']);
+            nmap, order['Total'].toString(), order.id, order['Member Phone']);
 
         //First Checking to see if Pending Order has already been loaded
         if (DatabaseFunctionClass.shop.shop_pending_orders.contains(n_order)) {
           //Saving the orders to pending Orders
         } else {
-          pendingOrders.add(test);
+          pendingOrders.add(n_order);
         }
       }
     });
@@ -168,13 +157,9 @@ class ServerFunctionClass {
           .listen((event) {
         for (DocumentSnapshot order in event.docs) {
           //Converting Medicine List to Map//////
-          List<dynamic> testList = order['Medicines'];
-          // testList.add(order['Medicines']);
-          Map<int, dynamic> tmap = testList.asMap();
-          Map<String, dynamic> nmap = {};
-          for (var i = 0; i < tmap.length; i++) {
-            nmap.addAll({tmap[i]['Medicine Name']: tmap[i]['Number']});
-          }
+
+          Map<String, dynamic> tempOrder = order['Medicines'];
+          Map<String, dynamic> nmap = tempOrder;
           //End of Conversion//////////////
           //Creating a variable to store current iterated order
           OrderClass _order = OrderClass(order['Recipient'], order['Phone'],
@@ -405,6 +390,7 @@ class ServerFunctionClass {
     Map<String, dynamic> orderMap = {
       'Recipient': order.recipientName,
       'Phone': order.recipientPhone,
+      'Member Phone':order.memberPhone,
       'Medicines': order.orders,
       'Total': order.total
     };

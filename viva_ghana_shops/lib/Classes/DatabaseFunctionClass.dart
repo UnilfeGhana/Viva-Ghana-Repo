@@ -129,11 +129,20 @@ class DatabaseFunctionClass {
   }
 
   increase_stock(OrderClass order) {
+    get_stock();
     //////  INVERSE OF REDUCE STOCK////////////
 
     for (var key in order.orders.keys) {
+      String newKey = '';
+      if (key == 'Viva Plus (90)') {
+        newKey = 'Viva Plus\n(90)';
+      }
+      if (key == 'Viva Plus (120)') {
+        newKey = 'Viva Plus\n(120)';
+      }
       int ordered_amt = int.parse('${order.orders[key]}');
-      int stocked_amt = int.parse(shop.stock[key]);
+      String shop_amt = shop.stock[key] ?? '0';
+      int stocked_amt = int.parse(shop_amt);
       int difference = stocked_amt + ordered_amt;
       shop.stock.update(key, (value) => difference.toString());
     }

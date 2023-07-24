@@ -14,6 +14,7 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   L1EventHandler eventHandler = L1EventHandler();
+  final String version = '7.0';
   UserFunction user = UserFunction();
   String phone = '';
   @override
@@ -115,9 +116,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   )),
             ),
             const SizedBox(height: 10),
-            const Text(
-              '~v3.0',
-              style: TextStyle(fontSize: 10),
+            Text(
+              '~v$version',
+              style: const TextStyle(fontSize: 10),
             ),
             const SizedBox(height: 10),
           ],

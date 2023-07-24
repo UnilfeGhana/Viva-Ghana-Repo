@@ -22,6 +22,8 @@ class _NewOrdersPageState extends State<NewOrdersPage> {
   ////////////////////////////////
   @override
   void initState() {
+    n = 0;
+    print("Debug n: $n");
     // TODO: implement initState
     super.initState();
     // newOrders.clear();

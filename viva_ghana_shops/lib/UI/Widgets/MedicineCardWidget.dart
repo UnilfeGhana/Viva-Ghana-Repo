@@ -91,7 +91,7 @@ class _MedicineCardWidgetState extends State<MedicineCardWidget> {
                   ///   Container for Text Input Fied   ///
                   ////////////////////////////////////////
                   Container(
-                    width: 35,
+                    width: 40,
                     child: TextField(
                       decoration: InputDecoration(
                         hintText: amount,

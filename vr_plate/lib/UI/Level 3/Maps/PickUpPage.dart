@@ -163,13 +163,14 @@ class _PickUpLocationPageState extends State<PickUpLocationPage> {
                         ),
                         Text(selectedShop),
                         const SizedBox(
-                          height: 20,
+                          height: 30,
                         ),
-                        const SizedBox(),
-                        const Text('Order Summary',
+                        const Text('Order Summary (Take Screenshot)',
                             style: TextStyle(
                               fontSize: 20,
+                              color: Colors.lightGreen,
                             )),
+                            const SizedBox(height:5),
                         OrderSummary(
                           controller: controller,
                         ),

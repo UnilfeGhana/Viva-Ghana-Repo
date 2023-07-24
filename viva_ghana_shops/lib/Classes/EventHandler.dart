@@ -67,7 +67,8 @@ class EventHandler {
   on_fail_order(OrderClass order) {
     //Remove the Order from Pending Orders to Failed Orders
     dbfClass.fail_order(order);
-
+    NavigationHandler(context).on_clear_context();
+    NavigationHandler(context).on_change_page('HomePage', Null);
     //Restock the Shop with amount
     dbfClass.increase_stock(order);
   }
