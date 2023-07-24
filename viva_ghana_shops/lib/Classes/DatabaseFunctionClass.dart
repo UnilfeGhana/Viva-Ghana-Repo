@@ -38,11 +38,16 @@ class DatabaseFunctionClass {
   }
 
   Future<List<OrderClass>> get_new_orders() async {
-    shop.shop_pending_orders =
+    shop.shop_new_orders =
         (await serverFunction.get_shop_new_orders(shop.shopName, shop.pin))!;
-    List<OrderClass> newOrders =
-        (await serverFunction.get_shop_new_orders(shop.shopName, shop.pin))!;
-    var ans = serverFunction.get_shop_new_orders(shop.shopName, shop.pin);
+    List<OrderClass> newOrders = [];
+    await serverFunction
+        .get_shop_new_orders(shop.shopName, shop.pin)
+        .then((value) {
+      newOrders = value ?? [];
+      print("Debug DBFC newOrders: $value");
+      return newOrders;
+    });
     return newOrders;
   }
 
@@ -106,8 +111,9 @@ class DatabaseFunctionClass {
     var old_stock = shop.stock;
     for (var key in order.orders.keys) {
       print("Difference is ${int.parse(shop.stock[key])}");
+      String value = order.orders[key].toString();
 
-      int ordered_amt = int.parse(order.orders[key]);
+      int ordered_amt = int.parse('$value');
       int stocked_amt = int.parse(shop.stock[key]);
 
       int difference = stocked_amt - ordered_amt;
@@ -126,7 +132,7 @@ class DatabaseFunctionClass {
     //////  INVERSE OF REDUCE STOCK////////////
 
     for (var key in order.orders.keys) {
-      int ordered_amt = int.parse(order.orders[key]);
+      int ordered_amt = int.parse('${order.orders[key]}');
       int stocked_amt = int.parse(shop.stock[key]);
       int difference = stocked_amt + ordered_amt;
       shop.stock.update(key, (value) => difference.toString());
@@ -142,6 +148,7 @@ class DatabaseFunctionClass {
 
     for (var key in order.orders.keys) {
       String val = order.orders[key].toString();
+      // print("Debug Pend Test order: ${order.orders}");
       try {
         int stock_amt = int.parse(DatabaseFunctionClass.shop.stock[key]);
         print("Stock amount is $stock_amt and value is: ${order.orders[key]}");

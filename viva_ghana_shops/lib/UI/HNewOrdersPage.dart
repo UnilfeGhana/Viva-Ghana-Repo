@@ -15,6 +15,7 @@ class _NewOrdersPageState extends State<NewOrdersPage> {
   late EventHandler eventH;
   DatabaseFunctionClass dbfc = DatabaseFunctionClass();
   List<OrderClass> newOrders = [];
+  int n = 0;
 
   ////////////////////////////////
   ///     Init State Method   ////
@@ -23,7 +24,7 @@ class _NewOrdersPageState extends State<NewOrdersPage> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    newOrders.clear();
+    // newOrders.clear();
   }
 
   //////////////////////////////////////////////////
@@ -32,17 +33,19 @@ class _NewOrdersPageState extends State<NewOrdersPage> {
   getNewOrders() async {
     //Change function call to get fulfilled Orders
     var temp = await dbfc.get_new_orders();
-    print("Debug2 temp is $temp");
+    // print("Debug2 temp is $temp");
     setState(() {
       newOrders = temp;
     });
-    print("Debug 3");
+    // print("Debug 3");
   }
 
   @override
   Widget build(BuildContext context) {
     if (newOrders.isEmpty) {
+      n++;
       getNewOrders();
+      print("Debug Npage getting $newOrders");
     }
     return Container(
         color: Colors.white,

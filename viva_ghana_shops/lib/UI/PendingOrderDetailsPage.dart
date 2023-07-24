@@ -3,6 +3,7 @@ import 'package:viva_ghana_shops/Classes/DatabaseFunctionClass.dart';
 import 'package:viva_ghana_shops/Classes/EventHandler.dart';
 import 'package:viva_ghana_shops/Classes/ProductClass.dart';
 import 'package:viva_ghana_shops/UI/Widgets/MedicineCardWidget.dart';
+import 'Widgets/OrderMedicineCardWidget.dart';
 
 import '../Classes/OrderClass.dart';
 
@@ -61,16 +62,16 @@ class _PendingOrderDetailsPageState extends State<PendingOrderDetailsPage> {
                       BuildContext context,
                       index,
                     ) {
-                      return MedicineCardWidget(
-                          //  'Viva Plus (90)',
-                          in_dbfc: dbfc,
+                      return OrderMedicineCard(
+                          medicineName: order.orders.keys.toList()[index],
+                          order: order,
                           itemIndex: index);
                     })),
             //For spacing
             const SizedBox(height: 20),
-            Row(
-              children: [const Text('Total:'), Text(order.total)],
-            ),
+            // Row(
+            //   children: [const Text('Total:'), Text(order.total)],
+            // ),
             /////////On Fulfill Order
             ElevatedButton(
                 onPressed: () {

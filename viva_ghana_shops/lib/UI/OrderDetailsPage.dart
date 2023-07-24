@@ -30,7 +30,6 @@ class _OrderDetailsPageState extends State<OrderDetailsPage> {
     //First getting the index at which the selected medicine is located in the
     //DatabaseFunctionClass's productList
     appendArray();
-    print('Debug End');
   }
 
   appendArray() {
@@ -38,8 +37,6 @@ class _OrderDetailsPageState extends State<OrderDetailsPage> {
     print("Debug KeyList ${keyList.length}");
 
     for (int i = 0; i < keyList.length; i++) {
-      print('debug');
-
       int relativeIndex = DatabaseFunctionClass.products
           .indexWhere((product) => product.productName == keyList[i]);
 
@@ -121,7 +118,7 @@ class _OrderDetailsPageState extends State<OrderDetailsPage> {
                         return OrderMedicineCard(
                             medicineName: order.orders.keys.toList()[index],
                             order: order,
-                            itemIndex: index);
+                            itemIndex: relativeIndexArray[index]);
                       })),
               //For spacing
               const SizedBox(height: 20),

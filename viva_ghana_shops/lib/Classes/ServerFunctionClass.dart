@@ -87,14 +87,20 @@ class ServerFunctionClass {
         OrderClass _order = OrderClass(order['Recipient'], order['Phone'], nmap,
             order['Total'].toString(), order.id, order['Phone']);
 
+        print("Debug order is : ${_order.orders}");
         //First Checking to see if Pending Order has already been loaded
         if (DatabaseFunctionClass.shop.shop_pending_orders.contains(_order)) {
+          print(
+              "Debug Server Saved Orders: ${DatabaseFunctionClass.shop.shop_pending_orders}");
           //Saving the orders to pending Orders
         } else {
+          print("Debug Server Else Order: $_order");
           newOrders.add(_order);
+          print("Debug Else NewOrder: ${newOrders[1].orders}");
         }
       }
     });
+    print("Debug Server New Orders: $newOrders");
 
     return newOrders;
   }
@@ -461,7 +467,7 @@ class ServerFunctionClass {
 
     int sum = 0;
     for (int j = 0; j < order.orders.values.toList().length; j++) {
-      sum += int.tryParse(order.orders.values.toList()[j])!;
+      sum += int.tryParse('${order.orders.values.toList()[j]}')!;
     }
     print("Debug sum is $sum");
 
