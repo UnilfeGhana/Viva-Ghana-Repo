@@ -115,4 +115,8 @@ class L1EventHandler {
     _navHandler.clearLayers(context);
     return true;
   }
+
+  openTermsandConditions(BuildContext context) {
+    _navHandler.openTC(context);
+  }
 }

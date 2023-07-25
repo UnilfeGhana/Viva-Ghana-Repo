@@ -11,6 +11,8 @@ import 'package:vr_plate/UI/Level%203/Maps/PickUpPage.dart';
 import 'package:vr_plate/UI/Level%203/Product/ProductPage.dart';
 import 'package:vr_plate/UI/Level%203/Product/TestProductPage.dart';
 
+import '../../UI/Level 1/TC.dart';
+
 class NavHandler {
   clearLayers(BuildContext context) {
     return Navigator.of(context).pop();
@@ -149,6 +151,13 @@ class NavHandler {
         default:
           return const HomePage();
       }
+    }));
+  }
+
+  openTC(BuildContext context) {
+    return Navigator.of(context)
+        .push(MaterialPageRoute(builder: (BuildContext) {
+      return TCpage();
     }));
   }
 }

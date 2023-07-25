@@ -14,7 +14,7 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   L1EventHandler eventHandler = L1EventHandler();
-  final String version = '7.0';
+  final String version = '8.0';
   UserFunction user = UserFunction();
   String phone = '';
   @override
@@ -97,16 +97,6 @@ class _LoginScreenState extends State<LoginScreen> {
                 setState(() {
                   eventHandler.onLogin(context, 'otp', phone);
                 });
-                // String verId = eventHandler.onSubmitPhone(phone);
-                // if (verId != 'NULL') {
-                //   Navigator.of(context)
-                //       .push(MaterialPageRoute(builder: (BuildContext context) {
-                //     return SubmitOTPPage(verId: verId);
-                //   }));
-                // } else {
-                //   navHandler.PopUpFailed(
-                //       context, 'Wrong Phone Number \nID: $verId \n');
-                // }
               },
               child: Container(
                   margin: const EdgeInsets.symmetric(horizontal: 20),
@@ -121,6 +111,11 @@ class _LoginScreenState extends State<LoginScreen> {
               style: const TextStyle(fontSize: 10),
             ),
             const SizedBox(height: 10),
+            Row(children: [
+              const Text('By continuing you agree to our '),
+              TextButton(
+                  onPressed: () {}, child: const Text('Terms and Conditions'))
+            ])
           ],
         ),
       ),
