@@ -33,14 +33,12 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    // cartItems = UserFunction.user.cartMap.values.length;
-    // print('Get');
+    get();
   }
 
   get() {
     setState(() {
       cartItems = UserFunction.user_.cartMap.values.length;
-      print('Get');
     });
   }
 

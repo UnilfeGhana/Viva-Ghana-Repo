@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
@@ -18,6 +20,10 @@ class UserFunction {
   static String verId = 'NULL';
 
   //intialize
+
+  // listener(){
+  //   StreamSubscription sub = Stream()
+  // }
 
   setUserName(String userName) {
     user_.userName = userName;

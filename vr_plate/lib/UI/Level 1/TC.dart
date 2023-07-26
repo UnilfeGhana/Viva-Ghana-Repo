@@ -13,7 +13,11 @@ class TCpage extends StatelessWidget {
       ),
       body: Container(
           padding: const EdgeInsets.all(10),
-          child: SingleChildScrollView(child: Column(children: [Text(tc)]))),
+          child: SingleChildScrollView(
+              child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(children: [Text(tc)]),
+          ))),
     );
   }
 }

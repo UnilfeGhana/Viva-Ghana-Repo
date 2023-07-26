@@ -390,7 +390,7 @@ class ServerFunctionClass {
     Map<String, dynamic> orderMap = {
       'Recipient': order.recipientName,
       'Phone': order.recipientPhone,
-      'Member Phone':order.memberPhone,
+      'Member Phone': order.memberPhone,
       'Medicines': order.orders,
       'Total': order.total
     };
@@ -457,17 +457,26 @@ class ServerFunctionClass {
     }
     print("Debug sum is $sum");
 
-    for (int v = 0; v < sum; v++) {
-      print("Debug commissioning $v");
-      try {
-        cloud
-            .collection('Members')
-            .doc(order.memberPhone)
-            .update({'commission': 'commPass'});
-      } on Exception {
-        print('Debug None Existent Member');
-      }
+    try {
+      cloud
+          .collection('Members')
+          .doc(order.memberPhone)
+          .update({'commission': 'commPass:$sum'});
+    } on Exception {
+      print('Debug None Existent Member');
     }
+
+    // for (int v = 0; v < sum; v++) {
+    //   print("Debug commissioning $v");
+    //   try {
+    //     cloud
+    //         .collection('Members')
+    //         .doc(order.memberPhone)
+    //         .update({'commission': 'commPass'});
+    //   } on Exception {
+    //     print('Debug None Existent Member');
+    //   }
+    // }
 
     // for (int medicineNumber in order.orders.values) {
     //   print("Debug medicineNumber is $medicineNumber");

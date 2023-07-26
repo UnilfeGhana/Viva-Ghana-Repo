@@ -14,7 +14,7 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   L1EventHandler eventHandler = L1EventHandler();
-  final String version = '8.0';
+  final String version = '9.0';
   UserFunction user = UserFunction();
   String phone = '';
   @override
@@ -91,6 +91,20 @@ class _LoginScreenState extends State<LoginScreen> {
                 ],
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text('By continuing you agree to our '),
+                    TextButton(
+                        onPressed: () {
+                          eventHandler.openTermsandConditions(context);
+                        },
+                        child: const Text('Terms and Conditions'))
+                  ]),
+            ),
+            const SizedBox(height: 5),
             ElevatedButton(
               onPressed: () {
                 print("Debug memberPhone is ${UserFunction.user_.phone}");
@@ -110,12 +124,7 @@ class _LoginScreenState extends State<LoginScreen> {
               '~v$version',
               style: const TextStyle(fontSize: 10),
             ),
-            const SizedBox(height: 10),
-            Row(children: [
-              const Text('By continuing you agree to our '),
-              TextButton(
-                  onPressed: () {}, child: const Text('Terms and Conditions'))
-            ])
+            const SizedBox(height: 10)
           ],
         ),
       ),

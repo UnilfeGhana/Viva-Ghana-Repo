@@ -22,7 +22,7 @@ You will receive up to GHC 1,000 from VivaGate Ghana Limited ( herein referred t
 
 9. VivaGate reserves the right to terminate this agreement at any time without notice if the terms and conditions are violated.
 
-10. Commissions earned will be paid out on a monthly basis through either Mobile Money or Bank account.
+10. Commissions earned will be paid out on a monthly basis through either Mobile Money or Bank account associated with the mobile number of the account.
 
 11. By agreeing to these terms and conditions, you acknowledge that you have read and understood them and agree to abide by them.
 

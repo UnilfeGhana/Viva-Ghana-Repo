@@ -158,7 +158,7 @@ class _PickUpLocationPageState extends State<PickUpLocationPage> {
                         ),
                         const SizedBox(height: 50),
                         const Text(
-                          'Above location would be used during delivery by Vendor\n please Screenshot the summary',
+                          'Above location would be used during delivery by Vendor\n',
                           textAlign: TextAlign.center,
                         ),
                         Text(selectedShop),
@@ -167,7 +167,7 @@ class _PickUpLocationPageState extends State<PickUpLocationPage> {
                         ),
                         const Text('Order Summary (Take Screenshot)',
                             style: TextStyle(
-                              fontSize: 20,
+                              fontSize: 16,
                               color: Colors.lightGreen,
                             )),
                             const SizedBox(height:5),
