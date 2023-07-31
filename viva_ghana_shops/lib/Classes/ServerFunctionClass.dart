@@ -421,7 +421,7 @@ class ServerFunctionClass {
     };
 
     print("Debug fulfill order: ${orderMap}");
-    //Deleting Order from New Orders Collection
+    //Deleting Order from Pending Orders Collection
     cloud
         .collection(shopsLocation)
         .doc('$shopName:$pin')
@@ -429,7 +429,7 @@ class ServerFunctionClass {
         .doc(order.order_db_location)
         .delete();
 
-    //Adding order to Pending Orders Collection
+    //Adding order to Fulfilled Orders Collection
     cloud
         .collection(shopsLocation)
         .doc('$shopName:$pin')
