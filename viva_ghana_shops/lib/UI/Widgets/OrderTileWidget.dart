@@ -3,6 +3,7 @@ import 'package:viva_ghana_shops/Classes/EventHandler.dart';
 
 import '../../Classes/OrderClass.dart';
 
+// ignore: must_be_immutable
 class OrderTileWidget extends StatefulWidget {
   OrderClass order;
   int orderNumber;
