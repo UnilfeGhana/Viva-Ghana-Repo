@@ -74,7 +74,6 @@ class DatabaseFunctionClass {
   get_stock() async {
     DatabaseFunctionClass.shop.stock =
         await serverFunction.get_shop_stock(shop.shopName, shop.pin);
-    var checker = DatabaseFunctionClass.shop.stock;
     return shop.stock;
   }
 
@@ -100,7 +99,6 @@ class DatabaseFunctionClass {
 
     //The process steps through each of the keys in the order and
     //updates the shops stock to the difference between them
-    var old_stock = shop.stock;
     for (var key in order.orders.keys) {
       int ordered_amt = order.orders[key];
       int stocked_amt = int.parse(shop.stock[key]);

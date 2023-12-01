@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:viva_ghana_shops/Classes/DatabaseFunctionClass.dart';
-import 'package:viva_ghana_shops/Classes/ServerFunctionClass.dart';
 
 import 'NavigationHanlder.dart';
 import 'OrderClass.dart';
-import 'ShopClass.dart';
 
 class EventHandler {
   DatabaseFunctionClass dbfClass = DatabaseFunctionClass();
