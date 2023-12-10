@@ -38,8 +38,8 @@ class DatabaseFunctionClass {
   }
 
   Future<List<OrderClass>> get_new_orders() async {
-    shop.shop_pending_orders =
-        (await serverFunction.get_shop_new_orders(shop.shopName, shop.pin))!;
+    // shop.shop_pending_orders =
+    //     (await serverFunction.get_shop_new_orders(shop.shopName, shop.pin))!;
     List<OrderClass> newOrders =
         (await serverFunction.get_shop_new_orders(shop.shopName, shop.pin))!;
     return newOrders;

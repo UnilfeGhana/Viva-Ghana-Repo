@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:viva_ghana_shops/Classes/DatabaseFunctionClass.dart';
 
@@ -10,13 +11,42 @@ class EventHandler {
   BuildContext context;
   EventHandler(this.context);
 
-  on_login(String shopName, String pin) {
-    dbfClass.on_login(shopName, pin);
-    on_get_new_orders();
-    on_get_pending_orders();
-    on_get_fulfilled_orders();
-    on_get_stock();
-    on_get_history();
+  Future<List<DocumentSnapshot>> getDocuments(
+      String collectionName, shopName, pin, orderType) async {
+    try {
+      CollectionReference collection = FirebaseFirestore.instance
+          .collection(collectionName)
+          .doc('${shopName}:${pin}')
+          .collection(orderType);
+
+      QuerySnapshot querySnapshot = await collection.get();
+
+      return querySnapshot.docs;
+    } catch (e) {
+      print("Error getting documents: $e");
+      return [];
+    }
+  }
+
+  on_login(String shopName, String pin) async {
+    await dbfClass.on_login(shopName, pin);
+
+    // FirebaseFirestore cloud = FirebaseFirestore.instance;
+    // String shopsLocation = 'Shops';
+
+    // var values =
+    //     await getDocuments('Shops', 'Head Office', '0003', 'new_orders');
+    // List val = [];
+    // for (var element in values) {
+    //   val.add(element.data());
+    // }
+    // print(val[0]['Total']);
+    // print(val[1]['Total']);
+    // await on_get_new_orders();
+    // on_get_pending_orders();
+    // on_get_fulfilled_orders();
+    // on_get_stock();
+    // on_get_history();
     NavigationHandler(context).on_change_page('HomePage', Null);
   }
 
@@ -80,8 +110,8 @@ class EventHandler {
     dbfClass.get_stock();
   }
 
-  on_get_new_orders() {
-    dbfClass.get_new_orders();
+  on_get_new_orders() async {
+    await dbfClass.get_new_orders();
   }
 
   on_get_pending_orders() {

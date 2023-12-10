@@ -13,6 +13,23 @@ class ServerFunctionClass {
   String ordersLocation = 'Orders';
   ServerKeysClass skc = ServerKeysClass();
 
+  Future<List<DocumentSnapshot>> getDocuments(
+      String collectionName, shopName, pin, orderType) async {
+    try {
+      CollectionReference collection = FirebaseFirestore.instance
+          .collection(collectionName)
+          .doc('${shopName}:${pin}')
+          .collection(orderType);
+
+      QuerySnapshot querySnapshot = await collection.get();
+
+      return querySnapshot.docs;
+    } catch (e) {
+      print("Error getting documents: $e");
+      return [];
+    }
+  }
+
   Future<ShopClass> get_shop(String shopName, String pin) async {
     //First get Shop Snapshot from the database
     //Get various list of orders from the shop to pass to the ShopClass variable
@@ -59,35 +76,43 @@ class ServerFunctionClass {
   Future<List<OrderClass>?> get_shop_new_orders(
       String shopName, String pin) async {
     List<OrderClass> newOrders = [];
-    cloud
-        .collection(shopsLocation)
-        .doc('$shopName:$pin')
-        .collection('new_orders')
-        .snapshots()
-        .listen((event) {
-      for (DocumentSnapshot order in event.docs) {
-        //Converting Medicine List to Map//////
-        List<dynamic> testList = order[skc.medicines];
+    print(shopName);
+    var values = await getDocuments('Shops', shopName, pin, 'new_orders');
+    List val = [];
+    for (var element in values) {
+      val.add(element.data());
+    }
+    // print(val[0][skc.member]);
 
-        Map<int, dynamic> tmap = testList.asMap();
-        Map<String, dynamic> nmap = {};
-        for (var i = 0; i < tmap.length; i++) {
-          nmap.addAll({tmap[i][skc.medicineName]: tmap[i][skc.medicineNumber]});
-        }
-        //End of Conversion//////////////
-        //Creating a variable to store current iterated order
-        OrderClass _order = OrderClass(order[skc.recipient], order[skc.phone], nmap,
-            order[skc.total].toString(), order.id, order[skc.member]);
+    for (var orderMap in val) {
+      //Converting Medicine List to Map//////
+      List<dynamic> testList = orderMap[skc.medicines];
+      // print(testList);
 
-        //First Checking to see if Pending Order has already been loaded
-        if (DatabaseFunctionClass.shop.shop_pending_orders.contains(_order)) {
-          //Saving the orders to pending Orders
-        } else {
-          newOrders.add(_order);
-        }
+      Map<int, dynamic> tmap = testList.asMap();
+      Map<String, dynamic> nmap = {};
+      for (var i = 0; i < tmap.length; i++) {
+        nmap.addAll({tmap[i][skc.medicineName]: tmap[i][skc.medicineNumber]});
       }
-    });
 
+      OrderClass _order = OrderClass(
+          orderMap[skc.recipient],
+          orderMap[skc.phone],
+          nmap,
+          orderMap[skc.total].toString(),
+          'orderMap.id',
+          orderMap[skc.member]);
+
+      //First Checking to see if Order has already been loaded
+      if (DatabaseFunctionClass.shop.shop_new_orders.contains(_order)) {
+        //Saving the orders to Shop's Orders
+      } else {
+        newOrders.add(_order);
+      }
+      // print(newOrders[0].orders);
+    }
+
+    print(newOrders[0].total);
     return newOrders;
   }
 
@@ -113,8 +138,8 @@ class ServerFunctionClass {
         }
         //End of Conversion//////////////
         //Creating a variable to store current iterated order
-        OrderClass _order = OrderClass(order[skc.recipient], order[skc.phone], nmap,
-            order[skc.total].toString(), order.id, order[skc.member]);
+        OrderClass _order = OrderClass(order[skc.recipient], order[skc.phone],
+            nmap, order[skc.total].toString(), order.id, order[skc.member]);
 
         //First Checking to see if Pending Order has already been loaded
         if (DatabaseFunctionClass.shop.shop_pending_orders.contains(_order)) {
@@ -145,7 +170,8 @@ class ServerFunctionClass {
           Map<int, dynamic> tmap = testList.asMap();
           Map<String, dynamic> nmap = {};
           for (var i = 0; i < tmap.length; i++) {
-            nmap.addAll({tmap[i][skc.medicineName]: tmap[i][skc.medicineNumber]});
+            nmap.addAll(
+                {tmap[i][skc.medicineName]: tmap[i][skc.medicineNumber]});
           }
           //End of Conversion//////////////
           //Creating a variable to store current iterated order
@@ -178,7 +204,8 @@ class ServerFunctionClass {
           Map<int, dynamic> tmap = testList.asMap();
           Map<String, dynamic> nmap = {};
           for (var i = 0; i < tmap.length; i++) {
-            nmap.addAll({tmap[i][skc.medicineName]: tmap[i][skc.medicineNumber]});
+            nmap.addAll(
+                {tmap[i][skc.medicineName]: tmap[i][skc.medicineNumber]});
           }
           //End of Conversion//////////////
           //Creating a variable to store current iterated order
@@ -212,7 +239,8 @@ class ServerFunctionClass {
           Map<int, dynamic> tmap = testList.asMap();
           Map<String, dynamic> nmap = {};
           for (var i = 0; i < tmap.length; i++) {
-            nmap.addAll({tmap[i][skc.medicineName]: tmap[i][skc.medicineNumber]});
+            nmap.addAll(
+                {tmap[i][skc.medicineName]: tmap[i][skc.medicineNumber]});
           }
           //End of Conversion//////////////
           //Creating a variable to store current iterated order

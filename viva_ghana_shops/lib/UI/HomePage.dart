@@ -16,6 +16,13 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    getNewOrders;
+  }
+
   int _currentIndex = 0;
   late EventHandler eventH;
   DatabaseFunctionClass dbfc = DatabaseFunctionClass();
@@ -97,5 +104,10 @@ class _HomePageState extends State<HomePage> {
                 icon: Icon(Icons.history), label: 'Monthly History'),
           ]),
     );
+  }
+
+  getNewOrders() async {
+    //Change function call to get fulfilled Orders
+    await dbfc.get_new_orders();
   }
 }

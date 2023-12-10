@@ -32,7 +32,10 @@ class _NewOrdersPageState extends State<NewOrdersPage> {
   getNewOrders() async {
     //Change function call to get fulfilled Orders
     var temp = await dbfc.get_new_orders();
-    newOrders = temp;
+
+    setState(() {
+      newOrders = temp;
+    });
   }
 
   @override
