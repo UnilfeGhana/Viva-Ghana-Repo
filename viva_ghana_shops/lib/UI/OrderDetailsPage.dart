@@ -30,9 +30,10 @@ class _OrderDetailsPageState extends State<OrderDetailsPage> {
     //DatabaseFunctionClass's productList
 
     List keyList = order.orders.keys.toList();
+
     for (var i = 0; i < keyList.length; i++) {
       int relativeIndex = DatabaseFunctionClass.products
-          .indexWhere((product) => product.productName = keyList[i]);
+          .indexWhere((product) => product.productName == keyList[i]);
 
       setState(() {
         relativeIndexArray.add(relativeIndex);
@@ -65,21 +66,22 @@ class _OrderDetailsPageState extends State<OrderDetailsPage> {
               ],
             ),
             SizedBox(
-                height: 400,
-                child: ListView.builder(
-                    controller: controller,
-                    itemCount: order.orders.keys.toList().length,
-                    itemBuilder: (
-                      BuildContext context,
-                      index,
-                    ) {
-                      return MedicineCardWidget(
-                          medicineName: order.orders.keys.toList()[index],
-                          //  'Viva Plus (90)',
-                          canEdit: false,
-                          in_dbfc: dbfc,
-                          itemIndex: relativeIndexArray[index]);
-                    })),
+              height: 400,
+              child: ListView.builder(
+                  controller: controller,
+                  itemCount: order.orders.keys.toList().length,
+                  itemBuilder: (
+                    BuildContext context,
+                    index,
+                  ) {
+                    return MedicineCardWidget(
+                        medicineName: order.orders.keys.toList()[index],
+                        //  'Viva Plus (90)',
+                        canEdit: false,
+                        in_dbfc: dbfc,
+                        itemIndex: relativeIndexArray[index]);
+                  }),
+            ),
             //For spacing
             const SizedBox(height: 20),
             Row(

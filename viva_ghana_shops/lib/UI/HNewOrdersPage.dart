@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:viva_ghana_shops/UI/Widgets/orderCard.dart';
 import '../Classes/DatabaseFunctionClass.dart';
 import '../Classes/EventHandler.dart';
 import '../Classes/OrderClass.dart';
@@ -48,7 +49,13 @@ class _NewOrdersPageState extends State<NewOrdersPage> {
           itemCount: newOrders.length,
           itemBuilder: (BuildContext context, index) {
             //return OrderTileWidget
-            return OrderTileWidget(
+            return OrderCardWidget(
+                index: '${index + 1}',
+                available: true,
+                name: newOrders[index].recipientName,
+                order: newOrders[index]);
+
+            OrderTileWidget(
               order: newOrders[index],
               orderNumber: index,
             );

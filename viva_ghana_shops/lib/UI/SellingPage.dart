@@ -44,7 +44,7 @@ class _SellingPageState extends State<SellingPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                const Text('Selling Page'),
+                const Text('Point of Sale'),
                 textFieldFormWidget('Recipient Name', 'Name'),
                 textFieldFormWidget('Recipient Phone', '+233...'),
                 textFieldFormWidget('Member Phone', '+233...'),

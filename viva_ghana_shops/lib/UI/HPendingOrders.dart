@@ -5,6 +5,7 @@ import 'package:viva_ghana_shops/Classes/EventHandler.dart';
 import '../Classes/OrderClass.dart';
 import 'Widgets/OrderTileWidget.dart';
 import 'Widgets/PendingOrderTileWidget.dart';
+import 'Widgets/orderCard.dart';
 
 class PendingOrdersPage extends StatefulWidget {
   const PendingOrdersPage({super.key});
@@ -47,7 +48,13 @@ class _PendingOrdersPageState extends State<PendingOrdersPage> {
           itemCount: pendingOrders.length,
           itemBuilder: (BuildContext context, index) {
             //return OrderTileWidget
-            return PendingOrderTileWidget(
+            return OrderCardWidget(
+                index: '${index + 1}',
+                available: true,
+                name: pendingOrders[index].recipientName,
+                order: pendingOrders[index]);
+
+            PendingOrderTileWidget(
               order: pendingOrders[index],
               orderNumber: index,
             );

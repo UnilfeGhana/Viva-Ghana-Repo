@@ -20,7 +20,7 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    getNewOrders;
+    // getNewOrders;
   }
 
   int _currentIndex = 0;
@@ -28,61 +28,78 @@ class _HomePageState extends State<HomePage> {
   DatabaseFunctionClass dbfc = DatabaseFunctionClass();
   List pageList = [
     NewOrdersPage(),
-    PendingOrdersPage(),
-    FulfilledOrdersPage(),
+    const PendingOrdersPage(),
+    const FulfilledOrdersPage(),
     SellingPage(),
-    HistoryPage()
+    // const HistoryPage()
   ];
   @override
   Widget build(BuildContext context) {
     //Initializing EventH
     eventH = EventHandler(context);
     return Scaffold(
+      backgroundColor: Colors.lightGreen,
       appBar: AppBar(
-        title: Text('${DatabaseFunctionClass.shop.shopName} Page'),
-        leading: TextButton(
-          child: Icon(Icons.logout),
-          onPressed: () {
-            eventH.on_logout(context);
-          },
+        toolbarHeight: 90,
+        elevation: 0,
+        title: Text(
+          '${DatabaseFunctionClass.shop.shopName} Page',
+          style: TextStyle(
+            fontWeight: FontWeight.w400,
+            fontSize: 25,
+          ),
         ),
+        // leading: TextButton(
+        //   child: const Icon(Icons.logout),
+        //   onPressed: () {
+        //     eventH.on_logout(context);
+        //   },
+        // ),
         actions: [
-          GestureDetector(
-              onTap: () {
-                eventH.on_show_stock();
-              },
-              child: const CircleAvatar(
-                  radius: 30,
-                  child: Text('Stock', style: TextStyle(fontSize: 10)))),
-          GestureDetector(
-              onTap: () {
-                setState(() {
-                  eventH.on_get_new_orders();
-                  eventH.on_get_pending_orders();
-                  eventH.on_get_fulfilled_orders();
-                  eventH.on_get_history();
-                });
-              },
-              child: const CircleAvatar(
-                  radius: 30,
-                  child: Text('Refresh', style: TextStyle(fontSize: 10))))
+          IconButton(
+            icon: Icon(Icons.inventory),
+            onPressed: () {
+              eventH.on_show_stock();
+            },
+          ),
+          // GestureDetector(
+          //     onTap: () {
+          //       eventH.on_show_stock();
+          //     },
+          //     child: const CircleAvatar(
+          //         radius: 30,
+          //         child: Text('Stock', style: TextStyle(fontSize: 10)))),
         ],
       ),
-      body: PageView.builder(
-        controller: PageController(),
-        onPageChanged: (value) {
-          setState(
-            () {
-              _currentIndex = value;
+      body: Container(
+        // margin: const EdgeInsets.all(5),
+        decoration: const BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(20),
+            topRight: Radius.circular(20),
+          ),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.only(top: 20),
+          child: PageView.builder(
+            controller: PageController(),
+            onPageChanged: (value) {
+              setState(
+                () {
+                  _currentIndex = value;
+                },
+              );
             },
-          );
-        },
-        itemCount: pageList.length,
-        itemBuilder: ((context, index) {
-          return pageList[_currentIndex];
-        }),
+            itemCount: pageList.length,
+            itemBuilder: ((context, index) {
+              return pageList[_currentIndex];
+            }),
+          ),
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
+          showUnselectedLabels: true,
           currentIndex: _currentIndex,
           unselectedItemColor: Colors.grey,
           selectedItemColor: Colors.lightGreen,
@@ -93,21 +110,20 @@ class _HomePageState extends State<HomePage> {
           },
           items: const [
             BottomNavigationBarItem(
-                icon: Icon(Icons.new_releases), label: 'New Orders'),
+                icon: Icon(Icons.notification_add), label: 'New'),
             BottomNavigationBarItem(
-                icon: Icon(Icons.pending_actions), label: 'Pending Orders'),
+                icon: Icon(Icons.pending_actions), label: 'Pending'),
+            BottomNavigationBarItem(icon: Icon(Icons.done), label: 'Fulfilled'),
             BottomNavigationBarItem(
-                icon: Icon(Icons.done), label: 'Fulfilled Orders'),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.create), label: 'Create Order'),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.history), label: 'Monthly History'),
+                icon: Icon(Icons.add_business_rounded), label: 'P.O.S'),
+            // BottomNavigationBarItem(
+            //     icon: Icon(Icons.history), label: 'Monthly History'),
           ]),
     );
   }
 
-  getNewOrders() async {
-    //Change function call to get fulfilled Orders
-    await dbfc.get_new_orders();
-  }
+  // getNewOrders() async {
+  //   //Change function call to get fulfilled Orders
+  //   await dbfc.get_new_orders();
+  // }
 }

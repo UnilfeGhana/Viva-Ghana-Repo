@@ -15,10 +15,16 @@ class ServerFunctionClass {
 
   Future<List<DocumentSnapshot>> getDocuments(
       String collectionName, shopName, pin, orderType) async {
+    // shopName = 'Head Office';
+    // pin = '0003';
+    // shopName = 'VivaGate';
+    // pin = '0204050873';
+    String _shopName = shopName;
+    String _pin = pin;
     try {
       CollectionReference collection = FirebaseFirestore.instance
           .collection(collectionName)
-          .doc('${shopName}:${pin}')
+          .doc('$_shopName:$_pin')
           .collection(orderType);
 
       QuerySnapshot querySnapshot = await collection.get();
@@ -33,11 +39,12 @@ class ServerFunctionClass {
   Future<ShopClass> get_shop(String shopName, String pin) async {
     //First get Shop Snapshot from the database
     //Get various list of orders from the shop to pass to the ShopClass variable
-    List<OrderClass>? newOrders = await get_shop_new_orders(shopName, pin);
-    List<OrderClass>? pendingOrders =
-        await get_shop_pending_orders(shopName, pin);
-    List<OrderClass>? fulfilledOrders =
-        await get_shop_fulfilled_orders(shopName, pin);
+    List<OrderClass>? newOrders = [];
+    // await get_shop_new_orders(shopName, pin);
+    List<OrderClass>? pendingOrders = [];
+    // await get_shop_pending_orders(shopName, pin);
+    List<OrderClass>? fulfilledOrders = [];
+    // await get_shop_fulfilled_orders(shopName, pin);
     List<OrderClass>? history = await get_shop_history(shopName, pin);
 
     ////////////////////////////////////////////
@@ -56,8 +63,8 @@ class ServerFunctionClass {
 
     //Create ShopClass varaible and fill with necessary Information
     Map<String, dynamic> map = {};
-    ShopClass shop = ShopClass(shopName, pin, 'mobile', map, newOrders!,
-        pendingOrders!, fulfilledOrders!, history!, [], 'shopSnapShot.id');
+    ShopClass shop = ShopClass(shopName, pin, 'mobile', map, newOrders,
+        pendingOrders, fulfilledOrders, history!, [], 'shopSnapShot.id');
 
     //return ShopClass varaible shop
     return shop;
@@ -88,6 +95,7 @@ class ServerFunctionClass {
       //Converting Medicine List to Map//////
       List<dynamic> testList = orderMap[skc.medicines];
       // print(testList);
+      print(orderMap[skc.medicines]);
 
       Map<int, dynamic> tmap = testList.asMap();
       Map<String, dynamic> nmap = {};
@@ -119,70 +127,80 @@ class ServerFunctionClass {
   Future<List<OrderClass>?> get_shop_pending_orders(
       String shopName, String pin) async {
     List<OrderClass> pendingOrders = [];
+    var values = await getDocuments('Shops', shopName, pin, 'pending_orders');
+    List val = [];
+    for (var element in values) {
+      val.add(element.data());
+    }
 
 //////New Listener to get Pending Orders
-    cloud
-        .collection(shopsLocation)
-        .doc('$shopName:$pin')
-        .collection('pending_orders')
-        .snapshots()
-        .listen((event) {
-      for (DocumentSnapshot order in event.docs) {
-        //Converting Medicine List to Map//////
-        List<dynamic> testList = order[skc.medicines];
 
-        Map<int, dynamic> tmap = testList.asMap();
-        Map<String, dynamic> nmap = {};
-        for (var i = 0; i < tmap.length; i++) {
-          nmap.addAll({tmap[i][skc.medicineName]: tmap[i][skc.medicineNumber]});
-        }
-        //End of Conversion//////////////
-        //Creating a variable to store current iterated order
-        OrderClass _order = OrderClass(order[skc.recipient], order[skc.phone],
-            nmap, order[skc.total].toString(), order.id, order[skc.member]);
+    for (var orderMap in val) {
+      //Converting Medicine List to Map//////
+      List<dynamic> testList = orderMap[skc.medicines];
+      // print(testList);
 
-        //First Checking to see if Pending Order has already been loaded
-        if (DatabaseFunctionClass.shop.shop_pending_orders.contains(_order)) {
-          //Saving the orders to pending Orders
-        } else {
-          pendingOrders.add(_order);
-        }
+      Map<int, dynamic> tmap = testList.asMap();
+      Map<String, dynamic> nmap = {};
+      for (var i = 0; i < tmap.length; i++) {
+        nmap.addAll({tmap[i][skc.medicineName]: tmap[i][skc.medicineNumber]});
       }
-    });
 
+      OrderClass _order = OrderClass(
+          orderMap[skc.recipient],
+          orderMap[skc.phone],
+          nmap,
+          orderMap[skc.total].toString(),
+          'orderMap.id',
+          orderMap[skc.member]);
+
+      //First Checking to see if Order has already been loaded
+      if (DatabaseFunctionClass.shop.shop_pending_orders.contains(_order)) {
+        //Saving the orders to Shop's Orders
+      } else {
+        pendingOrders.add(_order);
+      }
+      // print(newOrders[0].orders);
+    }
     return pendingOrders;
   }
 
   Future<List<OrderClass>?> get_shop_fulfilled_orders(
       String shopName, String pin) async {
     List<OrderClass> fulfilledOrders = [];
-    try {
-      cloud
-          .collection(shopsLocation)
-          .doc('$shopName:$pin')
-          .collection('fulfilled_orders')
-          .snapshots()
-          .listen((event) {
-        for (DocumentSnapshot order in event.docs) {
-          //Converting Medicine List to Map//////
-          List<dynamic> testList = order[skc.medicines];
-          // testList.add(order['Medicines']);
-          Map<int, dynamic> tmap = testList.asMap();
-          Map<String, dynamic> nmap = {};
-          for (var i = 0; i < tmap.length; i++) {
-            nmap.addAll(
-                {tmap[i][skc.medicineName]: tmap[i][skc.medicineNumber]});
-          }
-          //End of Conversion//////////////
-          //Creating a variable to store current iterated order
-          OrderClass _order = OrderClass(order[skc.recipient], order[skc.phone],
-              nmap, '0', order.id, order[skc.member]);
-          //Saving the Orders to fulfilled Orders
-          fulfilledOrders.add(_order);
-        }
-      });
-    } catch (e) {
-      print('No Fulfilled Orders');
+    var values = await getDocuments('Shops', shopName, pin, 'fulfilled_orders');
+    List val = [];
+    for (var element in values) {
+      val.add(element.data());
+    }
+    print(val[0]);
+    for (var orderMap in val) {
+      //Converting Medicine List to Map//////
+      // print(orderMap);
+
+      // print(testList);
+      // print(orderMap);
+
+      Map<String, dynamic> nmap = orderMap[skc.medicines];
+
+      print(nmap);
+      OrderClass _order = OrderClass(
+        orderMap[skc.recipient],
+        orderMap[skc.phone],
+        nmap,
+        orderMap[skc.total].toString(),
+        'orderMap.id',
+        'orderMap[skc.member]',
+      );
+      // print(_order);
+      //First Checking to see if Order has already been loaded
+      if (DatabaseFunctionClass.shop.shop_fulfilled_orders.contains(_order)) {
+        //Saving the orders to Shop's Orders
+      } else {
+        fulfilledOrders.add(_order);
+      }
+      // fulfilledOrders.add(_order);
+      // print(fulfilledOrders);
     }
     return fulfilledOrders;
   }
@@ -317,7 +335,7 @@ class ServerFunctionClass {
     MemberClass member = MemberClass('None Member', [], [], '', 0);
     DocumentSnapshot memberSnapshot =
         await cloud.collection('Members').doc(phone).get();
-    print('Member Snapshot is:${memberSnapshot}');
+    print('Member Snapshot is:$memberSnapshot');
     String phone_ = memberSnapshot['phone'];
     List<String> children = memberSnapshot['children'];
     List<String> parents = memberSnapshot['parents'];

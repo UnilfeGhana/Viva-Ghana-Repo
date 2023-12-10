@@ -67,6 +67,8 @@ class _AuthPageState extends State<AuthPage> {
                     style: ButtonStyle(
                         backgroundColor: MaterialStatePropertyAll(green)),
                     onPressed: () {
+                      print(shopName);
+                      print(pin);
                       setState(() {
                         eventH.on_login(shopName, pin);
                       });

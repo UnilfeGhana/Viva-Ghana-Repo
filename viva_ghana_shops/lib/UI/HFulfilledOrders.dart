@@ -4,6 +4,7 @@ import '../Classes/DatabaseFunctionClass.dart';
 import '../Classes/EventHandler.dart';
 import '../Classes/OrderClass.dart';
 import 'Widgets/OrderTileWidget.dart';
+import 'Widgets/orderCard.dart';
 
 class FulfilledOrdersPage extends StatefulWidget {
   const FulfilledOrdersPage({super.key});
@@ -26,8 +27,10 @@ class _FulfilledOrdersPageState extends State<FulfilledOrdersPage> {
 
   getFulfilled() async {
     var temp = await dbfc.get_fulfilled_orders();
+    print(temp);
     setState(() {
       fulfilledOrders = temp;
+      print(fulfilledOrders);
     });
   }
 
@@ -41,7 +44,13 @@ class _FulfilledOrdersPageState extends State<FulfilledOrdersPage> {
           itemCount: fulfilledOrders.length,
           itemBuilder: (BuildContext context, index) {
             //return OrderTileWidget
-            return OrderTileWidget(
+            return OrderCardWidget(
+                index: '${index + 1}',
+                available: true,
+                name: fulfilledOrders[index].recipientName,
+                order: fulfilledOrders[index]);
+
+            OrderTileWidget(
               order: fulfilledOrders[index],
               orderNumber: index,
             );

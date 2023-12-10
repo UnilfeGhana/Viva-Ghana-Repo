@@ -29,7 +29,7 @@ class EventHandler {
   }
 
   on_login(String shopName, String pin) async {
-    await dbfClass.on_login(shopName, pin);
+    dbfClass.on_login(shopName, pin);
 
     // FirebaseFirestore cloud = FirebaseFirestore.instance;
     // String shopsLocation = 'Shops';
