@@ -48,7 +48,7 @@ class _OrderCardWidgetState extends State<OrderCardWidget> {
             borderRadius: BorderRadius.circular(23),
             color: (available)
                 ? const Color.fromARGB(255, 189, 232, 140)
-                : Color.fromARGB(255, 250, 137, 129),
+                : Color.fromARGB(255, 250, 252, 114),
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,

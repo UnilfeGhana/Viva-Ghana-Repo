@@ -51,7 +51,7 @@ class _PendingOrdersPageState extends State<PendingOrdersPage> {
             //return OrderTileWidget
             return OrderCardWidget(
                 index: '${index + 1}',
-                available: true,
+                available: false,
                 name: pendingOrders[index].recipientName,
                 order: pendingOrders[index]);
 
