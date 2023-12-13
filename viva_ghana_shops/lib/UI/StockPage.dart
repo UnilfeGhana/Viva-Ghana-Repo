@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:viva_ghana_shops/Classes/EventHandler.dart';
+import 'package:viva_ghana_shops/Classes/ProductClass.dart';
 import 'package:viva_ghana_shops/UI/Widgets/MedicineCardWidget.dart';
 import 'package:viva_ghana_shops/Classes/EventHandler.dart';
+import 'package:viva_ghana_shops/UI/Widgets/StockCard.dart';
 
 import '../Classes/DatabaseFunctionClass.dart';
 
@@ -15,6 +17,22 @@ class StockPage extends StatefulWidget {
 class _StockPageState extends State<StockPage> {
   late EventHandler eventH;
   DatabaseFunctionClass dbfc = DatabaseFunctionClass();
+  List<String> keyList = DatabaseFunctionClass.shop.stock.keys.toList();
+  List valueList = DatabaseFunctionClass.shop.stock.values.toList();
+  List<String> imagePaths = [];
+
+  func() async {
+    // setState(() async {
+    //   await eventH.on_get_stock();
+    // });
+    for (var key in keyList) {
+      var product = DatabaseFunctionClass.products
+          .firstWhere((_product) => _product.productName == key);
+
+      imagePaths.add(product.img);
+    }
+    print('doing');
+  }
 
   @override
   void initState() {
@@ -24,6 +42,7 @@ class _StockPageState extends State<StockPage> {
     setState(() {
       eventH.on_get_stock();
     });
+    func();
   }
 
   @override
@@ -42,14 +61,14 @@ class _StockPageState extends State<StockPage> {
                 // height: MediaQuery.of(context).size.height * 0.6,
                 child: ListView.builder(
                     shrinkWrap: true,
-                    itemCount: DatabaseFunctionClass.cartList.length,
+                    itemCount: DatabaseFunctionClass.shop.stock.keys.length,
                     itemBuilder: (BuildContext context, index) {
                       //You should pass the List the Medicine card widget should use
-                      return MedicineCardWidget(
-                          medicineName: (index).toString(),
-                          canEdit: false,
-                          itemIndex: index,
-                          in_dbfc: dbfc);
+                      return StockCard(
+                        medicineName: keyList[index],
+                        value: valueList[index],
+                        image: imagePaths[index],
+                      );
                     })),
             const Text('Contact UniLife Ghana to refill your stock')
           ],

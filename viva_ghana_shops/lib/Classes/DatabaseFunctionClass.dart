@@ -12,9 +12,9 @@ class DatabaseFunctionClass {
   ///       List of Products                 ////
 ////////////////////////////////////////////////
   static final List<ProductClass> products = [
-    ProductClass('Viva Plus (90)', '70', '90tabsViva.png'),
-    ProductClass('Viva Plus (120)', '90', '120tabsViva.png'),
-    ProductClass('Viva Lady', '100', 'Vivalady.png')
+    ProductClass('Viva Plus (90)', '70', 'images/90tabsViva.png'),
+    ProductClass('Viva Plus (120)', '90', 'images/120tabsViva.png'),
+    ProductClass('Viva Lady', '100', 'images/Vivalady.png')
   ];
 
   static final List<CartClass> cartList = [
@@ -74,6 +74,7 @@ class DatabaseFunctionClass {
   get_stock() async {
     DatabaseFunctionClass.shop.stock =
         await serverFunction.get_shop_stock(shop.shopName, shop.pin);
+    // print('Shop Stock is ${shop.stock}');
     return shop.stock;
   }
 

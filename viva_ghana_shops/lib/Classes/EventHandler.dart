@@ -71,12 +71,15 @@ class EventHandler {
       dbfClass.reduce_stock(order);
       dbfClass.pend_order(order);
       NavigationHandler(context).on_clear_context();
-      NavigationHandler(context).on_change_page('HomePage', Null);
+
+      // NavigationHandler(context).on_change_page('HomePage', Null);
+      navHandler.on_success('Order has been moved to pending');
     } else {
       //Else show message that Shop stock is not enough
       // NavigationHandler(context).on_change_page('HomePage', Null);
       NavigationHandler(context).on_clear_context();
-      navHandler.on_fail('You do not have enough stock to fulfill this Order');
+      navHandler
+          .on_fail('You do not have enough stock to fulfill this Order \n\n');
     }
   }
 
@@ -106,8 +109,8 @@ class EventHandler {
     navHandler.on_change_page('Stock Page', Null);
   }
 
-  on_get_stock() {
-    dbfClass.get_stock();
+  on_get_stock() async {
+    await dbfClass.get_stock();
   }
 
   on_get_new_orders() async {

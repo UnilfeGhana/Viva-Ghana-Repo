@@ -90,7 +90,7 @@ class _PendingOrderDetailsPageState extends State<PendingOrderDetailsPage> {
                 onPressed: () {
                   EventHandler(context).on_fulfill_order(order);
                 },
-                child: const Text('Confirm Fulfill Order')),
+                child: const Text('Completed')),
 
             //For spacing
             const SizedBox(height: 10),

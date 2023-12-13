@@ -28,7 +28,7 @@ class _HomePageState extends State<HomePage> {
   DatabaseFunctionClass dbfc = DatabaseFunctionClass();
   List pageList = [
     NewOrdersPage(),
-    const PendingOrdersPage(),
+    PendingOrdersPage(),
     const FulfilledOrdersPage(),
     SellingPage(),
     // const HistoryPage()

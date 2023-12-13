@@ -29,6 +29,8 @@ class _OrderDetailsPageState extends State<OrderDetailsPage> {
     //First getting the index at which the selected medicine is located in the
     //DatabaseFunctionClass's productList
 
+    print(order.orders);
+
     List keyList = order.orders.keys.toList();
 
     for (var i = 0; i < keyList.length; i++) {

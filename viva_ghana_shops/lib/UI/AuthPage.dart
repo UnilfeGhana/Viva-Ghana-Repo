@@ -42,39 +42,44 @@ class _AuthPageState extends State<AuthPage> {
       Positioned(
         // top: 200,
         child: Container(
-          // height: double.infinity,
+          height: double.infinity,
           margin: const EdgeInsets.only(top: 250),
           decoration: BoxDecoration(
             color: Color.fromARGB(255, 248, 248, 248),
-            borderRadius: BorderRadius.circular(20),
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(20),
+              topRight: Radius.circular(20),
+            ),
           ),
-          child: Column(
+          child: SingleChildScrollView(
+            child: Column(
 
-              // mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                // Text('Please Login'),
-                const SizedBox(height: 100),
+                // mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  // Text('Please Login'),
+                  const SizedBox(height: 100),
 
-                //Shop Name Field
-                textFieldFormWidget('Shop Name', 'Shop Name'),
-                const SizedBox(
-                  height: 20,
-                ),
-                //Shop Pin Field
-                textFieldFormWidget('Shop Pin', 'Shop Pin'),
-                const SizedBox(height: 60),
-                ElevatedButton(
-                    style: ButtonStyle(
-                        backgroundColor: MaterialStatePropertyAll(green)),
-                    onPressed: () {
-                      print(shopName);
-                      print(pin);
-                      setState(() {
-                        eventH.on_login(shopName, pin);
-                      });
-                    },
-                    child: const Text('        Continue        '))
-              ]),
+                  //Shop Name Field
+                  textFieldFormWidget('Shop Name', 'Shop Name'),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  //Shop Pin Field
+                  textFieldFormWidget('Shop Pin', 'Shop Pin'),
+                  const SizedBox(height: 60),
+                  ElevatedButton(
+                      style: ButtonStyle(
+                          backgroundColor: MaterialStatePropertyAll(green)),
+                      onPressed: () {
+                        print(shopName);
+                        print(pin);
+                        setState(() {
+                          eventH.on_login(shopName, pin);
+                        });
+                      },
+                      child: const Text('        Continue        '))
+                ]),
+          ),
         ),
       ),
     ]));

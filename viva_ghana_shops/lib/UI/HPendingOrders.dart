@@ -3,7 +3,6 @@ import 'package:viva_ghana_shops/Classes/DatabaseFunctionClass.dart';
 import 'package:viva_ghana_shops/Classes/EventHandler.dart';
 
 import '../Classes/OrderClass.dart';
-import 'Widgets/OrderTileWidget.dart';
 import 'Widgets/PendingOrderTileWidget.dart';
 import 'Widgets/orderCard.dart';
 
@@ -22,11 +21,12 @@ class _PendingOrdersPageState extends State<PendingOrdersPage> {
   @override
   //Init State
   void initState() {
-    eventH = EventHandler(context);
     // TODO: implement initState
     super.initState();
+    print('pend Order page init');
+    eventH = EventHandler(context);
     //Callingthe get pending orders event
-    // eventH.on_get_pending_orders();
+    eventH.on_get_pending_orders();
 
     get_orders();
   }
@@ -36,6 +36,7 @@ class _PendingOrdersPageState extends State<PendingOrdersPage> {
     setState(() {
       pendingOrders = temp;
     });
+    print('getOrders');
   }
 
   @override
@@ -54,10 +55,10 @@ class _PendingOrdersPageState extends State<PendingOrdersPage> {
                 name: pendingOrders[index].recipientName,
                 order: pendingOrders[index]);
 
-            PendingOrderTileWidget(
-              order: pendingOrders[index],
-              orderNumber: index,
-            );
+            // PendingOrderTileWidget(
+            //   order: pendingOrders[index],
+            //   orderNumber: index,
+            // );
           },
         ));
   }

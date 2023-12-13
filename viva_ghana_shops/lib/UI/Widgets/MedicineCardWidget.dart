@@ -60,11 +60,11 @@ class _MedicineCardWidgetState extends State<MedicineCardWidget> {
                 ///     Container For Image  ////
                 /////////////////////////////////
                 Container(
-                  height: 250,
+                  height: 180,
                   width: 120,
                   decoration: BoxDecoration(
                       image: DecorationImage(
-                          image: AssetImage(img), fit: BoxFit.cover)),
+                          image: AssetImage(img), fit: BoxFit.contain)),
                 ),
                 ///////////////////////////////////////////////////////////
                 ///   Main Container for Product Price and Name Details ///

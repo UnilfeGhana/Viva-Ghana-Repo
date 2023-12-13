@@ -15,10 +15,6 @@ class ServerFunctionClass {
 
   Future<List<DocumentSnapshot>> getDocuments(
       String collectionName, shopName, pin, orderType) async {
-    // shopName = 'Head Office';
-    // pin = '0003';
-    // shopName = 'VivaGate';
-    // pin = '0204050873';
     String _shopName = shopName;
     String _pin = pin;
     try {
@@ -76,7 +72,7 @@ class ServerFunctionClass {
         await cloud.collection(shopsLocation).doc('$shopName:$pin').get();
 
     stock = data[skc.stock];
-    DatabaseFunctionClass.shop.stock = stock;
+    // DatabaseFunctionClass.shop.stock = stock;
     return stock;
   }
 
@@ -84,24 +80,33 @@ class ServerFunctionClass {
       String shopName, String pin) async {
     List<OrderClass> newOrders = [];
     print(shopName);
-    var values = await getDocuments('Shops', shopName, pin, 'new_orders');
-    List val = [];
-    for (var element in values) {
-      val.add(element.data());
-    }
-    // print(val[0][skc.member]);
+    List<DocumentSnapshot<Object?>> values =
+        await getDocuments('Shops', shopName, pin, 'new_orders');
+    // List val = [];
+    // for (DocumentSnapshot element in values) {
+    //   val.add(element.data());
+    // }
+    // // print(val[0][skc.member]);
+    // val[0];
 
-    for (var orderMap in val) {
+    for (var orderMap in values) {
       //Converting Medicine List to Map//////
       List<dynamic> testList = orderMap[skc.medicines];
       // print(testList);
-      print(orderMap[skc.medicines]);
+      // print('and');
+      // print(orderMap[skc.medicines]);
 
       Map<int, dynamic> tmap = testList.asMap();
       Map<String, dynamic> nmap = {};
       for (var i = 0; i < tmap.length; i++) {
-        nmap.addAll({tmap[i][skc.medicineName]: tmap[i][skc.medicineNumber]});
+        String nameBuffer = tmap[i][skc.medicineName];
+
+        nameBuffer = nameBuffer.replaceFirst(RegExp(r'\n'), ' ');
+
+        nmap.addAll({nameBuffer: tmap[i][skc.medicineNumber]});
       }
+      // print('and');
+      // print(nmap);
 
       OrderClass _order = OrderClass(
           orderMap[skc.recipient],
@@ -132,19 +137,23 @@ class ServerFunctionClass {
     for (var element in values) {
       val.add(element.data());
     }
+    // print(val);
 
 //////New Listener to get Pending Orders
 
     for (var orderMap in val) {
       //Converting Medicine List to Map//////
-      List<dynamic> testList = orderMap[skc.medicines];
+      // List<dynamic> testList = orderMap[skc.medicines];
+      // print('pending');
       // print(testList);
 
-      Map<int, dynamic> tmap = testList.asMap();
-      Map<String, dynamic> nmap = {};
-      for (var i = 0; i < tmap.length; i++) {
-        nmap.addAll({tmap[i][skc.medicineName]: tmap[i][skc.medicineNumber]});
-      }
+      // Map<String, dynamic> tmap = orderMap[skc.medicines];
+      Map<String, dynamic> nmap = orderMap[skc.medicines];
+      print(nmap);
+
+      // for (var i = 0; i < tmap.length; i++) {
+      //   nmap.addAll({tmap[i][skc.medicineName]: tmap[i][skc.medicineNumber]});
+      // }
 
       OrderClass _order = OrderClass(
           orderMap[skc.recipient],
@@ -152,7 +161,7 @@ class ServerFunctionClass {
           nmap,
           orderMap[skc.total].toString(),
           'orderMap.id',
-          orderMap[skc.member]);
+          orderMap[skc.phone]);
 
       //First Checking to see if Order has already been loaded
       if (DatabaseFunctionClass.shop.shop_pending_orders.contains(_order)) {
@@ -190,7 +199,7 @@ class ServerFunctionClass {
         nmap,
         orderMap[skc.total].toString(),
         'orderMap.id',
-        'orderMap[skc.member]',
+        orderMap[skc.phone],
       );
       // print(_order);
       //First Checking to see if Order has already been loaded
@@ -424,7 +433,8 @@ class ServerFunctionClass {
       'Recipient': order.recipientName,
       'Phone': order.recipientPhone,
       'Medicines': order.orders,
-      'Total': order.total
+      'Total': order.total,
+      'Member Phone': order.memberPhone,
     };
 
     //Deleting Order from New Orders Collection
