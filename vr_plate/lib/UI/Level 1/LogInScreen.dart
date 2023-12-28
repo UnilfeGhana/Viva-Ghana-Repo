@@ -79,6 +79,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           UserFunction.user_.phone = phone;
                           MemberFunction().setMemberPhone(phone);
                         });
+                        print('Login: $newVal');
                       },
                       decoration: const InputDecoration(
                         hintText: '+233-xx-xxxx-xxx',
