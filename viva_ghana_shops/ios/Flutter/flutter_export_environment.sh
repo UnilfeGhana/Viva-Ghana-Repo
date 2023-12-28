@@ -1,12 +1,12 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
-export "FLUTTER_ROOT=C:\src\flutter"
-export "FLUTTER_APPLICATION_PATH=C:\Users\HP\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops"
+export "FLUTTER_ROOT=C:\Users\RanVic\Downloads\flutter_windows_3.13.0-stable\flutter"
+export "FLUTTER_APPLICATION_PATH=C:\Users\RanVic\OneDrive\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops"
 export "COCOAPODS_PARALLEL_CODE_SIGN=true"
 export "FLUTTER_TARGET=lib\main.dart"
 export "FLUTTER_BUILD_DIR=build"
-export "FLUTTER_BUILD_NAME=4.0.0"
-export "FLUTTER_BUILD_NUMBER=4"
+export "FLUTTER_BUILD_NAME=7.0.0"
+export "FLUTTER_BUILD_NUMBER=7"
 export "DART_OBFUSCATION=false"
 export "TRACK_WIDGET_CREATION=true"
 export "TREE_SHAKE_ICONS=false"
