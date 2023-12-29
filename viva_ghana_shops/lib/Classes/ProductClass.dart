@@ -1,16 +1,16 @@
 class ProductClass {
   String productName;
-  String price;
+  double price;
   String img;
   ProductClass(this.productName, this.price, this.img);
 }
 
 class CartClass {
   ProductClass product;
-  String amount;
+  int quantity;
   late String subTotal;
 
-  CartClass(this.product, this.amount) {
-    subTotal = (int.parse(product.price) * int.parse(amount)).toString();
+  CartClass(this.product, this.quantity) {
+    subTotal = (product.price * quantity).toString();
   }
 }

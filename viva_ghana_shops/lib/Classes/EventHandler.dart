@@ -71,13 +71,14 @@ class EventHandler {
       dbfClass.reduce_stock(order);
       dbfClass.pend_order(order);
       NavigationHandler(context).on_clear_context();
-
+      NavigationHandler(context).on_clear_context();
+      NavigationHandler(context).on_change_page('HomePage', Null);
       // NavigationHandler(context).on_change_page('HomePage', Null);
       navHandler.on_success('Order has been moved to pending');
     } else {
       //Else show message that Shop stock is not enough
-      // NavigationHandler(context).on_change_page('HomePage', Null);
       NavigationHandler(context).on_clear_context();
+
       navHandler
           .on_fail('You do not have enough stock to fulfill this Order \n\n');
     }
@@ -90,6 +91,8 @@ class EventHandler {
       //after reducing stock, get the member from the order to be commissioned
       dbfClass.fulfill_pending_order(order);
       NavigationHandler(context).on_clear_context();
+      NavigationHandler(context).on_clear_context();
+
       NavigationHandler(context).on_change_page('HomePage', Null);
       // await ServerFunctionClass().on_commission(order);
     }
@@ -101,6 +104,9 @@ class EventHandler {
 
     //Restock the Shop with amount
     dbfClass.increase_stock(order);
+    NavigationHandler(context).on_clear_context();
+    NavigationHandler(context).on_clear_context();
+    NavigationHandler(context).on_change_page('HomePage', Null);
   }
 
   on_show_stock() {
@@ -127,5 +133,12 @@ class EventHandler {
 
   on_get_history() {
     dbfClass.get_history();
+  }
+
+  onSell(OrderClass order) {
+    dbfClass.onSell(order);
+    NavigationHandler(context).on_clear_context();
+    NavigationHandler(context).on_clear_context();
+    NavigationHandler(context).on_change_page('HomePage', Null);
   }
 }

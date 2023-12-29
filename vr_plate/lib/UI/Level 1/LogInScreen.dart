@@ -67,12 +67,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       keyboardType: TextInputType.number,
                       onChanged: (value) {
                         String newVal = value.trim();
-                        newVal = newVal..replaceFirst(RegExp(r'\+233'), '');
-                        if (newVal[0] == '0') {
-                          newVal = newVal.replaceFirst(RegExp(r'0'), '');
-                        }
-                        newVal = newVal.trim();
-
+                        newVal = cleanPhoneNumber(newVal);
                         newVal = '233$newVal';
                         setState(() {
                           phone = newVal;
@@ -137,5 +132,13 @@ class _LoginScreenState extends State<LoginScreen> {
       backgroundColor: MaterialStateProperty.all(color),
       // side: MaterialStateBorderSide()
     );
+  }
+
+  String cleanPhoneNumber(String phoneNumber) {
+    // Define the regular expression pattern
+    RegExp regExp = RegExp(r"^(0|\+233)");
+
+    // Remove the matching pattern from the phone number
+    return phoneNumber.replaceAll(regExp, "");
   }
 }

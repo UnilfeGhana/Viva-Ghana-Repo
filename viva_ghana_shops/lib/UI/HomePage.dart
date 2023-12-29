@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:viva_ghana_shops/Classes/EventHandler.dart';
+import 'package:viva_ghana_shops/Classes/NavigationHanlder.dart';
 import 'package:viva_ghana_shops/UI/HFulfilledOrders.dart';
 import 'package:viva_ghana_shops/UI/HMonthlyHistory.dart';
 import 'package:viva_ghana_shops/UI/HNewOrdersPage.dart';
@@ -28,9 +29,10 @@ class _HomePageState extends State<HomePage> {
   DatabaseFunctionClass dbfc = DatabaseFunctionClass();
   List pageList = [
     NewOrdersPage(),
-    PendingOrdersPage(),
+    const PendingOrdersPage(),
     const FulfilledOrdersPage(),
-    SellingPage(),
+    // SellingPage(),
+    // POSPage()
     // const HistoryPage()
   ];
   @override
@@ -44,7 +46,7 @@ class _HomePageState extends State<HomePage> {
         elevation: 0,
         title: Text(
           '${DatabaseFunctionClass.shop.shopName} Page',
-          style: TextStyle(
+          style: const TextStyle(
             fontWeight: FontWeight.w400,
             fontSize: 25,
           ),
@@ -57,7 +59,7 @@ class _HomePageState extends State<HomePage> {
         // ),
         actions: [
           IconButton(
-            icon: Icon(Icons.inventory),
+            icon: const Icon(Icons.inventory),
             onPressed: () {
               eventH.on_show_stock();
             },
@@ -98,6 +100,20 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
+      floatingActionButton: FloatingActionButton.extended(
+        backgroundColor: Colors.yellow,
+        onPressed: () {
+          NavigationHandler(context).on_change_page('Selling Page', null);
+        },
+        // child: Icon(
+        //   Icons.sell,
+        //   color: Colors.white,
+        // ),
+        label: const Text('P.O.S.',
+            style: TextStyle(
+                // color: Colors.white,
+                )),
+      ),
       bottomNavigationBar: BottomNavigationBar(
           showUnselectedLabels: true,
           currentIndex: _currentIndex,
@@ -114,8 +130,8 @@ class _HomePageState extends State<HomePage> {
             BottomNavigationBarItem(
                 icon: Icon(Icons.pending_actions), label: 'Pending'),
             BottomNavigationBarItem(icon: Icon(Icons.done), label: 'Fulfilled'),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.add_business_rounded), label: 'P.O.S'),
+            // BottomNavigationBarItem(
+            //     icon: Icon(Icons.add_business_rounded), label: 'P.O.S'),
             // BottomNavigationBarItem(
             //     icon: Icon(Icons.history), label: 'Monthly History'),
           ]),

@@ -15,121 +15,143 @@
 15    <uses-permission android:name="android.permission.INTERNET" />
 15-->C:\Users\RanVic\OneDrive\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\android\app\src\debug\AndroidManifest.xml:7:5-66
 15-->C:\Users\RanVic\OneDrive\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\android\app\src\debug\AndroidManifest.xml:7:22-64
-16    <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
+16    <uses-permission android:name="android.permission.CALL_PHONE" /> <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
+16-->C:\Users\RanVic\OneDrive\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\android\app\src\main\AndroidManifest.xml:3:5-69
+16-->C:\Users\RanVic\OneDrive\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\android\app\src\main\AndroidManifest.xml:3:22-66
 17    <!-- <uses-sdk android:minSdkVersion="14" /> -->
 18    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 18-->[com.google.firebase:firebase-firestore:24.5.0] C:\Users\RanVic\.gradle\caches\transforms-3\fc58c4bb0c2ba423ba6b31f4487369bc\transformed\jetified-firebase-firestore-24.5.0\AndroidManifest.xml:12:5-79
 18-->[com.google.firebase:firebase-firestore:24.5.0] C:\Users\RanVic\.gradle\caches\transforms-3\fc58c4bb0c2ba423ba6b31f4487369bc\transformed\jetified-firebase-firestore-24.5.0\AndroidManifest.xml:12:22-76
 19
-20    <application
-21        android:name="android.app.Application"
-22        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-22-->[androidx.core:core:1.6.0] C:\Users\RanVic\.gradle\caches\transforms-3\1141b72fb8be4e566e7814849b1aa3a2\transformed\core-1.6.0\AndroidManifest.xml:24:18-86
-23        android:debuggable="true"
-24        android:icon="@mipmap/ic_launcher"
-25        android:label="Viva Shops" >
-26        <activity
-27            android:name="com.Unilife.viva_gate_shops.MainActivity"
-28            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-29            android:exported="true"
-30            android:hardwareAccelerated="true"
-31            android:launchMode="singleTop"
-32            android:theme="@style/LaunchTheme"
-33            android:windowSoftInputMode="adjustResize" >
-34
-35            <!--
-36                 Specifies an Android theme to apply to this Activity as soon as
-37                 the Android process has started. This theme is visible to the user
-38                 while the Flutter UI initializes. After that, this theme continues
-39                 to determine the Window background behind the Flutter UI.
-40            -->
-41            <meta-data
-42                android:name="io.flutter.embedding.android.NormalTheme"
-43                android:resource="@style/NormalTheme" />
-44
-45            <intent-filter>
-46                <action android:name="android.intent.action.MAIN" />
-47
-48                <category android:name="android.intent.category.LAUNCHER" />
-49            </intent-filter>
-50        </activity>
-51        <!--
-52             Don't delete the meta-data below.
-53             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
-54        -->
-55        <meta-data
-56            android:name="flutterEmbedding"
-57            android:value="2" />
-58
-59        <service
-59-->[:cloud_firestore] C:\Users\RanVic\OneDrive\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-14:19
-60            android:name="com.google.firebase.components.ComponentDiscoveryService"
-60-->[:cloud_firestore] C:\Users\RanVic\OneDrive\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:10:18-89
-61            android:directBootAware="true"
-61-->[com.google.firebase:firebase-common:20.3.2] C:\Users\RanVic\.gradle\caches\transforms-3\026de80ea9d0b63bfc94ec9a10c1d73c\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:34:13-43
-62            android:exported="false" >
-62-->[com.google.firebase:firebase-firestore:24.5.0] C:\Users\RanVic\.gradle\caches\transforms-3\fc58c4bb0c2ba423ba6b31f4487369bc\transformed\jetified-firebase-firestore-24.5.0\AndroidManifest.xml:18:13-37
-63            <meta-data
-63-->[:cloud_firestore] C:\Users\RanVic\OneDrive\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
-64                android:name="com.google.firebase.components:io.flutter.plugins.firebase.firestore.FlutterFirebaseFirestoreRegistrar"
-64-->[:cloud_firestore] C:\Users\RanVic\OneDrive\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-134
-65                android:value="com.google.firebase.components.ComponentRegistrar" />
-65-->[:cloud_firestore] C:\Users\RanVic\OneDrive\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
-66            <meta-data
-66-->[:firebase_core] C:\Users\RanVic\OneDrive\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
-67                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
-67-->[:firebase_core] C:\Users\RanVic\OneDrive\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-124
-68                android:value="com.google.firebase.components.ComponentRegistrar" />
-68-->[:firebase_core] C:\Users\RanVic\OneDrive\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
+20    <permission
+20-->[androidx.core:core:1.10.1] C:\Users\RanVic\.gradle\caches\transforms-3\e73600b7204754fa6eaab4c4f4dd2179\transformed\core-1.10.1\AndroidManifest.xml:22:5-24:47
+21        android:name="com.Unilife.viva_gate_shops.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+21-->[androidx.core:core:1.10.1] C:\Users\RanVic\.gradle\caches\transforms-3\e73600b7204754fa6eaab4c4f4dd2179\transformed\core-1.10.1\AndroidManifest.xml:23:9-81
+22        android:protectionLevel="signature" />
+22-->[androidx.core:core:1.10.1] C:\Users\RanVic\.gradle\caches\transforms-3\e73600b7204754fa6eaab4c4f4dd2179\transformed\core-1.10.1\AndroidManifest.xml:24:9-44
+23
+24    <uses-permission android:name="com.Unilife.viva_gate_shops.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+24-->[androidx.core:core:1.10.1] C:\Users\RanVic\.gradle\caches\transforms-3\e73600b7204754fa6eaab4c4f4dd2179\transformed\core-1.10.1\AndroidManifest.xml:26:5-97
+24-->[androidx.core:core:1.10.1] C:\Users\RanVic\.gradle\caches\transforms-3\e73600b7204754fa6eaab4c4f4dd2179\transformed\core-1.10.1\AndroidManifest.xml:26:22-94
+25
+26    <application
+27        android:name="android.app.Application"
+28        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+28-->[androidx.core:core:1.10.1] C:\Users\RanVic\.gradle\caches\transforms-3\e73600b7204754fa6eaab4c4f4dd2179\transformed\core-1.10.1\AndroidManifest.xml:28:18-86
+29        android:debuggable="true"
+30        android:icon="@mipmap/ic_launcher"
+31        android:label="Viva Shops" >
+32        <activity
+33            android:name="com.Unilife.viva_gate_shops.MainActivity"
+34            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+35            android:exported="true"
+36            android:hardwareAccelerated="true"
+37            android:launchMode="singleTop"
+38            android:theme="@style/LaunchTheme"
+39            android:windowSoftInputMode="adjustResize" >
+40
+41            <!--
+42                 Specifies an Android theme to apply to this Activity as soon as
+43                 the Android process has started. This theme is visible to the user
+44                 while the Flutter UI initializes. After that, this theme continues
+45                 to determine the Window background behind the Flutter UI.
+46            -->
+47            <meta-data
+48                android:name="io.flutter.embedding.android.NormalTheme"
+49                android:resource="@style/NormalTheme" />
+50
+51            <intent-filter>
+52                <action android:name="android.intent.action.MAIN" />
+53
+54                <category android:name="android.intent.category.LAUNCHER" />
+55            </intent-filter>
+56        </activity>
+57        <!--
+58             Don't delete the meta-data below.
+59             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+60        -->
+61        <meta-data
+62            android:name="flutterEmbedding"
+63            android:value="2" />
+64
+65        <service
+65-->[:cloud_firestore] C:\Users\RanVic\OneDrive\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-14:19
+66            android:name="com.google.firebase.components.ComponentDiscoveryService"
+66-->[:cloud_firestore] C:\Users\RanVic\OneDrive\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:10:18-89
+67            android:directBootAware="true"
+67-->[com.google.firebase:firebase-common:20.3.2] C:\Users\RanVic\.gradle\caches\transforms-3\026de80ea9d0b63bfc94ec9a10c1d73c\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:34:13-43
+68            android:exported="false" >
+68-->[com.google.firebase:firebase-firestore:24.5.0] C:\Users\RanVic\.gradle\caches\transforms-3\fc58c4bb0c2ba423ba6b31f4487369bc\transformed\jetified-firebase-firestore-24.5.0\AndroidManifest.xml:18:13-37
 69            <meta-data
-69-->[com.google.firebase:firebase-firestore:24.5.0] C:\Users\RanVic\.gradle\caches\transforms-3\fc58c4bb0c2ba423ba6b31f4487369bc\transformed\jetified-firebase-firestore-24.5.0\AndroidManifest.xml:19:13-21:85
-70                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
-70-->[com.google.firebase:firebase-firestore:24.5.0] C:\Users\RanVic\.gradle\caches\transforms-3\fc58c4bb0c2ba423ba6b31f4487369bc\transformed\jetified-firebase-firestore-24.5.0\AndroidManifest.xml:20:17-111
+69-->[:cloud_firestore] C:\Users\RanVic\OneDrive\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
+70                android:name="com.google.firebase.components:io.flutter.plugins.firebase.firestore.FlutterFirebaseFirestoreRegistrar"
+70-->[:cloud_firestore] C:\Users\RanVic\OneDrive\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-134
 71                android:value="com.google.firebase.components.ComponentRegistrar" />
-71-->[com.google.firebase:firebase-firestore:24.5.0] C:\Users\RanVic\.gradle\caches\transforms-3\fc58c4bb0c2ba423ba6b31f4487369bc\transformed\jetified-firebase-firestore-24.5.0\AndroidManifest.xml:21:17-82
-72        </service>
-73
-74        <uses-library
-74-->[androidx.window:window:1.0.0-beta04] C:\Users\RanVic\.gradle\caches\transforms-3\40ff8c014bc3b03149787e1d45a42dea\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:25:9-27:40
-75            android:name="androidx.window.extensions"
-75-->[androidx.window:window:1.0.0-beta04] C:\Users\RanVic\.gradle\caches\transforms-3\40ff8c014bc3b03149787e1d45a42dea\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:26:13-54
-76            android:required="false" />
-76-->[androidx.window:window:1.0.0-beta04] C:\Users\RanVic\.gradle\caches\transforms-3\40ff8c014bc3b03149787e1d45a42dea\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:27:13-37
-77        <uses-library
-77-->[androidx.window:window:1.0.0-beta04] C:\Users\RanVic\.gradle\caches\transforms-3\40ff8c014bc3b03149787e1d45a42dea\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:28:9-30:40
-78            android:name="androidx.window.sidecar"
-78-->[androidx.window:window:1.0.0-beta04] C:\Users\RanVic\.gradle\caches\transforms-3\40ff8c014bc3b03149787e1d45a42dea\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:29:13-51
-79            android:required="false" />
-79-->[androidx.window:window:1.0.0-beta04] C:\Users\RanVic\.gradle\caches\transforms-3\40ff8c014bc3b03149787e1d45a42dea\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:30:13-37
-80
-81        <provider
-81-->[com.google.firebase:firebase-common:20.3.2] C:\Users\RanVic\.gradle\caches\transforms-3\026de80ea9d0b63bfc94ec9a10c1d73c\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:25:9-30:39
-82            android:name="com.google.firebase.provider.FirebaseInitProvider"
-82-->[com.google.firebase:firebase-common:20.3.2] C:\Users\RanVic\.gradle\caches\transforms-3\026de80ea9d0b63bfc94ec9a10c1d73c\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:26:13-77
-83            android:authorities="com.Unilife.viva_gate_shops.firebaseinitprovider"
-83-->[com.google.firebase:firebase-common:20.3.2] C:\Users\RanVic\.gradle\caches\transforms-3\026de80ea9d0b63bfc94ec9a10c1d73c\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:27:13-72
-84            android:directBootAware="true"
-84-->[com.google.firebase:firebase-common:20.3.2] C:\Users\RanVic\.gradle\caches\transforms-3\026de80ea9d0b63bfc94ec9a10c1d73c\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:28:13-43
-85            android:exported="false"
-85-->[com.google.firebase:firebase-common:20.3.2] C:\Users\RanVic\.gradle\caches\transforms-3\026de80ea9d0b63bfc94ec9a10c1d73c\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:29:13-37
-86            android:initOrder="100" />
-86-->[com.google.firebase:firebase-common:20.3.2] C:\Users\RanVic\.gradle\caches\transforms-3\026de80ea9d0b63bfc94ec9a10c1d73c\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:30:13-36
-87
-88        <activity
-88-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\RanVic\.gradle\caches\transforms-3\8f31701e663a8c1514b353cc4d7239a2\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:9-22:45
-89            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-89-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\RanVic\.gradle\caches\transforms-3\8f31701e663a8c1514b353cc4d7239a2\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:19-85
-90            android:exported="false"
-90-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\RanVic\.gradle\caches\transforms-3\8f31701e663a8c1514b353cc4d7239a2\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:22:19-43
-91            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-91-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\RanVic\.gradle\caches\transforms-3\8f31701e663a8c1514b353cc4d7239a2\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:21:19-78
-92
-93        <meta-data
-93-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\RanVic\.gradle\caches\transforms-3\ad3fb7e0e58165c0e3c87f8f0d79631f\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:21:9-23:69
-94            android:name="com.google.android.gms.version"
-94-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\RanVic\.gradle\caches\transforms-3\ad3fb7e0e58165c0e3c87f8f0d79631f\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:22:13-58
-95            android:value="@integer/google_play_services_version" />
-95-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\RanVic\.gradle\caches\transforms-3\ad3fb7e0e58165c0e3c87f8f0d79631f\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:23:13-66
-96    </application>
-97
-98</manifest>
+71-->[:cloud_firestore] C:\Users\RanVic\OneDrive\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
+72            <meta-data
+72-->[:firebase_core] C:\Users\RanVic\OneDrive\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
+73                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
+73-->[:firebase_core] C:\Users\RanVic\OneDrive\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-124
+74                android:value="com.google.firebase.components.ComponentRegistrar" />
+74-->[:firebase_core] C:\Users\RanVic\OneDrive\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
+75            <meta-data
+75-->[com.google.firebase:firebase-firestore:24.5.0] C:\Users\RanVic\.gradle\caches\transforms-3\fc58c4bb0c2ba423ba6b31f4487369bc\transformed\jetified-firebase-firestore-24.5.0\AndroidManifest.xml:19:13-21:85
+76                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+76-->[com.google.firebase:firebase-firestore:24.5.0] C:\Users\RanVic\.gradle\caches\transforms-3\fc58c4bb0c2ba423ba6b31f4487369bc\transformed\jetified-firebase-firestore-24.5.0\AndroidManifest.xml:20:17-111
+77                android:value="com.google.firebase.components.ComponentRegistrar" />
+77-->[com.google.firebase:firebase-firestore:24.5.0] C:\Users\RanVic\.gradle\caches\transforms-3\fc58c4bb0c2ba423ba6b31f4487369bc\transformed\jetified-firebase-firestore-24.5.0\AndroidManifest.xml:21:17-82
+78        </service>
+79
+80        <activity
+80-->[:url_launcher_android] C:\Users\RanVic\OneDrive\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-13:74
+81            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
+81-->[:url_launcher_android] C:\Users\RanVic\OneDrive\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-74
+82            android:exported="false"
+82-->[:url_launcher_android] C:\Users\RanVic\OneDrive\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-37
+83            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+83-->[:url_launcher_android] C:\Users\RanVic\OneDrive\Documents\GitHub\Viva-Ghana-Repo\viva_ghana_shops\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-71
+84
+85        <uses-library
+85-->[androidx.window:window:1.0.0-beta04] C:\Users\RanVic\.gradle\caches\transforms-3\40ff8c014bc3b03149787e1d45a42dea\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:25:9-27:40
+86            android:name="androidx.window.extensions"
+86-->[androidx.window:window:1.0.0-beta04] C:\Users\RanVic\.gradle\caches\transforms-3\40ff8c014bc3b03149787e1d45a42dea\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:26:13-54
+87            android:required="false" />
+87-->[androidx.window:window:1.0.0-beta04] C:\Users\RanVic\.gradle\caches\transforms-3\40ff8c014bc3b03149787e1d45a42dea\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:27:13-37
+88        <uses-library
+88-->[androidx.window:window:1.0.0-beta04] C:\Users\RanVic\.gradle\caches\transforms-3\40ff8c014bc3b03149787e1d45a42dea\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:28:9-30:40
+89            android:name="androidx.window.sidecar"
+89-->[androidx.window:window:1.0.0-beta04] C:\Users\RanVic\.gradle\caches\transforms-3\40ff8c014bc3b03149787e1d45a42dea\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:29:13-51
+90            android:required="false" />
+90-->[androidx.window:window:1.0.0-beta04] C:\Users\RanVic\.gradle\caches\transforms-3\40ff8c014bc3b03149787e1d45a42dea\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:30:13-37
+91
+92        <provider
+92-->[com.google.firebase:firebase-common:20.3.2] C:\Users\RanVic\.gradle\caches\transforms-3\026de80ea9d0b63bfc94ec9a10c1d73c\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:25:9-30:39
+93            android:name="com.google.firebase.provider.FirebaseInitProvider"
+93-->[com.google.firebase:firebase-common:20.3.2] C:\Users\RanVic\.gradle\caches\transforms-3\026de80ea9d0b63bfc94ec9a10c1d73c\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:26:13-77
+94            android:authorities="com.Unilife.viva_gate_shops.firebaseinitprovider"
+94-->[com.google.firebase:firebase-common:20.3.2] C:\Users\RanVic\.gradle\caches\transforms-3\026de80ea9d0b63bfc94ec9a10c1d73c\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:27:13-72
+95            android:directBootAware="true"
+95-->[com.google.firebase:firebase-common:20.3.2] C:\Users\RanVic\.gradle\caches\transforms-3\026de80ea9d0b63bfc94ec9a10c1d73c\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:28:13-43
+96            android:exported="false"
+96-->[com.google.firebase:firebase-common:20.3.2] C:\Users\RanVic\.gradle\caches\transforms-3\026de80ea9d0b63bfc94ec9a10c1d73c\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:29:13-37
+97            android:initOrder="100" />
+97-->[com.google.firebase:firebase-common:20.3.2] C:\Users\RanVic\.gradle\caches\transforms-3\026de80ea9d0b63bfc94ec9a10c1d73c\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:30:13-36
+98
+99        <activity
+99-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\RanVic\.gradle\caches\transforms-3\8f31701e663a8c1514b353cc4d7239a2\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:9-22:45
+100            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+100-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\RanVic\.gradle\caches\transforms-3\8f31701e663a8c1514b353cc4d7239a2\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:19-85
+101            android:exported="false"
+101-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\RanVic\.gradle\caches\transforms-3\8f31701e663a8c1514b353cc4d7239a2\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:22:19-43
+102            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+102-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\RanVic\.gradle\caches\transforms-3\8f31701e663a8c1514b353cc4d7239a2\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:21:19-78
+103
+104        <meta-data
+104-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\RanVic\.gradle\caches\transforms-3\ad3fb7e0e58165c0e3c87f8f0d79631f\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:21:9-23:69
+105            android:name="com.google.android.gms.version"
+105-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\RanVic\.gradle\caches\transforms-3\ad3fb7e0e58165c0e3c87f8f0d79631f\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:22:13-58
+106            android:value="@integer/google_play_services_version" />
+106-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\RanVic\.gradle\caches\transforms-3\ad3fb7e0e58165c0e3c87f8f0d79631f\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:23:13-66
+107    </application>
+108
+109</manifest>

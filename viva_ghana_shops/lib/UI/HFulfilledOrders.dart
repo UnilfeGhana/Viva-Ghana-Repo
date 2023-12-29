@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../Classes/DatabaseFunctionClass.dart';
 import '../Classes/EventHandler.dart';
 import '../Classes/OrderClass.dart';
+import 'Widgets/FulfilledOrderCardWidget.dart';
 import 'Widgets/OrderTileWidget.dart';
 import 'Widgets/orderCard.dart';
 
@@ -44,16 +45,8 @@ class _FulfilledOrdersPageState extends State<FulfilledOrdersPage> {
           itemCount: fulfilledOrders.length,
           itemBuilder: (BuildContext context, index) {
             //return OrderTileWidget
-            return OrderCardWidget(
-                index: '${index + 1}',
-                available: true,
-                name: fulfilledOrders[index].recipientName,
-                order: fulfilledOrders[index]);
-
-            OrderTileWidget(
-              order: fulfilledOrders[index],
-              orderNumber: index,
-            );
+            return FulfilledOrderTileWidget(
+                orderNumber: index, order: fulfilledOrders[index]);
           },
         ));
   }

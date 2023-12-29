@@ -12,15 +12,9 @@ class DatabaseFunctionClass {
   ///       List of Products                 ////
 ////////////////////////////////////////////////
   static final List<ProductClass> products = [
-    ProductClass('Viva Plus (90)', '70', 'images/Viva90.jpg'),
-    ProductClass('Viva Plus (120)', '90', 'images/Viva120.jpg'),
-    ProductClass('Viva Lady', '100', 'images/VivaLady.jpg')
-  ];
-
-  static final List<CartClass> cartList = [
-    CartClass(products[0], '0'),
-    CartClass(products[1], '0'),
-    CartClass(products[2], '0'),
+    ProductClass('Viva Plus (90)', 70, 'images/Viva90.jpg'),
+    ProductClass('Viva Plus (120)', 90, 'images/Viva120.jpg'),
+    ProductClass('Viva Lady', 100, 'images/VivaLady.jpg')
   ];
 
   // Map<String, CartClass> cartMap = {};
@@ -141,5 +135,9 @@ class DatabaseFunctionClass {
       }
     }
     return true;
+  }
+
+  void onSell(OrderClass order) {
+    serverFunction.on_create_order(order, shop.shopName, shop.pin);
   }
 }

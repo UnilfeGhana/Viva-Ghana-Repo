@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.Unilife.viva_gate_shops">
+    <uses-permission android:name="android.permission.CALL_PHONE" />
    <application
         android:label="Viva Shops"
         android:name="${applicationName}"

@@ -49,16 +49,17 @@ class _PendingOrdersPageState extends State<PendingOrdersPage> {
           itemCount: pendingOrders.length,
           itemBuilder: (BuildContext context, index) {
             //return OrderTileWidget
-            return OrderCardWidget(
-                index: '${index + 1}',
-                available: false,
-                name: pendingOrders[index].recipientName,
-                order: pendingOrders[index]);
+            return
+                // OrderCardWidget(
+                //     index: '${index + 1}',
+                //     available: false,
+                //     name: pendingOrders[index].recipientName,
+                //     order: pendingOrders[index]);
 
-            // PendingOrderTileWidget(
-            //   order: pendingOrders[index],
-            //   orderNumber: index,
-            // );
+                PendingOrderTileWidget(
+              order: pendingOrders[index],
+              orderNumber: index,
+            );
           },
         ));
   }

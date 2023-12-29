@@ -54,11 +54,6 @@ class _NewOrdersPageState extends State<NewOrdersPage> {
                 available: true,
                 name: newOrders[index].recipientName,
                 order: newOrders[index]);
-
-            OrderTileWidget(
-              order: newOrders[index],
-              orderNumber: index,
-            );
           },
         ));
   }

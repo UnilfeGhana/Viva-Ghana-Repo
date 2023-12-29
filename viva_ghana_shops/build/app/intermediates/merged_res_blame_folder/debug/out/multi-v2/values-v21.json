@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.Unilife.viva_gate_shops.app-mergeDebugResources-13:/values-v21/values-v21.xml",
+            "outputFile": "com.Unilife.viva_gate_shops.app-mergeDebugResources-15:/values-v21/values-v21.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\RanVic\\.gradle\\caches\\transforms-3\\1141b72fb8be4e566e7814849b1aa3a2\\transformed\\core-1.6.0\\res\\values-v21\\values-v21.xml",
+                    "source": "C:\\Users\\RanVic\\.gradle\\caches\\transforms-3\\e73600b7204754fa6eaab4c4f4dd2179\\transformed\\core-1.10.1\\res\\values-v21\\values-v21.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,13",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",
