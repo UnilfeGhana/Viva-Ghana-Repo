@@ -1,30 +1,42 @@
 class TC {
   final String tc = '''
-Terms and Conditions:
+VivaGate Ghana Limited Referral Program Terms and Conditions
 
-You will receive up to GHC 1,000 from VivaGate Ghana Limited ( herein referred to as 'VivaGate') based on the following conditions:
+1. Eligibility and Participation
 
-1. You must refer and enlist at least ten (10) people to join the VivaGate family. These individuals will become your First Generation members.
+By participating in the VivaGate Referral Program, you agree to comply with and be bound by the following terms and conditions.
 
-2. You must encourage each of your First Generation members to also refer and enlist at least ten (10) people to the VivaGate family. These individuals will form your Second Generation members.
+2. Referral Requirements
 
-3. You must continue to encourage your First Generation members to repeat steps 1 and 2 above.
+To be eligible for rewards, you must successfully refer individuals to join VivaGate. Each time those you refer make a purchase, you will receive a portion as commission.
 
-4. Your First Generation, Second Generation, and Third Generation members will form your Descendants.
+3. Monthly Product Purchase (Optional for Earning Rewards)
 
-5. You must purchase at least one bottle of VivaGate products each month and encourage as many of your Descendants as possible to do the same.
+While participation in the VivaGate Referral Program is encouraged, the monthly purchase of at least one bottle of VivaGate products is optional for those who wish to earn rewards. Additionally, participants may choose to encourage their referred individuals to make similar purchases.
 
-6. Out of the money received each month, 30% will be your commission, and 70% will cover transportation expenditure to reach out to your Descendants.
+4. Commission Structure
 
-7. This terms and conditions may be updated periodically based on Management's sole decision.
+Out of the total monthly earnings, a specified percentage will be designated as your commission each time your referred individuals make a purchase.
 
-8. Any fraudulent or unethical behaviour in the process of enlisting members or promoting VivaGate products will result in immediate termination of the agreement and forfeiture of any commission earned.
+5. Termination of Agreement
 
-9. VivaGate reserves the right to terminate this agreement at any time without notice if the terms and conditions are violated.
+Any fraudulent or unethical behavior in the process of enlisting members or promoting VivaGate products will lead to immediate termination of the agreement, with forfeiture of any commission earned.
 
-10. Commissions earned will be paid out on a monthly basis through either Mobile Money or Bank account associated with the mobile number of the account.
+6. Termination by VivaGate
 
-11. By agreeing to these terms and conditions, you acknowledge that you have read and understood them and agree to abide by them.
+VivaGate reserves the right to terminate this agreement at any time without notice if the terms and conditions are violated.
+
+7. Commission Payout
+
+Commissions earned will be paid out on a regular basis through either Mobile Money or the Bank account associated with the participant's mobile number. If the mobile number is invalid for Mobile Money, the commissions will be forfeited.
+
+8. Mobile Number Change
+
+Mobile numbers used to sign up or create an account cannot be changed once registered.
+
+9. Acknowledgment
+
+By agreeing to these terms and conditions, you acknowledge that you have read and understood them and agree to abide by their provisions.
 
 ''';
 }

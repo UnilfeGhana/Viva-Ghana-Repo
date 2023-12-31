@@ -90,11 +90,11 @@ class EventHandler {
     if (true) {
       //after reducing stock, get the member from the order to be commissioned
       dbfClass.fulfill_pending_order(order);
+      print('test order member is: ${order.memberPhone}');
       NavigationHandler(context).on_clear_context();
       NavigationHandler(context).on_clear_context();
 
       NavigationHandler(context).on_change_page('HomePage', Null);
-      // await ServerFunctionClass().on_commission(order);
     }
   }
 

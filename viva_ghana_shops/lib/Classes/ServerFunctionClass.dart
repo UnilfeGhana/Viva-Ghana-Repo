@@ -134,7 +134,7 @@ class ServerFunctionClass {
           nmap,
           orderMap[skc.total].toString(),
           orderMap.id,
-          orderMap[skc.phone]);
+          orderMap[skc.member]);
 
       //First Checking to see if Order has already been loaded
       if (DatabaseFunctionClass.shop.shop_pending_orders.contains(_order)) {
@@ -378,7 +378,8 @@ class ServerFunctionClass {
       'Recipient': order.recipientName,
       'Phone': order.recipientPhone,
       'Medicines': [order.orders],
-      'Total': order.total
+      'Total': order.total,
+      'Member Phone': order.memberPhone,
     };
 
     List<Map<String, dynamic>> list = [];
@@ -440,6 +441,7 @@ class ServerFunctionClass {
   }
 
   on_fulfill_order(OrderClass order, String shopName, String pin) async {
+    print("test: ${order.memberPhone}");
     //Creating Order Map variable
     Map<String, dynamic> orderMap = {
       'Recipient': order.recipientName,
@@ -466,24 +468,51 @@ class ServerFunctionClass {
         .add(orderMap);
 
     //////////////////////////////////////////////////////////////////
-    ///     COMMISSIONING   Send OrderID plus   memberPhone      /////
+    ///    COMMISSIONING  Send the Quantity of Medicines Ordered /////
     //////////////////////////////////////////////////////////////////
+    ///
+    print('helo');
+    int total_goods_ordered = 0;
 
-    ///Send Commission notification for each medicine in order
+    print(order.orders.values);
+    for (int amount in order.orders.values.toList()) {
+      total_goods_ordered += amount;
+      print('amount is $amount');
+    }
 
+    print('totalGoods is: $total_goods_ordered');
+
+    print('from member: ${order.memberPhone}');
+
+    cloud.collection('Members').doc(order.memberPhone).update(
+        {'commission': '${order.order_db_location}:${total_goods_ordered}'});
+
+    ////////////////////////////////////////////////////
+    ///   Showing a Member has purchased at least 1  ///
+    ////////////////////////////////////////////////////
+    ///
     cloud
         .collection('Members')
         .doc(order.memberPhone)
-        .update({'commission': order.order_db_location});
+        .update({'medicinesBought': '1'});
 
-    for (var medicine in order.orders.values) {
-      for (int i = 0; i < medicine['Number']; i++) {
-        cloud
-            .collection('Members')
-            .doc(order.memberPhone)
-            .update({'commission': '${order.order_db_location}$i'});
-      }
-    }
+    ///Below is deprecated
+
+    ///Send Commission notification for each medicine in order
+
+    // cloud
+    //     .collection('Members')
+    //     .doc(order.memberPhone)
+    //     .update({'commission': order.order_db_location});
+
+    // for (var medicine in order.orders.values) {
+    //   for (int i = 0; i < medicine['Number']; i++) {
+    //     cloud
+    //         .collection('Members')
+    //         .doc(order.memberPhone)
+    //         .update({'commission': '${order.order_db_location}$i'});
+    //   }
+    // }
   }
 
   on_fail_order(OrderClass order, String shopName, String pin) async {

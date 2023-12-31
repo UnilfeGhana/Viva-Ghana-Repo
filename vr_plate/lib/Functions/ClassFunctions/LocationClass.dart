@@ -12,7 +12,7 @@ class LocationClass {
   static late LocationPermission permission;
   static bool locationGranted = false;
   static String closestShop = 'Head Office:0003';
-  static String selectedShop = '';
+  // static String selectedShop = '';
 
 //Dependency Function for Marker Icon
   Future<Uint8List> getBytesFromAsset(String path, int width) async {
@@ -76,37 +76,51 @@ class LocationClass {
     Vendors shopBuffer = Vendors('shopName', 'shopPhone', 0, 0, 0);
     GeoPoint geopoint;
 
-    //Get all the Shop Names
-    shopRef.snapshots().listen((data) {
-      for (var item in data.docs) {
-        geopoint = item['location'];
+    try {
+      // Get all the Shop Names
+      shopRef.snapshots().listen((data) {
+        for (var item in data.docs) {
+          try {
+            geopoint = item['location'];
+            print(geopoint);
+            shopBuffer.lat = geopoint.latitude;
+            shopBuffer.long = geopoint.longitude;
+            shopBuffer.vendorName = item['shop Name']?.toString() ?? 'N/A';
 
-        shopBuffer.lat = geopoint.latitude;
-        shopBuffer.long = geopoint.longitude;
-        shopBuffer.vendorName = item['shop Name'].toString().split(":")[0];
-        shopBuffer.vendorPhone = item['shop Phone'].toString().split(":")[0];
-        //Adding All Shops to Map so that the user can see nearby shops
-        Shop.shopMarkers.add(Marker(
-          infoWindow: InfoWindow(
-              title: item['shop Name'].toString().split(":")[0],
-              snippet: item['shop Phone'].toString().split(":")[0]),
-          markerId: item['shop Name'],
-          position: LatLng(geopoint.latitude, geopoint.longitude),
-          icon: BitmapDescriptor.fromBytes(markerIcon()),
-        ));
+            shopBuffer.vendorPhone = 'phone';
+            // item['shop Phone']?.toString().split(":")[0] ?? 'N/A';
 
-        distanceBuffer = Geolocator.distanceBetween(position.latitude,
-            position.longitude, shopBuffer.lat, shopBuffer.long);
+            print(shopBuffer.vendorName);
+            // Adding All Shops to Map so that the user can see nearby shops
+            // Shop.shopMarkers.add(Marker(
+            //   infoWindow: InfoWindow(
+            //       title: shopBuffer.vendorName,
+            //       snippet: shopBuffer.vendorPhone),
+            //   markerId: MarkerId(item['shop Name']),
+            //   position: LatLng(shopBuffer.lat, shopBuffer.long),
+            //   icon: BitmapDescriptor.fromBytes(markerIcon()),
+            // ));
 
-        if (distanceBuffer < currentDistance) {
-          currentDistance = distanceBuffer;
-          closestShop.vendorName = shopBuffer.vendorName;
-          closestShop.distance = currentDistance;
-          closestShop = shopBuffer;
-          selectedShop = closestShop;
+            distanceBuffer = Geolocator.distanceBetween(position.latitude,
+                position.longitude, shopBuffer.lat, shopBuffer.long);
+
+            if (distanceBuffer < currentDistance) {
+              currentDistance = distanceBuffer;
+              closestShop.vendorName = shopBuffer.vendorName;
+              closestShop.distance = currentDistance;
+              closestShop = shopBuffer;
+              selectedShop = closestShop;
+            }
+          } catch (e) {
+            print('Error processing shop data: $e');
+          }
         }
-      }
-      print('the Closest shop was ${closestShop}');
-    });
+        // print('the Closest shop was ${closestShop.vendorName}');
+        LocationClass.closestShop = closestShop.vendorName;
+        print('the Closest shop was ${LocationClass.closestShop}');
+      });
+    } catch (e) {
+      print('Error retrieving shop data: $e');
+    }
   }
 }

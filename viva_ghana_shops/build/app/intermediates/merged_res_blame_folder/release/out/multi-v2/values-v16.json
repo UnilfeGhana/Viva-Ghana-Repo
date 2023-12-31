@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.Unilife.viva_gate_shops.app-mergeReleaseResources-15:/values-v16/values-v16.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\RanVic\\.gradle\\caches\\transforms-3\\e73600b7204754fa6eaab4c4f4dd2179\\transformed\\core-1.10.1\\res\\values-v16\\values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "65",
+                        "endOffsets": "116"
+                    }
+                }
+            ]
+        }
+    ]
+}

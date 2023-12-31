@@ -64,6 +64,7 @@ class _SellingPageState extends State<SellingPage> {
               setState(() {
                 member = value;
               });
+              print('member is: $member');
             }),
             SizedBox(height: 20),
             Text(

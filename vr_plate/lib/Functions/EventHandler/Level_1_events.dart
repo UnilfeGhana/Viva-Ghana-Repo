@@ -110,6 +110,7 @@ class L1EventHandler {
     await _locationClass.getDeviceLocation();
     _navHandler.clearLayers(context);
     //Text should be changed
+    _locationClass.getClosestShop();
     _navHandler.PopUpSuccess(context, 'Successful');
     await Future.delayed(const Duration(seconds: 1));
     _navHandler.clearLayers(context);

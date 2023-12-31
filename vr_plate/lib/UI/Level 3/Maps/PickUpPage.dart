@@ -161,7 +161,13 @@ class _PickUpLocationPageState extends State<PickUpLocationPage> {
                           'Above location would be used during delivery by Vendor\n',
                           textAlign: TextAlign.center,
                         ),
-                        Text(selectedShop),
+                        Text(
+                          selectedShop,
+                          style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.green),
+                        ),
                         const SizedBox(
                           height: 30,
                         ),
@@ -170,7 +176,7 @@ class _PickUpLocationPageState extends State<PickUpLocationPage> {
                               fontSize: 16,
                               color: Colors.lightGreen,
                             )),
-                            const SizedBox(height:5),
+                        const SizedBox(height: 5),
                         OrderSummary(
                           controller: controller,
                         ),

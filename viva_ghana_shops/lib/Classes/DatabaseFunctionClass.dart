@@ -78,6 +78,7 @@ class DatabaseFunctionClass {
   }
 
   fulfill_pending_order(OrderClass order) async {
+    print('test1: ${order.memberPhone}');
     serverFunction.on_fulfill_order(order, shop.shopName, shop.pin);
     shop.shop_pending_orders.remove(order);
   }
