@@ -107,7 +107,7 @@ Good Blood Circulation is essential for maintaining overall health and well-bein
   static List<CarouselClass> carousel = [
     CarouselClass(
         'Earn Cash',
-        'Add your Freinds and Family to earn real Cash Monthly',
+        'Add your Friends and Family to earn real Cash Monthly',
         'images/bermix-studio-NQf1efWvh5k-unsplash.jpg',
         'MemberScreen'),
     CarouselClass('Flat Tummy', 'Learn to lose weight naturally',
