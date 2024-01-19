@@ -14,7 +14,8 @@ class DatabaseFunctionClass {
   static final List<ProductClass> products = [
     ProductClass('Viva Plus (90)', 70, 'images/Viva90.jpg'),
     ProductClass('Viva Plus (120)', 90, 'images/Viva120.jpg'),
-    ProductClass('Viva Lady', 100, 'images/VivaLady.jpg')
+    ProductClass('Viva Lady', 100, 'images/VivaLady.jpg'),
+    ProductClass('Nego Tablets', 200, 'images/Nego.jpg'),
   ];
 
   // Map<String, CartClass> cartMap = {};

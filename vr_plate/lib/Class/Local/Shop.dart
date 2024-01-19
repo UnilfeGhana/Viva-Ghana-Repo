@@ -28,17 +28,49 @@ class Shop {
     //Viva Plus 120-70
     //Viva Plus 90-60
     ProductClass(
+        'Nego Tablets',
+        'Nego Tablets',
+        200,
+        '''
+Introducing our new food supplement, Nego Tablets. This innovative product provides users in natural and effective digestive aid, thereby having a potential for relief from aches and pains, helping you to live life to the fullest without the hindrance of discomfort.
+
+Nego contains a powerful blend of natural ingredients, including garlic, combretum smeathmanni and khaya senegalensis, which have been used for centuries to alleviate pain and inflammation. These ingredients work together to target the root cause of pain, providing long-lasting relief without the side effects often associated with traditional pain medications.
+
+In addition to its digestive aid and pain-relieving properties, Nego also supports arthritis, and overall joint health and mobility, making it an ideal choice for those looking to maintain an active lifestyle. Whether you suffer from chronic pain, exercise-related soreness, or occasional discomfort, Nego can help you find the relief you need.
+Our food supplement is easy to incorporate into your daily routine – simply take two (2) tablets before meal, up to two times a day, as needed.
+With regular use, you can experience the full benefits of Nego and enjoy a life free from the limitations of pain.
+Say goodbye to discomfort and hello to a more vibrant, pain-free life with Nego. Try it today and experience the difference for yourself.
+
+Price: 200.0 GHC
+''',
+        'images/Nego.jpg',
+        ['Chronic pain relief', 'Inflammation', 'Soreness / Discomfort'],
+        'composition',
+        'instruction'),
+
+    ProductClass(
       'Viva Lady',
       'Viva Lady',
       150,
       //Description
       '''
-      Viva Lady is a general well-being food supplement for Women.
+      It has been observed that majority of the ladies we have interacted with:
 
-      Viva Lady Tablets contains herbal products that aid in Weight Loss, and flattening the Stomach.
+      1) Prefer flattening of their stomach
 
-      *visible results within one month.
-      (Recommended for females 12 years and above except pregnant women and lactating mothers)
+      2) Dislike fibroids
+
+      3) Dislike Menstrual pains
+
+      4) Dislike scanty menstrual flow, or absence of menstrual flow
+
+      5) Dislike female reporductive health challenges
+
+      6) Prefer natural ways of resolving health challenges
+
+      VivaLady tablets, a totally natural food supplement, has been carefully produced under very good manufacturing practices
+      for the benefits of ladies who use the product.
+      VivaLady tablets is recommended for usage by females older than 11 years, except pregnant women and lactating mothers.
 
       Price: 150.00 GHC
 ''',
@@ -91,6 +123,7 @@ Good Blood Circulation is essential for maintaining overall health and well-bein
       'composition',
       'instruction',
     ),
+
     //Commented out the smallest viva tablet bottle
     // ProductClass(
     //   'Viva Plus (60)',
