@@ -51,7 +51,7 @@ Price: 200.0 GHC
     ProductClass(
       'Viva Lady',
       'Viva Lady',
-      150,
+      200,
       //Description
       '''
       It has been observed that majority of the ladies we have interacted with:
@@ -72,7 +72,7 @@ Price: 200.0 GHC
       for the benefits of ladies who use the product.
       VivaLady tablets is recommended for usage by females older than 11 years, except pregnant women and lactating mothers.
 
-      Price: 150.00 GHC
+      Price: 200.00 GHC
 ''',
       // 'Viva Lady is a complete well-being nutritional formula for the Lady. \n\n\n .',
       'images/VivaLadyTablet.png',
@@ -83,7 +83,7 @@ Price: 200.0 GHC
 //     ProductClass(
 //       'Viva Plus\n(120)',
 //       'Viva Plus\n(120)',
-//       100,
+//       120,
 //       //Description
 //       '''
 // Detoxification, is beneficial in cleansing the blood vessels leading to Cardiovascular wellbeing
@@ -104,7 +104,7 @@ Price: 200.0 GHC
     ProductClass(
       'Viva Plus\n(90)',
       'Viva Plus\n(90)',
-      80,
+      100,
       //Description
       '''
 Detoxification is beneficial in cleansing the blood vessels leading to Cardiovascular wellbeing
@@ -116,7 +116,7 @@ Good Blood Circulation is essential for maintaining overall health and well-bein
          
       (Recommended for 12 years and above,except pregnant women and lactating mothers).
 
-      Price: 80.00 GHC
+      Price: 100.00 GHC
          ''',
       'images/90tabsViva.png',
       ['Detoxification', 'Blood Circulation'],

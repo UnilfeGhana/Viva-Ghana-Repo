@@ -153,8 +153,8 @@ class ServerFunctions {
   sGetProducts() {
     DocumentReference productRef = cloud
         .collection('AppData')
-        .doc('CarouseData')
-        .collection('CarouseList')
+        .doc('Products')
+        .collection('ProductList')
         .doc();
   }
 

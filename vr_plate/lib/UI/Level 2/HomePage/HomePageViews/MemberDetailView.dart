@@ -66,8 +66,10 @@ class _MemberDetailViewState extends State<MemberDetailView> {
               const Text(' GHC'),
             ],
           )),
+          const SizedBox(height: 10),
+          const Text('**Commissions will be paid at the end of each month'),
 
-          const SizedBox(height: 40),
+          const SizedBox(height: 30),
           //Container to Contain List of Member Children
           Container(
             width: MediaQuery.of(context).size.width * 0.9,
