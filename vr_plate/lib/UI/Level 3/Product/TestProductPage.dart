@@ -3,6 +3,8 @@
 //This Screen is a duplicate of the Original "Product Page" but without the Stack Implementation
 //This is Because it seems the Stack made the whole page appear blank
 
+import 'dart:async';
+
 import 'package:badges/badges.dart' as prefix;
 import 'package:flutter/material.dart';
 import 'package:vr_plate/Functions/ClassFunctions/ShopFunctions.dart';
@@ -24,77 +26,112 @@ class _NewProductPageState extends State<NewProductPage> {
   _NewProductPageState(this.ProductIndex);
   ShopFunctions shopF = ShopFunctions();
   GetImage getImage = GetImage();
-  double mainHeight = 1000;
+  // double mainHeight = 1000;
   ScrollController controller = ScrollController();
+  int cartItems = UserFunction.user_.cartMap.values.length;
+  StreamController<int> streamController = UserFunction.cartStreamController;
+  late Stream<int> cartStream;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    get();
+  }
+
+  get() {
+    cartStream = streamController.stream;
+    cartStream.listen((event) {
+      print(event.toString());
+      print("Hi 2");
+      setState(() {
+        cartItems = event;
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     L3EventHandler eventHandler = L3EventHandler(context);
+
     return Scaffold(
         appBar: AppBar(
-            title: Text(shopF.getProducts(ProductIndex).productName),
-            toolbarHeight: 60,
-            actions: [
-              prefix.Badge(
-                  position: prefix.BadgePosition.topStart(),
-                  badgeContent:
-                      Text(UserFunction.user_.cartMap.values.length.toString()),
-                  child: IconButton(
-                      onPressed: () {
-                        eventHandler.viewCart();
-                      },
-                      icon: const Icon(Icons.shopping_bag_outlined, size: 40)))
-            ]),
+          title: Text(shopF.getProducts(ProductIndex).productName),
+          // toolbarHeight: 70,
+          actions: [
+            prefix.Badge(
+                badgeStyle: prefix.BadgeStyle(
+                    badgeColor: Colors.lightGreen.withOpacity(0)),
+                position: prefix.BadgePosition.bottomStart(),
+                badgeContent: Text('$cartItems',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                      color: Colors.white,
+                    )),
+                badgeAnimation: prefix.BadgeAnimation.rotation(),
+                child: IconButton(
+                    onPressed: () {
+                      eventHandler.viewCart();
+                    },
+                    icon: const Icon(Icons.shopping_bag_outlined, size: 40)))
+          ],
+        ),
         body: SingleChildScrollView(
           /////////////////////////////////////
           ///        Column for Body       /////
           /////////////////////////////////////
-          child: Column(
-            children: [
-              //////////////////////////////////////////////////
-              ///       Container for Image  Section       /////
-              //////////////////////////////////////////////////
-              Container(
-                  height: 400,
-                  decoration: BoxDecoration(
-                      image: DecorationImage(
-                          image: GetImage().getNameLocalImage(
-                              shopF.getProducts(ProductIndex).img)))),
+          child: Column(children: [
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.82,
+              child: ListView(
+                children: [
+                  //////////////////////////////////////////////////
+                  ///       Container for Image  Section       /////
+                  //////////////////////////////////////////////////
+                  Container(
+                      height: 400,
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                              image: GetImage().getNameLocalImage(
+                                  shopF.getProducts(ProductIndex).img)))),
 
-              //////////////////////////////////////////////////
-              ///        SizedBox for Product Details      /////
-              //////////////////////////////////////////////////
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.45,
-                child: Container(
-                    height: 200,
-                    child: Center(
+                  //////////////////////////////////////////////////
+                  ///        SizedBox for Product Details      /////
+                  //////////////////////////////////////////////////
+                  SizedBox(
+                    // height: MediaQuery.of(context).size.height * 0.45,
+                    child: Container(
+                        // height: 200,
+                        child: Center(
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Text(shopF.getProducts(ProductIndex).description,
                             textAlign: TextAlign.center, style: body()),
                       ),
                     )),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                ],
               ),
-              const SizedBox(
-                height: 10,
-              ),
-              /////////////////////////////////////////////
-              ///     Container for Purchase Button   /////
-              /////////////////////////////////////////////
-              Container(
-                alignment: Alignment.center,
-                height: 50,
-                width: MediaQuery.of(context).size.width,
-                color: Colors.white,
-                child: ElevatedButton(
-                    onPressed: () {
-                      eventHandler.addToCart(ProductIndex);
-                    },
-                    child: const Text('         Purchase          ')),
-              )
-            ],
-          ),
+            ),
+            /////////////////////////////////////////////
+            ///     Container for Purchase Button   /////
+            /////////////////////////////////////////////
+            Container(
+              alignment: Alignment.center,
+              height: 50,
+              width: MediaQuery.of(context).size.width,
+              color: Colors.white,
+              child: ElevatedButton(
+                  onPressed: () {
+                    eventHandler.addToCart(ProductIndex);
+                  },
+                  child: const Text('         Purchase         ')),
+            )
+          ]),
         )
 
         // ),

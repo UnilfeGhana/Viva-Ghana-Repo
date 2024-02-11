@@ -3,6 +3,7 @@ import 'package:vr_plate/Functions/ClassFunctions/ShopFunctions.dart';
 import 'package:vr_plate/Functions/EventHandler/Level_2_events.dart';
 import 'package:vr_plate/Functions/GetImage.dart';
 import 'package:vr_plate/UI/Level%202/HomePage/HomePageCards/CarouselDescription.dart';
+import 'package:vr_plate/UI/tools/fadeIn.dart';
 
 class CarouselCard extends StatefulWidget {
   int CarouselIndex;
@@ -26,11 +27,11 @@ class _CarouselCardState extends State<CarouselCard> {
     L2EventHandler eventHandler = L2EventHandler(context);
 
     return GestureDetector(
-      onTap: () => eventHandler.onOpenCarousel(CarouselIndex),
+      // onTap: () => eventHandler.onOpenCarousel(CarouselIndex),
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          color: Colors.lightGreen,
+          color: Colors.white,
         ),
         height: maxHeight,
         width: 350,
@@ -39,15 +40,17 @@ class _CarouselCardState extends State<CarouselCard> {
           alignment: Alignment.topRight,
           children: [
             //Image
-            Container(
-              height: maxHeight,
-              width: 400,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: Color.fromARGB(255, 201, 199, 199),
-                image: DecorationImage(
-                  image: GetImage().getNameLocalImage(image),
-                  fit: BoxFit.cover,
+            FadeIn(
+              child: Container(
+                height: maxHeight,
+                width: 400,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  // color: const Color.fromARGB(255, 201, 199, 199),
+                  image: DecorationImage(
+                    image: GetImage().getNameLocalImage(image),
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             ),

@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:badges/badges.dart' as prefix;
 import 'package:flutter/material.dart';
 import 'package:vr_plate/Functions/ClassFunctions/UserFunctions.dart';
@@ -22,6 +24,9 @@ class _HomePageState extends State<HomePage> {
   L1EventHandler eventHandler = L1EventHandler();
   ScrollController controller = ScrollController();
   int cartItems = 0;
+  StreamController<int> streamController = UserFunction.cartStreamController;
+  late Stream<int> cartStream;
+
   List<Widget> pageList = const [
     DefaultHomeScreen(),
     NewMemberView(),
@@ -37,8 +42,16 @@ class _HomePageState extends State<HomePage> {
   }
 
   get() {
-    setState(() {
-      cartItems = UserFunction.user_.cartMap.values.length;
+    cartStream = streamController.stream;
+    // if (streamController.hasListener) {
+    //   return;
+    // }
+    cartStream.listen((event) {
+      // print(event.toString());
+      // print("Hi");
+      setState(() {
+        cartItems = event;
+      });
     });
   }
 
@@ -54,14 +67,26 @@ class _HomePageState extends State<HomePage> {
           elevation: 0,
           toolbarHeight: 90,
           actions: [
-            prefix.Badge(
-                position: prefix.BadgePosition.topStart(),
-                badgeContent: Text('$cartItems'),
-                child: IconButton(
-                    onPressed: () {
-                      eventHandler2.onOpenCart();
-                    },
-                    icon: const Icon(Icons.shopping_bag_outlined, size: 40)))
+            GestureDetector(
+              onTap: () {
+                eventHandler2.onOpenCart();
+              },
+              child: prefix.Badge(
+                  badgeStyle: prefix.BadgeStyle(badgeColor: Colors.white),
+                  position: prefix.BadgePosition.center(),
+                  badgeContent: Text('$cartItems',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                        color: Colors.green,
+                      )),
+                  badgeAnimation: prefix.BadgeAnimation.rotation(),
+                  child: IconButton(
+                      onPressed: () {
+                        eventHandler2.onOpenCart();
+                      },
+                      icon: const Icon(Icons.shopping_bag_outlined, size: 40))),
+            )
           ],
           title: Container(
             height: 90,
@@ -130,5 +155,6 @@ class _HomePageState extends State<HomePage> {
     // TODO: implement deactivate
     super.deactivate();
     controller.dispose();
+    streamController.close();
   }
 }

@@ -1,3 +1,4 @@
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/services.dart';
 import 'package:geolocator/geolocator.dart';
@@ -55,7 +56,15 @@ class LocationClass {
     permission = await Geolocator.checkPermission();
     //Location can't be accessed with first 2 conditions
     if (permission == LocationPermission.denied) {
-      await Geolocator.requestPermission();
+      permission = await Geolocator.requestPermission();
+      if (permission == LocationPermission.always) {
+        getClosestShop();
+        return true;
+      }
+      if (permission == LocationPermission.whileInUse) {
+        getClosestShop();
+        return true;
+      }
       return false;
     } else if (permission == LocationPermission.deniedForever) {
       await Geolocator.openAppSettings();

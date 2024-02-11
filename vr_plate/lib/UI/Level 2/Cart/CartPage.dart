@@ -55,9 +55,9 @@ class _CartPageState extends State<CartPage> {
                     child: Card(
                       elevation: 2,
                       child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text('Total Amount: GHc ${UserFunction.total}'),
+                          // Text('Total Amount: GHc ${UserFunction.total}'),
                           ElevatedButton.icon(
                               onPressed: () {
                                 eventHandler.confirmPickUp();

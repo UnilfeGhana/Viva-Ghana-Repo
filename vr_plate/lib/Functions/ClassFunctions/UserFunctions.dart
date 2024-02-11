@@ -1,9 +1,7 @@
 import 'dart:async';
 
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:vr_plate/Class/Local/UserClass.dart';
 import 'package:vr_plate/Functions/ServerFunctions/ServerFunctions.dart';
 
@@ -14,6 +12,25 @@ class UserFunction {
   static double total = 0;
   static bool otpSent = false;
   // final NavHandler _navHandler = NavHandler();
+
+  ///////////////Cart Stream/////////////////
+  static final StreamController<int> cartStreamController =
+      StreamController.broadcast();
+
+  // late StreamSubscription cartSub;
+  UserFunction() {
+    if (cartStreamController.hasListener) {
+      return;
+    }
+  }
+
+  cartEvent(var event) {
+    // print("Adding Event ${event.toString()}");
+    if (cartStreamController.isClosed) {
+      return;
+    }
+    cartStreamController.add(event);
+  }
 
   //Authentication Dependecies
   FirebaseAuth firebaseAuth = FirebaseAuth.instance;
@@ -94,11 +111,13 @@ class UserFunction {
       user_.cartMap.addAll({item.productID: item});
       total += ((item.price) * item.amount);
     }
+    cartEvent(user_.cartMap.values.length);
   }
 
   removeFromCart(String item) {
     total -= ((user_.cartMap[item]?.price)! * (user_.cartMap[item]?.amount)!);
     user_.cartMap.remove(item);
+    cartEvent(user_.cartMap.values.length);
   }
 
   editAmount(String item, int amount) {
@@ -108,6 +127,7 @@ class UserFunction {
         ? total - (((user_.cartMap[item]!.amount) - amount) * price)
         : total + ((amount - (user_.cartMap[item]!.amount)) * price);
     user_.cartMap[item]?.amount = amount;
+    cartEvent(user_.cartMap.values.length);
   }
 
   emptyCart() {
@@ -174,7 +194,7 @@ class MemberFunction {
   String getMemberCommission() {
     setMemberCommission();
     print('Debug Member Commission is ${_member.commission}');
-    String commission_cedis = '${_member.commission}.00';
+    String commission_cedis = '${_member.commission}';
     return commission_cedis;
   }
 

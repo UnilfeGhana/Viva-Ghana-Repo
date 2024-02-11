@@ -87,6 +87,7 @@ class L1EventHandler {
     // bool success = mf.addMember(user.phone, user.userName);\
     mf.pushNewMember(
         user.phone, user.userName, MemberFunction().getMemberPhone());
+    _navHandler.PopUpSuccess(context, 'The request is being processed...');
     // bool success = mf.pushNewMember(
     //     user.phone, user.userName, MemberFunction.member.phone);
     // mf.http_submitMember(user.phone, MemberFunction.member.phone);

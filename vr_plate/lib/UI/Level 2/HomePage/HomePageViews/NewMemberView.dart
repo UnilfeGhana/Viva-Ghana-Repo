@@ -25,7 +25,7 @@ class _NewMemberViewState extends State<NewMemberView> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const SizedBox(height: 30),
-            const Text('Add a New Member to Earn Monthly',
+            const Text('Refer a new Member to Earn Monthly',
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold)),
             const SizedBox(height: 20),

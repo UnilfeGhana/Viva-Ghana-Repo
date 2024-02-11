@@ -36,7 +36,7 @@ class _PickUpLocationPageState extends State<PickUpLocationPage> {
     allMarkers.add(marker);
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Pin Location'),
+          title: const Text('Choose Delivery Location'),
           backgroundColor: Colors.white,
           toolbarHeight: 100,
         ),

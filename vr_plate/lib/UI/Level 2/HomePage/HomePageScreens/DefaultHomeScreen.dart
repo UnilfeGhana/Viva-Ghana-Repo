@@ -25,7 +25,7 @@ class _DefaultHomeScreenState extends State<DefaultHomeScreen> {
         mainAxisSize: MainAxisSize.max,
         children: [
           const CarouselView(),
-          const CategoriesViews(),
+          // const CategoriesViews(),
           ProductView(
             controller: controller,
           ),

@@ -30,17 +30,51 @@ class _MemberDetailViewState extends State<MemberDetailView> {
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           //Add Viva Plus Background Picture here
           Container(
-            height: 100,
+            height: 120,
             width: MediaQuery.of(context).size.width,
-            child: const CircleAvatar(
-                backgroundColor: Colors.green,
-                child: Icon(
-                  Icons.person,
-                  size: 70,
-                  color: Colors.white,
-                )),
-            // color: Colors.grey
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                Card(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(60)),
+                  elevation: 20,
+                  child: SizedBox(
+                    height: double.infinity,
+                    width: 115,
+                    child: CircularProgressIndicator(
+                      strokeCap: StrokeCap.round,
+                      color: Colors.green,
+                      strokeWidth: 10,
+                      backgroundColor: Color.fromARGB(255, 235, 235, 235),
+                      value: (double.parse(
+                              MemberFunction().getMemberCommission()) /
+                          1000),
+                    ),
+                  ),
+                ),
+                CircleAvatar(
+                  radius: 50,
+                  backgroundColor: Colors.white,
+                  child: Text(
+                    "GHC ${MemberFunction().getMemberCommission()}",
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.green,
+                        fontSize: 18),
+                  ),
+                ),
+              ],
+            ),
+            //  Icon(
+            //   Icons.person,
+            //   size: 70,
+            //   color: Colors.white,
+            // ),
           ),
+          // color: Colors.grey
+
           const SizedBox(height: 20),
           //Container to Contain member Phone
           Container(
@@ -66,15 +100,13 @@ class _MemberDetailViewState extends State<MemberDetailView> {
               const Text(' GHC'),
             ],
           )),
-          const SizedBox(height: 10),
-          const Text('**Commissions will be paid at the end of each month'),
 
           const SizedBox(height: 30),
           //Container to Contain List of Member Children
           Container(
             width: MediaQuery.of(context).size.width * 0.9,
             child: Text(
-              'Children: (${MemberFunction().getMemberChildren().length})',
+              'Referrals: (${MemberFunction().getMemberChildren().length})',
               style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
             ),
           ),
@@ -83,18 +115,17 @@ class _MemberDetailViewState extends State<MemberDetailView> {
               shrinkWrap: true,
               itemCount: MemberFunction().getMemberChildren().length,
               itemBuilder: (BuildContext context, index) {
-                return Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    width: MediaQuery.of(context).size.width * 0.5,
-                    height: 30,
-                    color: Colors.lightGreen,
-                    alignment: Alignment.center,
-                    child: Text(MemberFunction().getMemberChildren()[index],
-                        style: const TextStyle(color: Colors.white)),
-                  ),
+                return ListTile(
+                  title: Text(MemberFunction().getMemberChildren()[index]),
+                  leading: CircleAvatar(child: Text("${index + 1}")),
                 );
               }),
+          const SizedBox(height: 10),
+          const Text(
+              '**Commissions will be paid automatically at the end of each month',
+              style: TextStyle(
+                color: Colors.green,
+              )),
         ]),
       ),
     );

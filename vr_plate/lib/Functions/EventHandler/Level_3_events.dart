@@ -77,8 +77,9 @@ class L3EventHandler {
       navHandler.clearLayers(context);
       navHandler.clearLayers(context);
       navHandler.Lev4Nav('HomePage', context, null);
-      navHandler.PopUpSuccess(context, 'Order Placed');
-    }else {
+      navHandler.PopUpSuccess(
+          context, 'Thank you \n Your Order has been Placed');
+    } else {
       navHandler.clearLayers(context);
       navHandler.Lev4Nav('HomePage', context, null);
       navHandler.PopUpFailed(context, 'Failed to Place Order');

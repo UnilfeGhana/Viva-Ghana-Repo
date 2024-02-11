@@ -38,7 +38,7 @@ class OrderSummary extends StatelessWidget {
                       children: [
                         Text('Medicine: ${products[index].productID}'),
                         Text('Price: ${products[index].price}'),
-                        Text('Number: ${products[index].amount}')
+                        Text('Quantity: ${products[index].amount}')
                       ],
                     )
                   ],
