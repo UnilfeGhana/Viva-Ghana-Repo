@@ -32,6 +32,9 @@ class _PendingOrdersPageState extends State<PendingOrdersPage> {
   }
 
   get_orders() async {
+    if (!mounted) {
+      return;
+    }
     var temp = await dbfc.get_pending_orders();
     setState(() {
       pendingOrders = temp;

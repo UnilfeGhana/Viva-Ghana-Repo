@@ -1,0 +1,1 @@
+ C:\\Users\\RanVic\\OneDrive\\Documents\\GitHub\\Viva-Ghana-Repo\\viva_ghana_shops\\.dart_tool\\flutter_build\\8f0bd3f0f8ee9a599c9870abdbe7227d\\native_assets.yaml: 

@@ -31,6 +31,9 @@ class _NewOrdersPageState extends State<NewOrdersPage> {
   ///     Async Function to get New Orders       ////
   //////////////////////////////////////////////////
   getNewOrders() async {
+    if (!mounted) {
+      return;
+    }
     //Change function call to get fulfilled Orders
     var temp = await dbfc.get_new_orders();
 

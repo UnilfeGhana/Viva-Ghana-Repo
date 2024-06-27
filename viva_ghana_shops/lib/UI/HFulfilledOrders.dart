@@ -27,6 +27,9 @@ class _FulfilledOrdersPageState extends State<FulfilledOrdersPage> {
   }
 
   getFulfilled() async {
+    if (!mounted) {
+      return;
+    }
     var temp = await dbfc.get_fulfilled_orders();
     print(temp);
     setState(() {
